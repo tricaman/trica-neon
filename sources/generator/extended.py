@@ -475,7 +475,9 @@ def install(bf, d, dot):
     Pw, Pp = G["P"]
     put1("ruble", Pw + 60, shift(Pp, 60), ln((h, H * 0.25), (60 + h + 300, H * 0.25)), ch="₽")
     Bw, Bp = G["B"]
-    put1("bitcoin", Bw, Bp, ln((W * 0.3, -80), (W * 0.3, H + 80), cap=BUTT), ln((W * 0.55, -80), (W * 0.55, H + 80), cap=BUTT), ch="₿")
+    # ₿: the B with two short ticks that stick out above and below it, from inside its top and bottom strokes
+    put1("bitcoin", Bw, Bp, *[ln((x, T), (x, H + 80), cap=BUTT) for x in (W * 0.3, W * 0.55)],
+         *[ln((x, BT), (x, -80), cap=BUTT) for x in (W * 0.3, W * 0.55)], ch="₿")
     rw = W * 0.75
     put1("rupee", rw, ln((h, T), (rw - h, T)), ln((h, MI + 120), (rw - h, MI + 120)),
          ln((rw * 0.55 - r * 0.6, T), (rw * 0.55, T), (rw * 0.55, MI - 40), (h, MI - 40), (rw - h, BT),
