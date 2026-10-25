@@ -1,28 +1,28 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="Tbar" format="2">
-  <advance width="875"/>
+  <advance width="746"/>
   <unicode hex="0166"/>
-  <anchor x="438" y="700" name="top"/>
-  <anchor x="438" y="0" name="bottom"/>
-  <anchor x="634" y="0" name="ogonek"/>
+  <anchor x="373" y="700" name="top"/>
+  <anchor x="373" y="0" name="bottom"/>
+  <anchor x="569" y="0" name="ogonek"/>
   <outline>
     <contour>
-      <point x="88" y="700" type="line"/>
-      <point x="88" y="595" type="line"/>
-      <point x="788" y="595" type="line"/>
-      <point x="788" y="700" type="line"/>
+      <point x="23" y="700" type="line"/>
+      <point x="23" y="595" type="line"/>
+      <point x="723" y="595" type="line"/>
+      <point x="723" y="700" type="line"/>
     </contour>
     <contour>
-      <point x="490" y="700" type="line"/>
-      <point x="385" y="700" type="line"/>
-      <point x="385" y="0" type="line"/>
-      <point x="490" y="0" type="line"/>
+      <point x="426" y="700" type="line"/>
+      <point x="321" y="700" type="line"/>
+      <point x="321" y="0" type="line"/>
+      <point x="426" y="0" type="line"/>
     </contour>
     <contour>
-      <point x="245" y="403" type="line"/>
-      <point x="245" y="298" type="line"/>
-      <point x="630" y="298" type="line"/>
-      <point x="630" y="403" type="line"/>
+      <point x="181" y="403" type="line"/>
+      <point x="181" y="298" type="line"/>
+      <point x="566" y="298" type="line"/>
+      <point x="566" y="403" type="line"/>
     </contour>
   </outline>
   <lib>

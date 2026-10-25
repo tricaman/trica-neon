@@ -17,6 +17,7 @@ from fontTools.misc.roundTools import otRound
 
 import build_font as bf
 import kerning
+import spacing
 
 FAMILY, PS_FAMILY = "Trica Neon", "TricaNeon"
 REPO = "https://github.com/tricaman/trica-neon"
@@ -238,6 +239,7 @@ def write_sources(out):
     for style, b in builds.items():
         if shape(b) != shape(first):
             sys.exit(f"{style}: the glyphs, components or anchors differ from {WEIGHTS[0][0]}")
+    spacing.respace(list(builds.values()), bf.XH, bf.H)
     data = {s: {n: (adv, integer_contours(p)) for n, (adv, p) in b["glyphs"].items()} for s, b in builds.items()}
     comps = {s: {n: [(c, otRound(x), otRound(y)) for c, x, y in v] for n, v in b["components"].items()}
              for s, b in builds.items()}

@@ -1,22 +1,22 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="X" format="2">
-  <advance width="875"/>
+  <advance width="612"/>
   <unicode hex="0058"/>
-  <anchor x="438" y="700" name="top"/>
-  <anchor x="438" y="0" name="bottom"/>
-  <anchor x="634" y="0" name="ogonek"/>
+  <anchor x="306" y="700" name="top"/>
+  <anchor x="306" y="0" name="bottom"/>
+  <anchor x="502" y="0" name="ogonek"/>
   <outline>
     <contour>
-      <point x="238" y="700" type="line"/>
-      <point x="153" y="700" type="line"/>
-      <point x="637" y="0" type="line"/>
-      <point x="722" y="0" type="line"/>
+      <point x="106" y="700" type="line"/>
+      <point x="21" y="700" type="line"/>
+      <point x="506" y="0" type="line"/>
+      <point x="591" y="0" type="line"/>
     </contour>
     <contour>
-      <point x="153" y="0" type="line"/>
-      <point x="238" y="0" type="line"/>
-      <point x="722" y="700" type="line"/>
-      <point x="637" y="700" type="line"/>
+      <point x="21" y="0" type="line"/>
+      <point x="106" y="0" type="line"/>
+      <point x="591" y="700" type="line"/>
+      <point x="506" y="700" type="line"/>
     </contour>
   </outline>
   <lib>

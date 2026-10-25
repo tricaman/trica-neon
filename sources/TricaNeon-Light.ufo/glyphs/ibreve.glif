@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="ibreve" format="2">
-  <advance width="262"/>
+  <advance width="286"/>
   <unicode hex="012D"/>
   <outline>
     <component base="dotlessi" xOffset="18"/>
-    <component base="brevecomb.narrow" xOffset="499" yOffset="504"/>
+    <component base="brevecomb.narrow" xOffset="511" yOffset="504"/>
   </outline>
 </glyph>

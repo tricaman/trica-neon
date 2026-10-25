@@ -1,25 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="pi" format="2">
-  <advance width="735"/>
+  <advance width="612"/>
   <unicode hex="03C0"/>
   <outline>
     <contour>
-      <point x="88" y="504" type="line"/>
-      <point x="88" y="487" type="line"/>
-      <point x="648" y="487" type="line"/>
-      <point x="648" y="504" type="line"/>
+      <point x="26" y="504" type="line"/>
+      <point x="26" y="487" type="line"/>
+      <point x="586" y="487" type="line"/>
+      <point x="586" y="504" type="line"/>
     </contour>
     <contour>
-      <point x="253" y="504" type="line"/>
-      <point x="236" y="504" type="line"/>
-      <point x="236" y="0" type="line"/>
-      <point x="253" y="0" type="line"/>
+      <point x="192" y="504" type="line"/>
+      <point x="174" y="504" type="line"/>
+      <point x="174" y="0" type="line"/>
+      <point x="192" y="0" type="line"/>
     </contour>
     <contour>
-      <point x="499" y="504" type="line"/>
-      <point x="482" y="504" type="line"/>
-      <point x="482" y="0" type="line"/>
-      <point x="499" y="0" type="line"/>
+      <point x="438" y="504" type="line"/>
+      <point x="420" y="504" type="line"/>
+      <point x="420" y="0" type="line"/>
+      <point x="438" y="0" type="line"/>
     </contour>
   </outline>
   <lib>

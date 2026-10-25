@@ -1,35 +1,35 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="Ldot" format="2">
-  <advance width="875"/>
+  <advance width="801"/>
   <unicode hex="013F"/>
   <outline>
     <contour>
-      <point x="193" y="700" type="line"/>
-      <point x="88" y="700" type="line"/>
-      <point x="88" y="201" type="line"/>
-      <point x="88" y="90"/>
-      <point x="178" y="0"/>
-      <point x="289" y="0" type="curve"/>
-      <point x="788" y="0" type="line"/>
-      <point x="788" y="105" type="line"/>
-      <point x="289" y="105" type="line"/>
-      <point x="236" y="105"/>
-      <point x="193" y="148"/>
-      <point x="193" y="201" type="curve"/>
+      <point x="183" y="700" type="line"/>
+      <point x="78" y="700" type="line"/>
+      <point x="78" y="201" type="line"/>
+      <point x="78" y="90"/>
+      <point x="168" y="0"/>
+      <point x="279" y="0" type="curve"/>
+      <point x="778" y="0" type="line"/>
+      <point x="778" y="105" type="line"/>
+      <point x="279" y="105" type="line"/>
+      <point x="226" y="105"/>
+      <point x="183" y="148"/>
+      <point x="183" y="201" type="curve"/>
     </contour>
     <contour>
-      <point x="546" y="350" type="curve"/>
-      <point x="546" y="391"/>
-      <point x="513" y="424"/>
-      <point x="473" y="424" type="curve"/>
-      <point x="432" y="424"/>
-      <point x="399" y="391"/>
-      <point x="399" y="350" type="curve"/>
-      <point x="399" y="309"/>
-      <point x="432" y="277"/>
-      <point x="473" y="277" type="curve"/>
-      <point x="513" y="277"/>
-      <point x="546" y="309"/>
+      <point x="536" y="350" type="curve"/>
+      <point x="536" y="391"/>
+      <point x="503" y="424"/>
+      <point x="463" y="424" type="curve"/>
+      <point x="422" y="424"/>
+      <point x="389" y="391"/>
+      <point x="389" y="350" type="curve"/>
+      <point x="389" y="309"/>
+      <point x="422" y="277"/>
+      <point x="463" y="277" type="curve"/>
+      <point x="503" y="277"/>
+      <point x="536" y="309"/>
     </contour>
   </outline>
 </glyph>

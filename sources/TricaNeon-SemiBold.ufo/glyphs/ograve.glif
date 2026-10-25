@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="ograve" format="2">
-  <advance width="735"/>
+  <advance width="707"/>
   <unicode hex="00F2"/>
   <outline>
     <component base="o"/>
-    <component base="gravecomb" xOffset="735" yOffset="504"/>
+    <component base="gravecomb" xOffset="721" yOffset="504"/>
   </outline>
 </glyph>
