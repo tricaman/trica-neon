@@ -68,7 +68,7 @@ make npm             # npm package with the web fonts and ready-made CSS in out/
 make release         # zip of the fonts, the license and this README
 ```
 
-`make build` writes the variable font to `fonts/variable`, the static fonts to `fonts/ttf` and `fonts/otf` and the WOFF2 web fonts to `fonts/webfonts`. GitHub Actions builds and checks the fonts on every push; a tag such as `v1.000` also publishes a GitHub release with the zip.
+`make build` writes the variable font to `fonts/variable`, the static fonts to `fonts/ttf` and `fonts/otf` and the WOFF2 web fonts to `fonts/webfonts`. GitHub Actions builds and checks the fonts on every push; a tag with the font version, such as `1.000`, also publishes a GitHub release with the zip.
 
 ## License
 
