@@ -4,22 +4,8 @@
   <unicode hex="0149"/>
   <outline>
     <contour>
-      <point x="217" y="635" type="curve"/>
-      <point x="217" y="671"/>
-      <point x="188" y="700"/>
-      <point x="152" y="700" type="curve"/>
-      <point x="116" y="700"/>
-      <point x="88" y="671"/>
-      <point x="88" y="635" type="curve"/>
-      <point x="88" y="599"/>
-      <point x="116" y="571"/>
-      <point x="152" y="571" type="curve"/>
-      <point x="188" y="571"/>
-      <point x="217" y="599"/>
-    </contour>
-    <contour>
-      <point x="194" y="621" type="line"/>
-      <point x="111" y="650" type="line"/>
+      <point x="216" y="686" type="line"/>
+      <point x="133" y="714" type="line"/>
       <point x="46" y="462" type="line"/>
       <point x="129" y="433" type="line"/>
     </contour>
@@ -46,10 +32,4 @@
       <point x="277" y="307" type="curve"/>
     </contour>
   </outline>
-  <lib>
-    <dict>
-      <key>public.truetype.overlap</key>
-      <true/>
-    </dict>
-  </lib>
 </glyph>

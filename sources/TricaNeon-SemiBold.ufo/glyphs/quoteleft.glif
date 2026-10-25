@@ -4,30 +4,10 @@
   <unicode hex="2018"/>
   <outline>
     <contour>
-      <point x="38" y="470" type="curve"/>
-      <point x="38" y="429"/>
-      <point x="71" y="396"/>
-      <point x="111" y="396" type="curve"/>
-      <point x="152" y="396"/>
-      <point x="185" y="429"/>
-      <point x="185" y="470" type="curve"/>
-      <point x="185" y="510"/>
-      <point x="152" y="543"/>
-      <point x="111" y="543" type="curve"/>
-      <point x="71" y="543"/>
-      <point x="38" y="510"/>
-    </contour>
-    <contour>
-      <point x="62" y="487" type="line"/>
-      <point x="161" y="453" type="line"/>
-      <point x="235" y="666" type="line"/>
-      <point x="135" y="700" type="line"/>
+      <point x="86" y="683" type="line"/>
+      <point x="185" y="396" type="line"/>
+      <point x="284" y="430" type="line"/>
+      <point x="185" y="717" type="line"/>
     </contour>
   </outline>
-  <lib>
-    <dict>
-      <key>public.truetype.overlap</key>
-      <true/>
-    </dict>
-  </lib>
 </glyph>

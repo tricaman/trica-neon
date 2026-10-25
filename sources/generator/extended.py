@@ -93,12 +93,15 @@ def install(bf, d, dot):
         return bw - h if name in ("A", "a") else bw / 2 if name in ("I", "i", "dotlessi") else bw * 0.78
     def top_x(name, bw):           # marks above: centred, but on L and l they start over the stem (the acute rises from it)
         return stem_x(name) + 60 if name in "Ll" else bw / 2
-    # comma below and turned comma above (ģ): the comma of "," scaled down, with its dot over the attachment
-    # point; at most to 3/4, less in the heavy weights so that the comma below ends at the descenders
+    # comma below and turned comma above (ģ): the comma of "," scaled down and centred on the attachment point,
+    # the turned one slanted the other way as the opening quotes; at most to 3/4, less in the heavy weights so
+    # that the comma below ends at the descenders
+    cxs = [p[0] for _, segs in G["comma"][1].contours for g in segs for p in g[1:]]
     cys = [p[1] for _, segs in G["comma"][1].contours for g in segs for p in g[1:]]
     kc = min(0.75, (h - DB - 40) / (max(cys) - min(cys)))
-    def m_commabelow(cx, y): return G["comma"][1].transform(kc, 0, 0, kc, cx - kc * d / 2, -40 - kc * d)
-    def m_commaturned(cx, y): return G["comma"][1].transform(-kc, 0, 0, -kc, cx + kc * d / 2, y + 90 + kc * d)
+    cm = (min(cxs) + max(cxs)) / 2
+    def m_commabelow(cx, y): return G["comma"][1].transform(kc, 0, 0, kc, cx - kc * cm, -40 - kc * max(cys))
+    def m_commaturned(cx, y): return G["comma"][1].transform(-kc, 0, 0, kc, cx + kc * cm, y + 90 - kc * min(cys))
     def m_caronalt(cx, y): return ln((cx, y - 170), (cx, y), cap=BUTT)       # vertical caron of ď ľ ť Ľ
 
     # Combining marks: zero-width glyphs drawn left of the origin, over the centre of the

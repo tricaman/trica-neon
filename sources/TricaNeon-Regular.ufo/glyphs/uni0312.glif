@@ -5,30 +5,10 @@
   <anchor x="-367" y="246" name="top"/>
   <outline>
     <contour>
-      <point x="-406" y="128" type="curve"/>
-      <point x="-406" y="107"/>
-      <point x="-388" y="90"/>
-      <point x="-367" y="90" type="curve"/>
-      <point x="-347" y="90"/>
-      <point x="-329" y="107"/>
-      <point x="-329" y="128" type="curve"/>
-      <point x="-329" y="149"/>
-      <point x="-347" y="166"/>
-      <point x="-367" y="166" type="curve"/>
-      <point x="-388" y="166"/>
-      <point x="-406" y="149"/>
-    </contour>
-    <contour>
-      <point x="-390" y="136" type="line"/>
-      <point x="-345" y="120" type="line"/>
-      <point x="-307" y="231" type="line"/>
-      <point x="-352" y="246" type="line"/>
+      <point x="-413" y="231" type="line"/>
+      <point x="-365" y="90" type="line"/>
+      <point x="-322" y="105" type="line"/>
+      <point x="-370" y="246" type="line"/>
     </contour>
   </outline>
-  <lib>
-    <dict>
-      <key>public.truetype.overlap</key>
-      <true/>
-    </dict>
-  </lib>
 </glyph>

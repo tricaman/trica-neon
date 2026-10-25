@@ -4,50 +4,16 @@
   <unicode hex="201E"/>
   <outline>
     <contour>
-      <point x="136" y="24" type="curve"/>
-      <point x="136" y="37"/>
-      <point x="125" y="48"/>
-      <point x="112" y="48" type="curve"/>
-      <point x="98" y="48"/>
-      <point x="88" y="37"/>
-      <point x="88" y="24" type="curve"/>
-      <point x="88" y="11"/>
-      <point x="98" y="0"/>
-      <point x="112" y="0" type="curve"/>
-      <point x="125" y="0"/>
-      <point x="136" y="11"/>
-    </contour>
-    <contour>
-      <point x="120" y="21" type="line"/>
-      <point x="103" y="27" type="line"/>
+      <point x="128" y="45" type="line"/>
+      <point x="112" y="51" type="line"/>
       <point x="52" y="-123" type="line"/>
       <point x="68" y="-129" type="line"/>
     </contour>
     <contour>
-      <point x="208" y="24" type="curve"/>
-      <point x="208" y="37"/>
-      <point x="197" y="48"/>
-      <point x="184" y="48" type="curve"/>
-      <point x="170" y="48"/>
-      <point x="160" y="37"/>
-      <point x="160" y="24" type="curve"/>
-      <point x="160" y="11"/>
-      <point x="170" y="0"/>
-      <point x="184" y="0" type="curve"/>
-      <point x="197" y="0"/>
-      <point x="208" y="11"/>
-    </contour>
-    <contour>
-      <point x="192" y="21" type="line"/>
-      <point x="175" y="27" type="line"/>
+      <point x="200" y="45" type="line"/>
+      <point x="184" y="51" type="line"/>
       <point x="124" y="-123" type="line"/>
       <point x="140" y="-129" type="line"/>
     </contour>
   </outline>
-  <lib>
-    <dict>
-      <key>public.truetype.overlap</key>
-      <true/>
-    </dict>
-  </lib>
 </glyph>

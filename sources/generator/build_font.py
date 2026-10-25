@@ -168,20 +168,18 @@ def build_symbols(d, dot):
     rs = r * 0.5                           # small radius for small shapes
     top_q, bot_q = T, T - 2 * r            # vertical span used by quote marks
 
-    # the comma: a dot with a diagonal tail; the semicolon and the typographic quotes are made of it
-    tl = max(d * 1.45, 150)                    # drop of the tail: never too short in the light weights
-    comma = lambda x, y: union(dot(x, y), ln((x, y), (x - tl * 0.5 / 1.45, y - tl), cap=BUTT))
+    # the comma: a straight stroke, as the acute, from the top of the dot of the period down to the left;
+    # the semicolon and the typographic quotes are made of it
+    tl = max(d * 1.45, 150)                    # drop below the centre of the dot: never too short in the light weights
+    comma = lambda x, y: ln((x + (d / 2) * 0.5 / 1.45, y + d / 2), (x - tl * 0.5 / 1.45, y - tl), cap=BUTT)
     put("comma", d, comma(d / 2, d / 2))
     y_colon = XH - d / 2                       # upper dot, as in the colon
     put("semicolon", d, dot(d / 2, y_colon), comma(d / 2, d / 2))
     put("quotedbl", S * 3, ln((h, bot_q), (h, top_q)), ln((S * 3 - h, bot_q), (S * 3 - h, top_q)))
-    # typographic quotes: the comma (a dot with a tail), raised to the cap height; ' and " stay straight
-    def turned(o):                              # turned by 180 degrees within its own box
-        xs = [p[0] for _, segs in o.contours for g in segs for p in g[1:]]
-        ys = [p[1] for _, segs in o.contours for g in segs for p in g[1:]]
-        return o.transform(-1, 0, 0, -1, min(xs) + max(xs), min(ys) + max(ys))
+    # typographic quotes: the comma raised to the cap height, the opening ones slanted the other way (as the
+    # grave) so that they read apart from the closing ones; ' and " stay straight
     qr = lambda x: comma(x + d / 2, H - d / 2)
-    ql = lambda x: turned(qr(x))
+    ql = lambda x: qr(x).transform(-1, 0, 0, 1, 2 * x + d, 0)
     put("quoteright", d, qr(0))
     put("quoteleft", d, ql(0))
     put("quotedblright", d * 2.5, qr(0), qr(d * 1.5))

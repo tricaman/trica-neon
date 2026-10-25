@@ -18,30 +18,10 @@
       <point x="144" y="461"/>
     </contour>
     <contour>
-      <point x="144" y="28" type="curve"/>
-      <point x="144" y="43"/>
-      <point x="131" y="56"/>
-      <point x="116" y="56" type="curve"/>
-      <point x="100" y="56"/>
-      <point x="88" y="43"/>
-      <point x="88" y="28" type="curve"/>
-      <point x="88" y="13"/>
-      <point x="100" y="0"/>
-      <point x="116" y="0" type="curve"/>
-      <point x="131" y="0"/>
-      <point x="144" y="13"/>
-    </contour>
-    <contour>
-      <point x="132" y="22" type="line"/>
-      <point x="99" y="34" type="line"/>
+      <point x="142" y="50" type="line"/>
+      <point x="109" y="62" type="line"/>
       <point x="47" y="-116" type="line"/>
       <point x="80" y="-128" type="line"/>
     </contour>
   </outline>
-  <lib>
-    <dict>
-      <key>public.truetype.overlap</key>
-      <true/>
-    </dict>
-  </lib>
 </glyph>

@@ -4,30 +4,10 @@
   <unicode hex="201A"/>
   <outline>
     <contour>
-      <point x="217" y="65" type="curve"/>
-      <point x="217" y="101"/>
-      <point x="188" y="130"/>
-      <point x="152" y="130" type="curve"/>
-      <point x="116" y="130"/>
-      <point x="88" y="101"/>
-      <point x="88" y="65" type="curve"/>
-      <point x="88" y="29"/>
-      <point x="116" y="0"/>
-      <point x="152" y="0" type="curve"/>
-      <point x="188" y="0"/>
-      <point x="217" y="29"/>
-    </contour>
-    <contour>
-      <point x="194" y="50" type="line"/>
-      <point x="111" y="79" type="line"/>
+      <point x="216" y="115" type="line"/>
+      <point x="133" y="144" type="line"/>
       <point x="46" y="-109" type="line"/>
       <point x="129" y="-137" type="line"/>
     </contour>
   </outline>
-  <lib>
-    <dict>
-      <key>public.truetype.overlap</key>
-      <true/>
-    </dict>
-  </lib>
 </glyph>
