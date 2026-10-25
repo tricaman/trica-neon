@@ -42,10 +42,10 @@ jobs:
           path: fonts
       - name: Check the fonts with FontBakery
         run: make test
-      - name: Make the proofs
+      - name: Make the proofs and the specimen page
         if: ${{ !cancelled() }}
-        run: make proof
-      - name: Upload the FontBakery reports and the proofs
+        run: make proof specimen
+      - name: Upload the FontBakery reports, the proofs and the specimen page
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v6
         with:

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trica Neon</title>
+<meta name="description" content="Trica Neon, a geometric typeface drawn with a single stroke. Six weights and a variable font, free under the SIL Open Font License.">
+<!-- Template of the specimen page: `make specimen` fills in the character list and the version
+     and writes the page with its web font to out/specimen. -->
+<style>
+@font-face {
+  font-family: "Trica Neon";
+  src: url("fonts/TricaNeon-Variable.woff2") format("woff2");
+  font-weight: 100 600;
+  font-display: swap;
+}
+:root {
+  --bg: #f6f5f1;
+  --fg: #15161a;
+  --muted: #6b6f78;
+  --line: #dddbd4;
+  --panel: #ffffff;
+  --accent: #d6246e;
+  --size: 72px;
+  --weight: 400;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e0f12;
+    --fg: #f5f3ee;
+    --muted: #8b9099;
+    --line: #2a2c33;
+    --panel: #16171c;
+    --accent: #ff4f9a;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+a { color: var(--accent); }
+.neon { font-family: "Trica Neon", system-ui, sans-serif; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+header { border-bottom: 1px solid var(--line); }
+header .wrap { display: flex; align-items: center; gap: 24px; min-height: 64px; flex-wrap: wrap; }
+header nav { display: flex; gap: 18px; flex-wrap: wrap; flex: 1; }
+header nav a, .brand { color: var(--fg); text-decoration: none; }
+.brand { font-weight: 600; font-size: 20px; }
+.button {
+  display: inline-block; padding: 8px 18px; border-radius: 999px;
+  background: var(--accent); color: #fff; text-decoration: none; font-weight: 600;
+}
+section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+h1 { font-size: clamp(40px, 12vw, 168px); font-weight: 600; line-height: 1; margin: 24px 0 16px; }
+h2 { font-size: 32px; font-weight: 400; margin: 0 0 24px; }
+.lead { font-size: 20px; max-width: 46em; }
+.facts { color: var(--muted); }
+.controls { display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 16px; color: var(--muted); }
+.controls label { display: flex; align-items: center; gap: 10px; }
+.controls input { accent-color: var(--accent); width: 180px; }
+.controls output { min-width: 3ch; color: var(--fg); }
+.sample {
+  font-size: var(--size); font-weight: var(--weight); line-height: 1.3;
+  padding: 24px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel);
+  outline: none; overflow-wrap: anywhere;
+}
+.sample:focus { border-color: var(--accent); }
+.weights { list-style: none; margin: 0; padding: 0; }
+.weights li { display: flex; align-items: baseline; gap: 24px; padding: 14px 0; border-top: 1px solid var(--line); }
+.weights span:first-child { width: 10em; color: var(--muted); flex: none; white-space: nowrap; }
+.weights span:last-child { font-size: 36px; overflow-wrap: anywhere; }
+.w100 { font-weight: 100; } .w200 { font-weight: 200; } .w300 { font-weight: 300; }
+.w400 { font-weight: 400; } .w500 { font-weight: 500; } .w600 { font-weight: 600; }
+.glyph-view { display: flex; gap: 24px; align-items: flex-start; }
+.glyphs {
+  list-style: none; margin: 0; padding: 0; flex: 1;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(52px, 1fr)); gap: 4px;
+}
+.glyphs button {
+  width: 100%; aspect-ratio: 1; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--panel); color: var(--fg); font: 400 26px "Trica Neon", sans-serif; cursor: pointer;
+}
+.glyphs button:hover, .glyphs button:focus-visible { border-color: var(--accent); }
+.preview {
+  position: sticky; top: 16px; width: 240px; flex: none; text-align: center;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--panel); padding: 16px;
+}
+.preview div { font-size: 150px; line-height: 1.3; }
+.preview p { margin: 0; color: var(--muted); }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; }
+th, td { text-align: left; padding: 12px 16px 12px 0; border-top: 1px solid var(--line); vertical-align: baseline; }
+th { color: var(--muted); font-weight: 400; }
+td.neon { font-size: 30px; }
+.off { font-kerning: none; font-variant-ligatures: none; font-feature-settings: "kern" 0; }
+.frac { font-variant-numeric: diagonal-fractions; }
+.sups { font-feature-settings: "sups"; }
+.ordn { font-variant-numeric: ordinal; }
+.tnum { font-variant-numeric: tabular-nums; }
+.case { font-feature-settings: "case"; }
+.nomark { font-feature-settings: "mark" 0, "mkmk" 0; }
+pre {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+  padding: 16px; overflow-x: auto; font-size: 14px;
+}
+footer { padding: 32px 0 48px; color: var(--muted); }
+@media (max-width: 700px) {
+  .wrap { padding: 0 16px; }
+  td.neon { font-size: 22px; }
+  .glyph-view { flex-direction: column-reverse; align-items: stretch; }
+  .preview { position: static; width: 100%; }
+  .weights li { flex-direction: column; gap: 4px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand neon" href="#top">Trica Neon</a>
+    <nav aria-label="Sections">
+      <a href="#tester">Try it</a>
+      <a href="#weights">Weights</a>
+      <a href="#glyphs">Glyphs</a>
+      <a href="#features">Features</a>
+      <a href="#use">Use it</a>
+    </nav>
+    <a class="button" href="https://github.com/tricaman/trica-neon/releases/latest">Download</a>
+  </div>
+</header>
+
+<main id="top">
+  <section>
+    <div class="wrap">
+      <h1 class="neon">Trica Neon</h1>
+      <p class="lead">A geometric typeface drawn with a single, even stroke, like a line of neon tube. The design grows from one module, a pill as wide as the capital height and half as tall; outer corners are rounded and inner joints stay sharp.</p>
+      <p class="facts">Six weights from Thin to SemiBold and a variable font · {{count}} characters · SIL Open Font License 1.1</p>
+    </div>
+  </section>
+
+  <section id="tester">
+    <div class="wrap">
+      <h2 class="neon">Try it</h2>
+      <div class="controls">
+        <label for="size">Size <input id="size" type="range" min="12" max="220" value="72" data-var="--size" data-unit="px"> <output for="size">72</output></label>
+        <label for="weight">Weight <input id="weight" type="range" min="100" max="600" value="400" data-var="--weight"> <output for="weight">400</output></label>
+      </div>
+      <div class="sample neon" contenteditable="true" spellcheck="false" role="textbox" aria-multiline="true" aria-label="Sample text, editable">Sphinx of black quartz, judge my vow.</div>
+    </div>
+  </section>
+
+  <section id="weights">
+    <div class="wrap">
+      <h2 class="neon">Weights</h2>
+      <ul class="weights neon">
+        <li><span>Thin 100</span><span class="w100">Sphinx of black quartz, judge my vow</span></li>
+        <li><span>ExtraLight 200</span><span class="w200">Sphinx of black quartz, judge my vow</span></li>
+        <li><span>Light 300</span><span class="w300">Sphinx of black quartz, judge my vow</span></li>
+        <li><span>Regular 400</span><span class="w400">Sphinx of black quartz, judge my vow</span></li>
+        <li><span>Medium 500</span><span class="w500">Sphinx of black quartz, judge my vow</span></li>
+        <li><span>SemiBold 600</span><span class="w600">Sphinx of black quartz, judge my vow</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="glyphs">
+    <div class="wrap">
+      <h2 class="neon">Glyphs</h2>
+      <div class="glyph-view">
+        <ul class="glyphs" aria-label="Characters in the font">
+{{glyphs}}
+        </ul>
+        <div class="preview" aria-live="polite">
+          <div class="neon" id="glyph-big">A</div>
+          <p id="glyph-code">U+0041</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <h2 class="neon">OpenType features</h2>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Feature</th><th scope="col">Off</th><th scope="col">On</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Kerning</th><td class="neon off">AVATAR Tavolo</td><td class="neon">AVATAR Tavolo</td></tr>
+          <tr><th scope="row">Fractions</th><td class="neon">1/2 3/4 12/34</td><td class="neon frac">1/2 3/4 12/34</td></tr>
+          <tr><th scope="row">Superiors</th><td class="neon">m2 x3</td><td class="neon sups">m2 x3</td></tr>
+          <tr><th scope="row">Ordinals</th><td class="neon">1a 2o</td><td class="neon ordn">1a 2o</td></tr>
+          <tr><th scope="row">Tabular figures</th><td class="neon">11:17<br>00:00</td><td class="neon tnum">11:17<br>00:00</td></tr>
+          <tr><th scope="row">Case-sensitive forms</th><td class="neon">(HOLA) [H]</td><td class="neon case">(HOLA) [H]</td></tr>
+          <tr><th scope="row">Romanian forms</th><td class="neon">Şţ</td><td class="neon" lang="ro">Şţ</td></tr>
+          <tr><th scope="row">Combining marks</th><td class="neon nomark">x&#x301; q&#x328; e&#x306;&#x300; i&#x30C;</td><td class="neon">x&#x301; q&#x328; e&#x306;&#x300; i&#x30C;</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="use">
+    <div class="wrap">
+      <h2 class="neon">Use it</h2>
+      <p><strong>On your computer:</strong> download the zip of the <a href="https://github.com/tricaman/trica-neon/releases/latest">latest release</a> and install the fonts in <code>fonts/otf</code> (or the variable font in <code>fonts/variable</code>).</p>
+      <p><strong>On the web:</strong> host the WOFF2 file of the variable font from <code>fonts/webfonts</code>; one file covers every weight.</p>
+<pre><code>@font-face {
+  font-family: "Trica Neon";
+  src: url("TricaNeon[wght].woff2") format("woff2");
+  font-weight: 100 600;
+  font-display: swap;
+}
+body {
+  font-family: "Trica Neon", sans-serif;
+}</code></pre>
+      <p>Trica Neon is free and open source under the <a href="https://openfontlicense.org">SIL Open Font License 1.1</a>. Sources and build: <a href="https://github.com/tricaman/trica-neon">github.com/tricaman/trica-neon</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Trica Neon {{version}} · Designed by Marius Trica, <a href="https://mariustrica.com">mariustrica.com</a></div>
+</footer>
+
+<script>
+for (const input of document.querySelectorAll("input[data-var]")) {
+  const output = document.querySelector(`output[for="${input.id}"]`);
+  const update = () => {
+    document.documentElement.style.setProperty(input.dataset.var, input.value + (input.dataset.unit || ""));
+    output.value = input.value;
+  };
+  input.addEventListener("input", update);
+  update();
+}
+document.querySelector(".glyphs").addEventListener("click", (event) => {
+  const button = event.target.closest("button");
+  if (!button) return;
+  document.getElementById("glyph-big").textContent = button.textContent;
+  document.getElementById("glyph-code").textContent = button.title;
+});
+</script>
+</body>
+</html>

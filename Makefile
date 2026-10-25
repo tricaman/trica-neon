@@ -5,7 +5,7 @@ GENERATOR = $(wildcard sources/generator/*.py)
 STYLES = Thin ExtraLight Light Regular Medium SemiBold
 VERSION = $(shell $(PYTHON) -c 'import plistlib; i = plistlib.load(open("sources/TricaNeon-Regular.ufo/fontinfo.plist", "rb")); print("%d.%03d" % (i["versionMajor"], i["versionMinor"]))')
 
-.PHONY: venv venv-test update sources check-sources build test proof images release version clean
+.PHONY: venv venv-test update sources check-sources build test proof specimen images release version clean
 
 # venv holds the build tools, venv-test the QA tools: FontBakery's googlefonts
 # profile needs protobuf<4, gftools needs protobuf>=6.33.
@@ -69,6 +69,13 @@ proof: build.stamp
 	venv/bin/diff3proof fonts/variable/*.ttf --output out/proof
 	venv/bin/python scripts/render_labeled.py out/proof/specimen.png 40 scripts/specimen.txt \
 		$(foreach s,$(STYLES),"$(s)::fonts/ttf/TricaNeon-$(s).ttf")
+
+# The specimen page in out/specimen, ready for GitHub Pages or any static host: the template in
+# documentation/specimen with the characters of the font, and the variable web font.
+specimen: build.stamp
+	rm -rf out/specimen
+	venv/bin/python scripts/specimen_page.py documentation/specimen/index.html \
+		"fonts/variable/TricaNeon[wght].ttf" "fonts/webfonts/TricaNeon[wght].woff2" out/specimen
 
 # The specimen images of the README in documentation/images.
 images: build.stamp
