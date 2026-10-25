@@ -82,6 +82,8 @@ def install(bf, d, dot):
     def m_ogonek(cx, y): return ln((cx, BT), (cx, -110), (cx + 90, -110), radii=[0, 90, 0], cap=BUTT)   # a quarter circle, as the foot of the t
     def ogonek_x(name, bw):        # where the ogonek hangs: as the end of the right stem of A and a, under the stem of I and i
         return bw - h if name in ("A", "a") else bw / 2 if name in ("I", "i", "dotlessi") else bw * 0.78
+    def top_x(name, bw):           # marks above: centred, but on L and l they start over the stem (the acute rises from it)
+        return stem_x(name) + 60 if name in "Ll" else bw / 2
     # comma below and turned comma above (ģ): the comma of "," scaled down, with its dot over the attachment
     # point; at most to 3/4, less in the heavy weights so that the comma below ends at the descenders
     cys = [p[1] for _, segs in G["comma"][1].contours for g in segs for p in g[1:]]
@@ -178,7 +180,7 @@ def install(bf, d, dot):
                     bw = need
                 comps.append(({0x303: "tildecomb.narrow", 0x306: "brevecomb.narrow"}[m], bw / 2 - mx, top))
             elif m in ABOVE:
-                comps.append((ABOVE[m], bw / 2 - mx, top))
+                comps.append((ABOVE[m], top_x(bname, bw) - mx, top))
             elif m in BELOW:
                 cx = ogonek_x(bname, bw) if m == 0x328 else stem_x(bname) if m == 0x326 and bname in "rlt" else bw / 2
                 comps.append((BELOW[m], cx - mx, 0))
@@ -202,7 +204,7 @@ def install(bf, d, dot):
     for b in [*"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", "dotlessi", "dotlessj"]:
         bw = G[b][0]
         top = H if b.isupper() else (T + h if b in ASCENDERS else XH)
-        bf.ANCHORS[b] = [("top", bw / 2, top), ("bottom", bw / 2, 0), ("ogonek", ogonek_x(b, bw), 0)]
+        bf.ANCHORS[b] = [("top", top_x(b, bw), top), ("bottom", bw / 2, 0), ("ogonek", ogonek_x(b, bw), 0)]
     # d l t L take the vertical caron on their right, where ď ľ ť Ľ have it (ccmp swaps the mark)
     for b in "dltL":
         ytop = XT + (T - XT) * 0.6 + h if b == "t" else T + h
