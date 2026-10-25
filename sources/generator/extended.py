@@ -24,6 +24,10 @@ def install(bf, d, dot):
     def glyph_of(name):
         return G[name]
 
+    def x_extent(name):            # leftmost and rightmost x of a glyph, which can pass its box
+        xs = [p[0] for _, segs in G[name][1].contours for g in segs for p in g[1:]]
+        return min(xs), max(xs)
+
     # ------------------------------------------------------------------ marks
     def m_grave(cx, y): return ln((cx - 60, y + 200), (cx + 60, y + 90), cap=BUTT)
     def m_acute(cx, y): return ln((cx - 60, y + 90), (cx + 60, y + 200), cap=BUTT)
@@ -112,8 +116,9 @@ def install(bf, d, dot):
                 ytop = T + h if base in "dlL" else XT + (T - XT) * 0.6 + h
                 if base == "L":
                     ytop = T + h
-                comps.append(("caroncomb.alt", bw + 40 - mx, ytop))
-                bw = bw + 80
+                x = x_extent(bname)[1] + 40            # right of the letter, whose crossbar (t) can pass its box
+                comps.append(("caroncomb.alt", x - mx, ytop))
+                bw = x + 40
             elif m in ABOVE:
                 comps.append((ABOVE[m], bw / 2 - mx, top))
             elif m in BELOW:
@@ -142,7 +147,7 @@ def install(bf, d, dot):
     # d l t L take the vertical caron on their right, where ď ľ ť Ľ have it (ccmp swaps the mark)
     for b in "dltL":
         ytop = XT + (T - XT) * 0.6 + h if b == "t" else T + h
-        bf.ANCHORS[b].append(("caron", G[b][0] + 40, ytop))
+        bf.ANCHORS[b].append(("caron", x_extent(b)[1] + 40, ytop))
     bf.ANCHORS["caroncomb.alt"] = [("_caron", mx, 0)]
 
     # ------------------------------------------------------- special letters
@@ -182,7 +187,8 @@ def install(bf, d, dot):
     Tw, Tp = G["T"]
     put1("Tbar", Tw, Tp, ln((W * 0.3, MI), (W * 0.7, MI)), ch="Ŧ")
     tw, tp = G["t"]
-    put1("tbar", tw, tp, ln((h, XM), (tw - h, XM)), ch="ŧ")
+    tx0, tx1 = x_extent("t")
+    put1("tbar", tw, tp, ln((tx0 + h, XM), (tx1 - h, XM)), ch="ŧ")             # the bar as long as the crossbar
     fw = w * 0.6; sf = fw * 0.38
     put1("longs", fw, ln((fw - h, T), (sf, T), (sf, BT), radii=[0, r, 0]), ch="ſ")
 

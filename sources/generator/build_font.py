@@ -296,8 +296,10 @@ def build_lowercase(d, dot):
     glyph("c", w, [([(R, XT), (L, XT), (L, BT), (R, BT)], [0, r, r, 0])])
     glyph("d", w, [([(R, BT), (R, AT)],), bowl_l])
     glyph("e", w, [([(R, XM), (R, XT), (L, XT), (L, BT), (R, BT)], [0, r, r, r, 0]), ([(L, XM), (R, XM)],)])
-    wf = w * 0.6; sf = wf * 0.38
-    glyph("f", wf, [([(wf - h, AT), (sf, AT), (sf, BT)], [0, r, 0]), ([(h, XT), (wf - h, XT)],)])
+    # f and t: the crossbar reaches fl units into the left sidebearing and fr into the right one
+    fl, fr = 50, SB / 2
+    wf = w * 0.6; sf = wf * 0.38 - fl
+    glyph("f", wf - fl - fr, [([(wf - h - fl, AT), (sf, AT), (sf, BT)], [0, r, 0]), ([(h - fl, XT), (wf - h - fl, XT)],)])
     glyph("g", w, [([(R, XT), (L, XT), (L, BT), (R, BT)], [0, r, r, 0]),
                    ([(R, XT), (R, DB), (L, DB)], [0, r, 0])])
     glyph("h", w, [([(L, BT), (L, AT)],), ([(L, XT), (R, XT), (R, BT)], [0, r, 0])])
@@ -319,10 +321,10 @@ def build_lowercase(d, dot):
     glyph("p", w, [([(L, DB), (L, XT)],), bowl_r])
     glyph("q", w, [([(R, DB), (R, XT)],), bowl_l])
     wr = w * 0.72
-    glyph("r", wr, [([(L, BT), (L, XT), (wr - h, XT)], [0, r, 0])])
+    glyph("r", wr - 70, [([(L, BT), (L, XT), (wr - h, XT)], [0, r, 0])])     # the arm reaches 70 units into the right sidebearing
     glyph("s", w, [([(R, XT), (L, XT), (L, XM), (R, XM), (R, BT), (L, BT)], [0, r, r, r, r, 0])])
-    wt = w * 0.6; st = wt * 0.38
-    glyph("t", wt, [([(st, XT + (AT - XT) * 0.6), (st, BT), (wt - h, BT)], [0, r * 0.6, 0]), ([(h, XT), (wt - h, XT)],)])
+    wt = w * 0.6; st = wt * 0.38 - fl
+    glyph("t", wt - fl - fr, [([(st, XT + (AT - XT) * 0.6), (st, BT), (wt - h - fl, BT)], [0, r * 0.6, 0]), ([(h - fl, XT), (wt - h - fl, XT)],)])
     glyph("u", w, [([(L, XT), (L, BT), (R, BT), (R, XT)], [0, r, r, 0])])
     vp = stroke(rounded([(L, XT + 2 * S), (C, BT - S * 0.6), (R, XT + 2 * S)]))
     glyph("v", w, extra=[clip(vp, 0, 0, w, XH)])
