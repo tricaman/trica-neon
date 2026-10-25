@@ -225,8 +225,9 @@ def build_symbols(d, dot):
         ln((cx - a * 0.7, ay + a * 0.4), (cx + a * 0.7, ay - a * 0.4)))
 
     # dashes and dots
-    put("endash", W * 0.6, ln((h, AX), (W * 0.6 - h, AX)))
-    put("emdash", W * 1.1, ln((h, AX), (W * 1.1 - h, AX)))
+    # – and —: one and a half and two and a half hyphens long, so that they read apart from it
+    put("endash", 525, ln((h, AX), (525 - h, AX)))
+    put("emdash", 875, ln((h, AX), (875 - h, AX)))
     put("periodcentered", d, dot(d / 2, AX))
     put("bullet", d * 2, circle(d, AX, d))
     put("ellipsis", d * 5, dot(d / 2, d / 2), dot(d * 2.5, d / 2), dot(d * 4.5, d / 2))
