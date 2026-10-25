@@ -346,9 +346,11 @@ def install(bf, d, dot):
     put1("dagger", dg, ln((dg / 2, -80), (dg / 2, T)), ln((h, T - 200), (dg - h, T - 200)), ch="†")
     put1("daggerdbl", dg, ln((dg / 2, -80), (dg / 2, T)), ln((h, T - 200), (dg - h, T - 200)), ln((h, 180), (dg - h, 180)), ch="‡")
     pcw, pcp = G["percent"]
+    # ‰: the % with a copy of its lower zero on the right, a clear gap of one stroke (at least 40 units) away
     sq = H * 0.3
-    put1("perthousand", pcw + sq + 40, pcp, ln((pcw + 40, BT + sq), (pcw + 40 + sq - h, BT + sq), (pcw + 40 + sq - h, BT), (pcw + 40, BT),
-                                              radii=[r * 0.3] * 4, closed=True), ch="‰")
+    dx = sq + h + max(S, 40)
+    put1("perthousand", pcw + dx, pcp, ln((pcw - sq + dx, BT + sq), (pcw - h + dx, BT + sq), (pcw - h + dx, BT), (pcw - sq + dx, BT),
+                                         radii=[r * 0.3] * 4, closed=True), ch="‰")
     put1("minute", 120, ln((90, T), (40, T - 200), cap=BUTT), ch="′")
     put1("second", 220, ln((90, T), (40, T - 200), cap=BUTT), ln((190, T), (140, T - 200), cap=BUTT), ch="″")
     tm = W * 1.0; s2 = 0.42
