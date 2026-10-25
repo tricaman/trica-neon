@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trica Neon</title>
 <meta name="description" content="Trica Neon, a geometric typeface drawn with a single stroke. Six weights and a variable font, free under the SIL Open Font License.">
-<!-- Template of the specimen page: `make specimen` fills in the character list and the version
-     and writes the page with its web font to out/specimen. -->
+<!-- Template of the specimen page: `make specimen` fills in the character list, the version and a
+     hash of the web font (so browsers load it again when it changes) and writes the page with its
+     web font to out/specimen. -->
 <style>
 @font-face {
   font-family: "Trica Neon";
-  src: url("fonts/TricaNeon-Variable.woff2") format("woff2");
+  src: url("fonts/TricaNeon-Variable.woff2?v={{fonthash}}") format("woff2");
   font-weight: 100 600;
   font-display: swap;
 }
