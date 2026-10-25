@@ -58,6 +58,9 @@
     <key>public.kern1.quotes</key>
     <array>
       <string>quotesingle</string>
+      <string>quotedbl</string>
+      <string>quoteleft</string>
+      <string>quotedblleft</string>
     </array>
     <key>public.kern1.r</key>
     <array>
@@ -165,6 +168,9 @@
     <key>public.kern2.quotes</key>
     <array>
       <string>quotesingle</string>
+      <string>quotedbl</string>
+      <string>quoteleft</string>
+      <string>quotedblleft</string>
     </array>
   </dict>
 </plist>

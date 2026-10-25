@@ -28,17 +28,17 @@ def groups(components):
     """{"public.kern1.X": [...], "public.kern2.X": [...]} with internal glyph names. On the
     left side of a pair, accented letters whose mark sticks out on the right (ogonek,
     vertical caron) stay out of the group."""
-    def members(key, left):
-        if key in LISTS:
-            return LISTS[key]
+    def members(group, key, left):
+        if group in LISTS:
+            return LISTS[group]
         out = [key]
         for name, comps in components.items():
             marks = {c[0] for c in comps[1:]}
             if comps[0][0] == key and comps[1:] and not (left and marks & {"ogonekcomb", "caroncomb.alt"}):
                 out.append(name)
         return out
-    result = {f"public.kern1.{g}": members(k, True) for g, k in LEFT.items()}
-    result.update({f"public.kern2.{g}": members(k, False) for g, k in RIGHT.items()})
+    result = {f"public.kern1.{g}": members(g, k, True) for g, k in LEFT.items()}
+    result.update({f"public.kern2.{g}": members(g, k, False) for g, k in RIGHT.items()})
     return result
 
 
