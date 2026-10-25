@@ -310,7 +310,8 @@ def build_lowercase(d, dot):
 
     bowl_r = ([(L, XT), (R, XT), (R, BT), (L, BT)], [0, r, r, 0], True)     # stem on the left
     bowl_l = ([(L, XT), (R, XT), (R, BT), (L, BT)], [r, 0, 0, r], True)     # stem on the right
-    glyph("a", w, [([(R, XT), (L, XT), (L, BT), (R, BT)], [0, r, r, 0]), ([(R, XT), (R, BT)],)])
+    # a: the bowl of the o, closed on the right by a straight stem, so it is not a mirrored d
+    glyph("a", w, [([(L, XT), (R, XT), (R, BT), (L, BT)], [r, r, r, r], True), ([(R, XT), (R, BT)],)])
     glyph("b", w, [([(L, BT), (L, AT)],), bowl_r])
     glyph("c", w, [([(R, XT), (L, XT), (L, BT), (R, BT)], [0, r, r, 0])])
     glyph("d", w, [([(R, BT), (R, AT)],), bowl_l])
