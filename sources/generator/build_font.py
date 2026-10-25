@@ -198,6 +198,8 @@ def build_symbols(d, dot):
     put("braceright", Wn, ln((h, yt), (Wn - nib, yt), (Wn - nib, yb), (h, yb), radii=[0, rs, rs, 0]),
         ln((Wn - nib, cy), (Wn - h, cy)))
     put("bar", S, ln((h, yb), (h, yt)))
+    gb = (max(S * 1.5, 90) + S) / 2                 # ¦: the bar with a clear break in the middle
+    put("brokenbar", S, ln((h, yb), (h, (yb + yt) / 2 - gb)), ln((h, (yb + yt) / 2 + gb), (h, yt)))
     put("backslash", W / 2, ln((h, T), (W / 2 - h, BT)))
     # the underscore fills its advance, flat at both ends, so repeated underscores form one line
     put("underscore", W * 0.8, ln((-SB, -H * 0.12), (W * 0.8 + SB, -H * 0.12), cap=BUTT))
@@ -278,7 +280,7 @@ def build_symbols(d, dot):
 
     for n, c in {"semicolon": ";", "quotedbl": '"', "quoteleft": "\u2018", "quotedblleft": "\u201c", "quoteright": "\u2019", "quotedblright": "\u201d",
                  "grave": "`", "parenleft": "(", "parenright": ")", "bracketleft": "[", "bracketright": "]",
-                 "braceleft": "{", "braceright": "}", "bar": "|\u00a6", "backslash": "\\", "underscore": "_",
+                 "braceleft": "{", "braceright": "}", "bar": "|", "brokenbar": "\u00a6", "backslash": "\\", "underscore": "_",
                  "plus": "+", "minus": "\u2212", "equal": "=", "less": "<", "greater": ">", "multiply": "\u00d7",
                  "divide": "\u00f7", "asciicircum": "^", "asciitilde": "~", "asterisk": "*", "endash": "\u2013",
                  "emdash": "\u2014", "periodcentered": "\u00b7", "bullet": "\u2022", "ellipsis": "\u2026", "exclamdown": "\u00a1",

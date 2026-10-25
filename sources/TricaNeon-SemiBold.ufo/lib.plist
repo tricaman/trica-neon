@@ -64,6 +64,7 @@
       <string>braceleft</string>
       <string>braceright</string>
       <string>bar</string>
+      <string>brokenbar</string>
       <string>backslash</string>
       <string>underscore</string>
       <string>plus</string>
@@ -772,6 +773,8 @@
       <string>base</string>
       <key>brevecomb.narrow</key>
       <string>mark</string>
+      <key>brokenbar</key>
+      <string>base</string>
       <key>bullet</key>
       <string>base</string>
       <key>c</key>

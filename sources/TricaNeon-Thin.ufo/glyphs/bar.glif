@@ -2,7 +2,6 @@
 <glyph name="bar" format="2">
   <advance width="192"/>
   <unicode hex="007C"/>
-  <unicode hex="00A6"/>
   <outline>
     <contour>
       <point x="88" y="-84" type="line"/>

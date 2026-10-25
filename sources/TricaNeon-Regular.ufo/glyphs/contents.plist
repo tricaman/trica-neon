@@ -314,6 +314,8 @@
     <string>breve.glif</string>
     <key>brevecomb.narrow</key>
     <string>brevecomb.narrow.glif</string>
+    <key>brokenbar</key>
+    <string>brokenbar.glif</string>
     <key>bullet</key>
     <string>bullet.glif</string>
     <key>c</key>
