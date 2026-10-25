@@ -209,7 +209,11 @@ def install(bf, d, dot):
     put1("OE", W2, ln((Wa, T), (L, T), (L, BT), (Wa, BT), radii=[0, r, r, 0]), ln((Wa, T), (Wa, BT)),
          ln((Wa, T), (W2 - h, T)), ln((Wa, MI), (W2 - h - 40, MI)), ln((Wa, BT), (W2 - h, BT)), ch="Œ")
     aw, ap = G["a"]; ew, ep = G["e"]; ow, op_ = G["o"]
-    put1("ae", aw + ew - S, ap, shift(ep, aw - S), ch="æ")
+    # æ: the outline of the e stretched over both letters, the shared stem in the middle and the bar of
+    # the e on the right: one top and one bottom stroke, joined to the stem with sharp corners
+    jx, rx = aw - h, aw - S + ew - h             # shared stem, right side of the e part
+    put1("ae", aw + ew - S, ln((rx, XM), (rx, XT), (h, XT), (h, BT), (rx, BT), radii=[0, r, r, r, 0]),
+         ln((jx, XT), (jx, BT)), ln((jx, XM), (rx, XM)), ch="æ")
     put1("oe", ow + ew - S, op_, shift(ep, ow - S), ch="œ")
     put1("Thorn", W, ln((L, BT), (L, T)), ln((L, H * 0.8), (R, H * 0.8), (R, H * 0.25), (L, H * 0.25), radii=[0, r, r, 0], closed=True), ch="Þ")
     put1("thorn", w, ln((h, DB), (h, T)), ln((h, XT), (lR, XT), (lR, BT), (h, BT), radii=[0, r, r, 0], closed=True), ch="þ")
