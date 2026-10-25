@@ -2,6 +2,49 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
+    <key>ampersand</key>
+    <dict>
+      <key>public.kern2.Z</key>
+      <integer>10</integer>
+    </dict>
+    <key>exclamdown</key>
+    <dict>
+      <key>public.kern2.dotlessj</key>
+      <integer>20</integer>
+      <key>public.kern2.j</key>
+      <integer>20</integer>
+    </dict>
+    <key>greater</key>
+    <dict>
+      <key>public.kern2.Lslash</key>
+      <integer>20</integer>
+    </dict>
+    <key>greaterequal</key>
+    <dict>
+      <key>public.kern2.Eth</key>
+      <integer>15</integer>
+    </dict>
+    <key>increment</key>
+    <dict>
+      <key>public.kern2.Z</key>
+      <integer>10</integer>
+    </dict>
+    <key>less</key>
+    <dict>
+      <key>public.kern2.t</key>
+      <integer>5</integer>
+      <key>public.kern2.tbar</key>
+      <integer>5</integer>
+    </dict>
+    <key>lessequal</key>
+    <dict>
+      <key>public.kern2.Hbar</key>
+      <integer>5</integer>
+      <key>public.kern2.X</key>
+      <integer>5</integer>
+      <key>public.kern2.Z</key>
+      <integer>15</integer>
+    </dict>
     <key>public.kern1.A</key>
     <dict>
       <key>public.kern2.T</key>
@@ -11,13 +54,34 @@
       <key>public.kern2.Y</key>
       <integer>-50</integer>
     </dict>
+    <key>public.kern1.AE</key>
+    <dict>
+      <key>greater</key>
+      <integer>5</integer>
+    </dict>
+    <key>public.kern1.C</key>
+    <dict>
+      <key>greater</key>
+      <integer>10</integer>
+    </dict>
     <key>public.kern1.F</key>
     <dict>
+      <key>lessequal</key>
+      <integer>5</integer>
       <key>public.kern2.period</key>
       <integer>-130</integer>
     </dict>
+    <key>public.kern1.Hbar</key>
+    <dict>
+      <key>greaterequal</key>
+      <integer>5</integer>
+    </dict>
     <key>public.kern1.L</key>
     <dict>
+      <key>greater</key>
+      <integer>20</integer>
+      <key>greaterequal</key>
+      <integer>5</integer>
       <key>public.kern2.T</key>
       <integer>-130</integer>
       <key>public.kern2.V</key>
@@ -29,16 +93,31 @@
     </dict>
     <key>public.kern1.Ldot</key>
     <dict>
+      <key>greater</key>
+      <integer>20</integer>
+      <key>greaterequal</key>
+      <integer>5</integer>
       <key>public.kern2.Z</key>
       <integer>10</integer>
     </dict>
     <key>public.kern1.Lslash</key>
     <dict>
+      <key>greater</key>
+      <integer>20</integer>
+      <key>greaterequal</key>
+      <integer>5</integer>
       <key>public.kern2.Z</key>
       <integer>10</integer>
     </dict>
+    <key>public.kern1.OE</key>
+    <dict>
+      <key>greater</key>
+      <integer>5</integer>
+    </dict>
     <key>public.kern1.P</key>
     <dict>
+      <key>greaterequal</key>
+      <integer>5</integer>
       <key>public.kern2.A</key>
       <integer>-55</integer>
       <key>public.kern2.period</key>
@@ -83,6 +162,8 @@
     </dict>
     <key>public.kern1.X</key>
     <dict>
+      <key>greaterequal</key>
+      <integer>5</integer>
       <key>public.kern2.Z</key>
       <integer>10</integer>
     </dict>
@@ -108,6 +189,13 @@
     <dict>
       <key>public.kern2.period</key>
       <integer>-55</integer>
+    </dict>
+    <key>questiondown</key>
+    <dict>
+      <key>public.kern2.dotlessj</key>
+      <integer>25</integer>
+      <key>public.kern2.j</key>
+      <integer>25</integer>
     </dict>
   </dict>
 </plist>

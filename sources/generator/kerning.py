@@ -4,8 +4,9 @@ Each pair of the brief is kerned so that the space between the two glyphs, avera
 the height they share, matches the space between two straight stems (twice the
 sidebearing). Open areas, such as under the bar of a T or beside the foot of a V, count
 only up to a limit, and only part of the difference becomes kerning, so it stays moderate.
-Then no two letters or figures come closer than a share of the stroke: kerning that would
-bring them closer is reduced, and pairs that are too close untouched get kerned apart.
+Then no two letters or figures, and no letter and punctuation mark, come closer than a share
+of the stroke: kerning that would bring them closer is reduced, and pairs that are too close
+untouched get kerned apart.
 """
 import math, unicodedata
 
@@ -35,6 +36,14 @@ def letters(cmap, components):
                    if unicodedata.category(chr(cp)) in ("Ll", "Lu", "Lt", "Nd") and n not in components})
 
 
+def punctuation(cmap, components, skip):
+    """The drawn punctuation and symbols, kept apart from the letters (as single glyphs, not classes),
+    but for those in `skip`, drawn to touch their neighbours (_ ⁄)."""
+    return sorted({n for cp, n in cmap.items()
+                   if unicodedata.category(chr(cp))[0] in "PS" and unicodedata.category(chr(cp)) != "Sk"
+                   and n not in components and n not in skip})
+
+
 def groups(components, letters):
     """{"public.kern1.X": [...], "public.kern2.X": [...]} with internal glyph names. On the
     left side of a pair, accented letters whose mark sticks out on the right (ogonek,
@@ -54,9 +63,9 @@ def groups(components, letters):
     return result
 
 
-def values(contours, advances, gap, stroke, letters):
+def values(contours, advances, gap, stroke, letters, marks):
     """{(kern1 group, kern2 group): value} for one master; contours resolved, in font units."""
-    lines = {g: _polylines(contours[g]) for g in set(LEFT.values()) | set(RIGHT.values()) | set(letters)}
+    lines = {g: _polylines(contours[g]) for g in set(LEFT.values()) | set(RIGHT.values()) | set(letters) | set(marks)}
     rows = {g: _rows(lines[g]) for g in lines}
     least = max(MIN_GAP * stroke, MIN_GAP_UNITS)
 
@@ -80,6 +89,13 @@ def values(contours, advances, gap, stroke, letters):
                 value = apart(a, b, 0)
                 if value:
                     out[key] = value
+    # punctuation next to letters: glyph to class (marks already in a list class stay out)
+    listed = {side: {m for g in groups_ if g in LISTS for m in LISTS[g]} for side, groups_ in (("l", LEFT), ("r", RIGHT))}
+    for a, b, key in [(p, b, (p, f"public.kern2.{b}")) for p in marks if p not in listed["l"] for b in letters] + \
+                     [(a, p, (f"public.kern1.{a}", p)) for a in letters for p in marks if p not in listed["r"]]:
+        value = apart(a, b, 0)
+        if value:
+            out[key] = value
     return out
 
 

@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
+    <key>exclamdown</key>
+    <dict>
+      <key>public.kern2.dotlessj</key>
+      <integer>5</integer>
+      <key>public.kern2.j</key>
+      <integer>5</integer>
+    </dict>
     <key>public.kern1.A</key>
     <dict>
       <key>public.kern2.T</key>
