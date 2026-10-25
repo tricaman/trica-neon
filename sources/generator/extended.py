@@ -249,12 +249,26 @@ def install(bf, d, dot):
         wd, p = small(nm, sc, 0, sup_y, sw)
         put1(nm + "superior", wd, p, ch={"zero": "⁰", "four": "⁴", "five": "⁵", "six": "⁶",
                                             "seven": "⁷", "eight": "⁸", "nine": "⁹"}[nm])
-    fw2 = W * 1.0
+    # fractions: the slash of ⁄; numerator and denominator keep the same clear gap from it where they
+    # meet, at half the height, so the whole is symmetric about the centre of the slash
+    sl = W * 0.4 - 2 * h                                   # horizontal run of the slash
+    hs = h * math.hypot(sl, H - S) / (H - S)               # half the slash thickness, measured horizontally
+    gap = max(S * 1.5, 50)                                 # never below 50 units, for the light weights
+    def xb(o):
+        xs = [p[0] for _, segs in o.contours for g in segs for p in g[1:]]
+        return min(xs), max(xs)
     for num, den, ch in [("one", "four", "¼"), ("one", "two", "½"), ("three", "four", "¾")]:
-        nw_, npth = small(num, sc, 0, sup_y, sw)
-        dw_, dpth = small(den, sc, fw2 - G[den][0] * sc, 0, sw)
-        put1(num + "_" + den, fw2, npth, dpth, ln((fw2 * 0.28, BT), (fw2 * 0.72, T), cap=BUTT), ch=ch)
-    put1("fraction", W * 0.4, ln((h, BT), (W * 0.4 - h, T), cap=BUTT), ch="⁄")
+        npth = small(num, sc, 0, sup_y, sw)[1]
+        dpth = small(den, sc, 0, 0, sw)[1]
+        (n0, n1), (d0, d1) = xb(npth), xb(dpth)
+        xc = n1 - n0 + gap + hs                            # centre of the slash, from the left of the numerator
+        left = min(0, xc - sl / 2 - hs)                    # the foot of the slash can pass the numerator
+        right = max(xc + hs + gap + d1 - d0, xc + sl / 2 + hs)
+        put1(num + "_" + den, right - left, shift(npth, -n0 - left), shift(dpth, xc + hs + gap - d0 - left),
+             ln((xc - sl / 2 - left, BT), (xc + sl / 2 - left, T), cap=BUTT), ch=ch)
+    # ⁄ itself: with the 40 unit sidebearings of the numerators and denominators (frac), the same gap
+    tight_f = gap - 40 - bf.SB
+    put1("fraction", 2 * (tight_f + hs), ln((tight_f + hs - sl / 2, BT), (tight_f + hs + sl / 2, T), cap=BUTT), ch="⁄")
     # ordinals
     aw2, ap2 = small("a", 0.55, 0, H * 0.42, sw)
     put1("ordfeminine", aw2, ap2, ln((h, H * 0.3), (aw2 - h, H * 0.3)), ch="ª")
