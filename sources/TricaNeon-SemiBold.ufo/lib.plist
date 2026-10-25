@@ -141,6 +141,7 @@
       <string>uni0328</string>
       <string>caroncomb.alt</string>
       <string>tildecomb.narrow</string>
+      <string>brevecomb.narrow</string>
       <string>uni25CC</string>
       <string>uni0237</string>
       <string>Agrave</string>
@@ -769,6 +770,8 @@
       <string>base</string>
       <key>breve</key>
       <string>base</string>
+      <key>brevecomb.narrow</key>
+      <string>mark</string>
       <key>bullet</key>
       <string>base</string>
       <key>c</key>

@@ -68,8 +68,8 @@ def install(bf, d, dot):
         return ln((cx - a, y0), (cx - a, y1), (cx, y1), (cx, y0), (cx + a, y0), (cx + a, y1),
                   radii=[0, rr, rr, rr, rr, 0], cap=BUTT)
     def m_macron(cx, y): return ln((cx - 100, y + 140), (cx + 100, y + 140), cap=BUTT)
-    def m_breve(cx, y): return ln((cx - 90, y + 200), (cx - 90, y + 100), (cx + 90, y + 100), (cx + 90, y + 200),
-                                  radii=[0, 45, 45, 0], cap=BUTT)
+    def m_breve(cx, y, a=125):                # a: half the width
+        return ln((cx - a, y + 200), (cx - a, y + 100), (cx + a, y + 100), (cx + a, y + 200), radii=[0, 45, 45, 0], cap=BUTT)
     def m_dot(cx, y): return circle(cx, y + 140, d / 2)
     def m_dier(cx, y):
         sp = max(90, (d + S * 0.4) / 2)          # the two dots never touch
@@ -114,11 +114,11 @@ def install(bf, d, dot):
                             [("_bottom", mx, 0), ("bottom", mx, min(ys))] if attach == "bottom" else [("_ogonek", mx, 0)])
     G["caroncomb.alt"] = (-2 * bf.SB, m_caronalt(mx, 0))
     bf.MARKS.add("caroncomb.alt")
-    # a narrower tilde for the narrow letters (Ĩ ĩ), so that a run of them does not touch
-    nt = m_tilde(mx, 0, 90)
-    G["tildecomb.narrow"] = (-2 * bf.SB, nt)
-    bf.MARKS.add("tildecomb.narrow")
-    bf.ANCHORS["tildecomb.narrow"] = [("_top", mx, 0), ("top", mx, max(p[1] for _, segs in nt.contours for g in segs for p in g[1:]))]
+    # a narrower tilde and breve for the narrow letters (Ĩ ĩ Ĭ ĭ), so that a run of them does not touch
+    for name, nt in [("tildecomb.narrow", m_tilde(mx, 0, 90)), ("brevecomb.narrow", m_breve(mx, 0, 90))]:
+        G[name] = (-2 * bf.SB, nt)
+        bf.MARKS.add(name)
+        bf.ANCHORS[name] = [("_top", mx, 0), ("top", mx, max(p[1] for _, segs in nt.contours for g in segs for p in g[1:]))]
 
     # dotted circle: shapers show it under a combining mark that has no letter to sit on.
     # Twelve dots every 30 degrees (sqrt only, so the points are the same on every platform).
@@ -170,13 +170,13 @@ def install(bf, d, dot):
                 x = caron_x(bname, ytop)
                 comps.append(("caroncomb.alt", x - mx, ytop))
                 bw = max(bw, x)                        # half the caron sticks out into the sidebearing
-            elif m == 0x303 and bname in ("I", "dotlessi"):
-                # the narrow tilde, and room for it, so that a run of these letters does not touch
+            elif m in (0x303, 0x306) and bname in ("I", "dotlessi"):
+                # the narrow tilde or breve, and room for it, so that a run of these letters does not touch
                 need = 2 * 90 + S + max(S * 0.5, 30) - 2 * bf.SB
                 if need > bw:
                     comps[0] = (bname, (need - bw) / 2, 0)
                     bw = need
-                comps.append(("tildecomb.narrow", bw / 2 - mx, top))
+                comps.append(({0x303: "tildecomb.narrow", 0x306: "brevecomb.narrow"}[m], bw / 2 - mx, top))
             elif m in ABOVE:
                 comps.append((ABOVE[m], bw / 2 - mx, top))
             elif m in BELOW:
