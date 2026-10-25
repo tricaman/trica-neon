@@ -7,16 +7,14 @@
     <contour>
       <point x="-350" y="18" type="line"/>
       <point x="-385" y="18" type="line"/>
-      <point x="-385" y="-75" type="line"/>
-      <point x="-385" y="-85"/>
-      <point x="-393" y="-92"/>
-      <point x="-402" y="-92" type="curve"/>
-      <point x="-457" y="-92" type="line"/>
+      <point x="-385" y="-20" type="line"/>
+      <point x="-385" y="-60"/>
+      <point x="-417" y="-92"/>
+      <point x="-457" y="-92" type="curve"/>
       <point x="-457" y="-127" type="line"/>
-      <point x="-402" y="-127" type="line"/>
-      <point x="-374" y="-127"/>
-      <point x="-350" y="-104"/>
-      <point x="-350" y="-75" type="curve"/>
+      <point x="-398" y="-127"/>
+      <point x="-350" y="-79"/>
+      <point x="-350" y="-20" type="curve"/>
     </contour>
   </outline>
 </glyph>

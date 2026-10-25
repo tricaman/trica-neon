@@ -48,7 +48,7 @@ def install(bf, d, dot):
         a = 70
         return ln((cx - a, y + 230), (cx + a, y + 230), (cx + a, y + 90), (cx - a, y + 90), radii=[35] * 4, closed=True)
     def m_dblacute(cx, y): return union(m_acute(cx - 75, y), m_acute(cx + 75, y))
-    def m_cedilla(cx, y): return ln((cx, BT), (cx, -110), (cx - 90, -110), radii=[0, 35, 0], cap=BUTT)
+    def m_cedilla(cx, y): return ln((cx, BT), (cx, -110), (cx - 90, -110), radii=[0, 90, 0], cap=BUTT)  # the ogonek turned to the left
     def m_ogonek(cx, y): return ln((cx, BT), (cx, -110), (cx + 90, -110), radii=[0, 90, 0], cap=BUTT)   # a quarter circle, as the foot of the t
     def ogonek_x(name, bw):        # where the ogonek hangs: as the end of the right stem of A and a, under the stem of I and i
         return bw - h if name in ("A", "a") else bw / 2 if name in ("I", "i", "dotlessi") else bw * 0.78
