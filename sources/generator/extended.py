@@ -217,8 +217,16 @@ def install(bf, d, dot):
     put1("oe", ow + ew - S, op_, shift(ep, ow - S), ch="œ")
     put1("Thorn", W, ln((L, BT), (L, T)), ln((L, H * 0.8), (R, H * 0.8), (R, H * 0.25), (L, H * 0.25), radii=[0, r, r, 0], closed=True), ch="Þ")
     put1("thorn", w, ln((h, DB), (h, T)), ln((h, XT), (lR, XT), (lR, BT), (h, BT), radii=[0, r, r, 0], closed=True), ch="þ")
-    put1("eth", w, ln((h, XT), (lR, XT), (lR, BT), (h, BT), radii=[r, r, r, r], closed=True),
-         ln((lR, XM), (lR, T), (w * 0.35, T), radii=[0, r * 0.6, 0]), ln((w * 0.45, yb), (w + 20 - h, yb)), ch="ð")
+    # ð: the bowl of the o whose right side runs on as a straight ascender leaning to the left (a sharp
+    # corner where they meet), trimmed flush with the cap height as in V, crossed by a short bar
+    eslope = (lR - w * 0.5) / (H + S - XT)
+    eshift = h * (1 + eslope - math.hypot(1, eslope))       # so the edge of the ascender meets the corner
+    ex0, ex1 = lR + eshift, w * 0.5 + eshift                # foot (the top right corner) and top of the ascender
+    eyb = (XH + h + H) / 2
+    exb = ex0 + (ex1 - ex0) * (eyb - XT) / (H + S - XT)    # where the bar crosses the ascender
+    put1("eth", w, ln((h, XT), (lR, XT), (lR, BT), (h, BT), radii=[r, 0, r, r], closed=True),
+         bf.clip(ln((ex0 + 2 * S * eslope, XT - 2 * S), (ex1, H + S)), -H, XT - h, lR + h, H),
+         ln((exb - w * 0.22, eyb), (exb + w * 0.22, eyb)), ch="ð")
     ym = (T + BT) * 0.55
     put1("germandbls", w, ln((h, BT), (h, T), (lR, T), (lR, ym), (w / 2, ym), radii=[0, r, r, r, 0]),
          ln((lR - r, ym), (lR, ym), (lR, BT), (w * 0.45, BT), radii=[0, r, r, 0]), ch="ß")
