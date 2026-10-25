@@ -7,7 +7,7 @@ This file provides detailed information on the Trica Neon font software. This in
 Basic Font Information
 ----------------------
 
-Trica Neon is a geometric typeface generated from centerline skeletons stroked at a single width. Wide letters fit a square module, outer corners are rounded and inner joints stay sharp.
+Trica Neon is a geometric typeface drawn with a single, even stroke. The design grows from one module, a pill as wide as the capital height and half as tall: every curve is half or a quarter of that pill, outer corners are rounded and inner joints stay sharp. The glyphs are generated from centerline skeletons stroked at the width of each weight, so all weights share one construction.
 
 
 ChangeLog
@@ -15,8 +15,11 @@ ChangeLog
 
 (This should list both major and minor changes, most recent first.)
 
-Unreleased
-- Version 1.000 in development.
+Version 1.000 (not released yet)
+- First version: six weights from Thin to SemiBold, as static fonts and as a variable font with a weight axis.
+- GF Latin Core character set, with combining marks positioned by anchors.
+- Class kerning, and the ccmp, locl (Romanian and Moldovan), frac, numr, dnom, sups, ordn, tnum and case features.
+- Vertical metrics: a 1.3 em line with the capitals centred in it.
 
 
 Acknowledgements
