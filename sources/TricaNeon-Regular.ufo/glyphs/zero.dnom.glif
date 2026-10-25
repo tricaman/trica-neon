@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="zero.dnom" format="2">
+  <advance width="360"/>
+  <outline>
+    <contour>
+      <point x="28" y="96" type="line"/>
+      <point x="28" y="36"/>
+      <point x="76" y="-12"/>
+      <point x="136" y="-12" type="curve"/>
+      <point x="224" y="-12" type="line"/>
+      <point x="284" y="-12"/>
+      <point x="332" y="36"/>
+      <point x="332" y="96" type="curve"/>
+      <point x="332" y="254" type="line"/>
+      <point x="332" y="314"/>
+      <point x="284" y="362"/>
+      <point x="224" y="362" type="curve"/>
+      <point x="136" y="362" type="line"/>
+      <point x="76" y="362"/>
+      <point x="28" y="314"/>
+      <point x="28" y="254" type="curve"/>
+    </contour>
+    <contour>
+      <point x="87" y="96" type="curve"/>
+      <point x="87" y="254" type="line"/>
+      <point x="87" y="281"/>
+      <point x="109" y="303"/>
+      <point x="136" y="303" type="curve"/>
+      <point x="224" y="303" type="line"/>
+      <point x="251" y="303"/>
+      <point x="273" y="281"/>
+      <point x="273" y="254" type="curve"/>
+      <point x="273" y="96" type="line"/>
+      <point x="273" y="69"/>
+      <point x="251" y="47"/>
+      <point x="224" y="47" type="curve"/>
+      <point x="136" y="47" type="line"/>
+      <point x="109" y="47"/>
+      <point x="87" y="69"/>
+    </contour>
+  </outline>
+</glyph>

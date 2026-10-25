@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="six.dnom" format="2">
+  <advance width="360"/>
+  <outline>
+    <contour>
+      <point x="338" y="279" type="line"/>
+      <point x="338" y="368" type="line"/>
+      <point x="141" y="368" type="line"/>
+      <point x="75" y="368"/>
+      <point x="22" y="315"/>
+      <point x="22" y="249" type="curve"/>
+      <point x="22" y="101" type="line"/>
+      <point x="22" y="35"/>
+      <point x="75" y="-18"/>
+      <point x="141" y="-18" type="curve"/>
+      <point x="219" y="-18" type="line"/>
+      <point x="285" y="-18"/>
+      <point x="338" y="35"/>
+      <point x="338" y="101" type="curve"/>
+      <point x="338" y="166"/>
+      <point x="285" y="220"/>
+      <point x="219" y="220" type="curve"/>
+      <point x="22" y="220" type="line"/>
+      <point x="22" y="130" type="line"/>
+      <point x="219" y="130" type="line"/>
+      <point x="236" y="130"/>
+      <point x="249" y="117"/>
+      <point x="249" y="101" type="curve"/>
+      <point x="249" y="84"/>
+      <point x="236" y="71"/>
+      <point x="219" y="71" type="curve"/>
+      <point x="141" y="71" type="line"/>
+      <point x="124" y="71"/>
+      <point x="111" y="84"/>
+      <point x="111" y="101" type="curve"/>
+      <point x="111" y="249" type="line"/>
+      <point x="111" y="266"/>
+      <point x="124" y="279"/>
+      <point x="141" y="279" type="curve"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="four.dnom" format="2">
+  <advance width="360"/>
+  <outline>
+    <contour>
+      <point x="111" y="368" type="line"/>
+      <point x="22" y="368" type="line"/>
+      <point x="22" y="249" type="line"/>
+      <point x="22" y="184"/>
+      <point x="75" y="130"/>
+      <point x="141" y="130" type="curve"/>
+      <point x="338" y="130" type="line"/>
+      <point x="338" y="220" type="line"/>
+      <point x="141" y="220" type="line"/>
+      <point x="124" y="220"/>
+      <point x="111" y="233"/>
+      <point x="111" y="249" type="curve"/>
+    </contour>
+    <contour>
+      <point x="338" y="368" type="line"/>
+      <point x="249" y="368" type="line"/>
+      <point x="249" y="-18" type="line"/>
+      <point x="338" y="-18" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

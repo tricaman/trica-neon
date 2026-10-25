@@ -354,6 +354,43 @@
       <string>fraction</string>
       <string>ordfeminine</string>
       <string>ordmasculine</string>
+      <string>zero.dnom</string>
+      <string>zero.numr</string>
+      <string>zero.tf</string>
+      <string>one.dnom</string>
+      <string>one.numr</string>
+      <string>one.tf</string>
+      <string>two.dnom</string>
+      <string>two.numr</string>
+      <string>two.tf</string>
+      <string>three.dnom</string>
+      <string>three.numr</string>
+      <string>three.tf</string>
+      <string>four.dnom</string>
+      <string>four.numr</string>
+      <string>four.tf</string>
+      <string>five.dnom</string>
+      <string>five.numr</string>
+      <string>five.tf</string>
+      <string>six.dnom</string>
+      <string>six.numr</string>
+      <string>six.tf</string>
+      <string>seven.dnom</string>
+      <string>seven.numr</string>
+      <string>seven.tf</string>
+      <string>eight.dnom</string>
+      <string>eight.numr</string>
+      <string>eight.tf</string>
+      <string>nine.dnom</string>
+      <string>nine.numr</string>
+      <string>nine.tf</string>
+      <string>parenleft.case</string>
+      <string>parenright.case</string>
+      <string>bracketleft.case</string>
+      <string>bracketright.case</string>
+      <string>braceleft.case</string>
+      <string>braceright.case</string>
+      <string>iogonek.dotless</string>
       <string>cent</string>
       <string>currency</string>
       <string>yen</string>
@@ -712,11 +749,19 @@
       <string>base</string>
       <key>braceleft</key>
       <string>base</string>
+      <key>braceleft.case</key>
+      <string>base</string>
       <key>braceright</key>
+      <string>base</string>
+      <key>braceright.case</key>
       <string>base</string>
       <key>bracketleft</key>
       <string>base</string>
+      <key>bracketleft.case</key>
+      <string>base</string>
       <key>bracketright</key>
+      <string>base</string>
+      <key>bracketright.case</key>
       <string>base</string>
       <key>breve</key>
       <string>base</string>
@@ -792,6 +837,12 @@
       <string>base</string>
       <key>eight</key>
       <string>base</string>
+      <key>eight.dnom</key>
+      <string>base</string>
+      <key>eight.numr</key>
+      <string>base</string>
+      <key>eight.tf</key>
+      <string>base</string>
       <key>ellipsis</key>
       <string>base</string>
       <key>emacron</key>
@@ -818,7 +869,19 @@
       <string>base</string>
       <key>five</key>
       <string>base</string>
+      <key>five.dnom</key>
+      <string>base</string>
+      <key>five.numr</key>
+      <string>base</string>
+      <key>five.tf</key>
+      <string>base</string>
       <key>four</key>
+      <string>base</string>
+      <key>four.dnom</key>
+      <string>base</string>
+      <key>four.numr</key>
+      <string>base</string>
+      <key>four.tf</key>
       <string>base</string>
       <key>fraction</key>
       <string>base</string>
@@ -878,6 +941,8 @@
       <string>base</string>
       <key>iogonek</key>
       <string>base</string>
+      <key>iogonek.dotless</key>
+      <string>base</string>
       <key>itilde</key>
       <string>base</string>
       <key>j</key>
@@ -932,6 +997,12 @@
       <string>base</string>
       <key>nine</key>
       <string>base</string>
+      <key>nine.dnom</key>
+      <string>base</string>
+      <key>nine.numr</key>
+      <string>base</string>
+      <key>nine.tf</key>
+      <string>base</string>
       <key>notequal</key>
       <string>base</string>
       <key>ntilde</key>
@@ -960,6 +1031,12 @@
       <string>base</string>
       <key>one</key>
       <string>base</string>
+      <key>one.dnom</key>
+      <string>base</string>
+      <key>one.numr</key>
+      <string>base</string>
+      <key>one.tf</key>
+      <string>base</string>
       <key>onehalf</key>
       <string>base</string>
       <key>onequarter</key>
@@ -978,7 +1055,11 @@
       <string>base</string>
       <key>parenleft</key>
       <string>base</string>
+      <key>parenleft.case</key>
+      <string>base</string>
       <key>parenright</key>
+      <string>base</string>
+      <key>parenright.case</key>
       <string>base</string>
       <key>partialdiff</key>
       <string>base</string>
@@ -1046,7 +1127,19 @@
       <string>base</string>
       <key>seven</key>
       <string>base</string>
+      <key>seven.dnom</key>
+      <string>base</string>
+      <key>seven.numr</key>
+      <string>base</string>
+      <key>seven.tf</key>
+      <string>base</string>
       <key>six</key>
+      <string>base</string>
+      <key>six.dnom</key>
+      <string>base</string>
+      <key>six.numr</key>
+      <string>base</string>
+      <key>six.tf</key>
       <string>base</string>
       <key>slash</key>
       <string>base</string>
@@ -1066,6 +1159,12 @@
       <string>base</string>
       <key>three</key>
       <string>base</string>
+      <key>three.dnom</key>
+      <string>base</string>
+      <key>three.numr</key>
+      <string>base</string>
+      <key>three.tf</key>
+      <string>base</string>
       <key>threequarters</key>
       <string>base</string>
       <key>tilde</key>
@@ -1075,6 +1174,12 @@
       <key>trademark</key>
       <string>base</string>
       <key>two</key>
+      <string>base</string>
+      <key>two.dnom</key>
+      <string>base</string>
+      <key>two.numr</key>
+      <string>base</string>
+      <key>two.tf</key>
       <string>base</string>
       <key>u</key>
       <string>base</string>
@@ -1239,6 +1344,12 @@
       <key>zdotaccent</key>
       <string>base</string>
       <key>zero</key>
+      <string>base</string>
+      <key>zero.dnom</key>
+      <string>base</string>
+      <key>zero.numr</key>
+      <string>base</string>
+      <key>zero.tf</key>
       <string>base</string>
     </dict>
     <key>public.openTypeMeta</key>

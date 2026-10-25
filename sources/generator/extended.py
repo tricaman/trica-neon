@@ -235,6 +235,30 @@ def install(bf, d, dot):
     ow2, op2 = small("o", 0.55, 0, H * 0.42, sw)
     put1("ordmasculine", ow2, op2, ln((h, H * 0.3), (ow2 - h, H * 0.3)), ch="º")
 
+    # figures for the OpenType features: numerators (the superiors) and denominators (the same
+    # small figures on the baseline, as in ½ ¼ ¾) with a 40 unit sidebearing; tabular figures
+    # all as wide as the zero
+    tight = 40 - bf.SB
+    for nm in ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]:
+        wd, p = small(nm, sc, 0, 0, sw)
+        G[nm + ".dnom"] = (wd + 2 * tight, shift(p, tight))
+        G[nm + ".numr"] = (wd + 2 * tight, bf.Outline())
+        bf.COMPONENTS[nm + ".numr"] = [(nm + "superior", tight, 0)]
+        G[nm + ".tf"] = (G["zero"][0], bf.Outline())
+        bf.COMPONENTS[nm + ".tf"] = [(nm, (G["zero"][0] - G[nm][0]) / 2, 0)]
+
+    # brackets for all-capital text (case): they reach below the baseline, so raise them
+    # to sit centred on the capitals
+    for nm in ["parenleft", "parenright", "bracketleft", "bracketright", "braceleft", "braceright"]:
+        G[nm + ".case"] = (G[nm][0], bf.Outline())
+        bf.COMPONENTS[nm + ".case"] = [(nm, 0, H * 0.06)]
+
+    # i with ogonek and no dot, for a mark above it (ccmp)
+    iw = G["dotlessi"][0]
+    pad = (260 - iw) / 2 if iw < 260 else 0
+    G["iogonek.dotless"] = (iw + 2 * pad, bf.Outline())
+    bf.COMPONENTS["iogonek.dotless"] = [("dotlessi", pad, 0), ("ogonekcomb", (iw + 2 * pad) * 0.78 - mx, 0)]
+
     # ------------------------------------------------------- Latin-1 symbols
     cw, cp_ = G["c"]
     put1("cent", cw, cp_, ln((cw / 2, -80), (cw / 2, XH + 80), cap=BUTT), ch="¢")
