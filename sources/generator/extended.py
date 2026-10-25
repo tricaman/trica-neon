@@ -471,7 +471,9 @@ def install(bf, d, dot):
          ln((W + 20 + h, H * 0.2), (W * 1.5 - h - 30, H * 0.2)), ch="№")
     # more currency: rupee, ruble, bitcoin, lira
     put1("lira", W * 0.8, *[G["sterling"][1]], ch="₤")
-    put1("won", W, G["W"][1], ln((0 + h, MI + 80), (W - h, MI + 80)), ch="₩")
+    # ₩: two bars, one stroke (at least 70 units) above and below the middle, that stick out 60 units on both sides of the W
+    wy = max(70, S)
+    put1("won", W + 120, shift(G["W"][1], 60), *[ln((h, y), (W + 120 - h, y)) for y in (MI - wy, MI + wy)], ch="₩")
     Pw, Pp = G["P"]
     put1("ruble", Pw + 60, shift(Pp, 60), ln((h, H * 0.25), (60 + h + 300, H * 0.25)), ch="₽")
     Bw, Bp = G["B"]
