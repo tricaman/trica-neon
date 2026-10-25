@@ -412,8 +412,11 @@ def install(bf, d, dot):
          ln((pc - pa, yb), (pc + pa, yb)), ch="±")
     uw, up = G["u"]
     put1("mu", uw, up, ln((h, DB), (h, BT + r)), ch="µμ")       # the descender ends inside the stem of the u
+    # ¶: two stems and a filled bowl (the outer edge of the loop of the bowl)
+    bowl = stroke(rounded([(W * 0.45, T), (h, T), (h, MI), (W * 0.45, MI)], [0, r * 0.7, r * 0.7, 0], True))
+    outer = max(bowl.contours, key=lambda c: max(p[0] for g in c[1] for p in g[1:]) - min(p[0] for g in c[1] for p in g[1:]))
     put1("paragraph", W * 0.7, ln((W * 0.45, BT), (W * 0.45, T)), ln((W * 0.7 - h, BT), (W * 0.7 - h, T)),
-         ln((W * 0.45, T), (h, T), (h, MI), (W * 0.45, MI), radii=[0, r * 0.7, r * 0.7, 0]), ch="¶")
+         bf.Outline([outer]), ch="¶")
     reg("hyphen", "‐‑")             # hyphen, non-breaking hyphen; no soft hyphen (U+00AD)
 
     # --------------------------------------------------- general punctuation
@@ -469,10 +472,12 @@ def install(bf, d, dot):
                   (wx + wa, y - tw2 / 2), (wx + wa, y + tw2 / 2), radii=[0, ra, ra, ra, ra, 0])
     ay = tw2 / 2 + h + max(S * 0.4, 28)
     put1("approxequal", tlw, wave(AX + ay), wave(AX - ay), ch="≈")
-    iq = W * 0.28
-    put1("infinity", W * 1.0, ln((h, MI + iq / 2), (W / 2, MI + iq / 2), (W / 2, MI - iq / 2), (h, MI - iq / 2), radii=[iq * 0.45] * 4, closed=True),
-         ln((W / 2, MI), (W / 2, MI + iq / 2), (W - h, MI + iq / 2), (W - h, MI - iq / 2), (W / 2, MI - iq / 2), (W / 2, MI),
-            radii=[0] + [iq * 0.45] * 4 + [0]), ch="∞")           # right loop left open on the shared side
+    # ∞: two loops rounded as the o, together as tall as 0.8 of the x-height, on the axis of the lowercase
+    iq = XH * 0.8 - S                            # height of a loop between the centrelines
+    iw = iq * 1.1; ir = min(r, iq / 2); ic = h + iw   # width of a loop, corner radius, the shared side
+    put1("infinity", 2 * iw + S, ln((h, AX + iq / 2), (ic, AX + iq / 2), (ic, AX - iq / 2), (h, AX - iq / 2), radii=[ir] * 4, closed=True),
+         ln((ic, AX), (ic, AX + iq / 2), (ic + iw, AX + iq / 2), (ic + iw, AX - iq / 2), (ic, AX - iq / 2), (ic, AX),
+            radii=[0] + [ir] * 4 + [0]), ch="∞")           # right loop left open on the shared side
     # the point at the bottom is trimmed flush with the baseline, as in V
     put1("radical", W * 0.8, bf.clip(ln((h, MI), (W * 0.22, MI), (W * 0.38, BT - S * 0.6), (W * 0.52, T), (W * 0.8 - h, T)),
                                      -H, 0, 2 * H, 2 * H), ch="√")
