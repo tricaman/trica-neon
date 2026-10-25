@@ -1,35 +1,55 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="napostrophe" format="2">
-  <advance width="882"/>
+  <advance width="952"/>
   <unicode hex="0149"/>
   <outline>
     <contour>
-      <point x="88" y="306" type="line"/>
-      <point x="175" y="306" type="line"/>
-      <point x="175" y="700" type="line"/>
-      <point x="88" y="700" type="line"/>
+      <point x="245" y="621" type="curve"/>
+      <point x="245" y="665"/>
+      <point x="210" y="700"/>
+      <point x="166" y="700" type="curve"/>
+      <point x="123" y="700"/>
+      <point x="88" y="665"/>
+      <point x="88" y="621" type="curve"/>
+      <point x="88" y="578"/>
+      <point x="123" y="543"/>
+      <point x="166" y="543" type="curve"/>
+      <point x="210" y="543"/>
+      <point x="245" y="578"/>
     </contour>
     <contour>
-      <point x="235" y="0" type="line"/>
-      <point x="323" y="0" type="line"/>
-      <point x="323" y="307" type="line"/>
-      <point x="323" y="368"/>
-      <point x="371" y="417"/>
-      <point x="432" y="417" type="curve"/>
-      <point x="598" y="417" type="line"/>
-      <point x="659" y="417"/>
-      <point x="708" y="368"/>
-      <point x="708" y="307" type="curve"/>
-      <point x="708" y="0" type="line"/>
-      <point x="795" y="0" type="line"/>
-      <point x="795" y="307" type="line"/>
-      <point x="795" y="416"/>
-      <point x="707" y="504"/>
-      <point x="598" y="504" type="curve"/>
-      <point x="432" y="504" type="line"/>
-      <point x="323" y="504"/>
-      <point x="235" y="416"/>
-      <point x="235" y="307" type="curve"/>
+      <point x="210" y="621" type="line"/>
+      <point x="123" y="621" type="line"/>
+      <point x="123" y="369" type="line"/>
+      <point x="210" y="369" type="line"/>
+    </contour>
+    <contour>
+      <point x="305" y="0" type="line"/>
+      <point x="393" y="0" type="line"/>
+      <point x="393" y="307" type="line"/>
+      <point x="393" y="368"/>
+      <point x="441" y="417"/>
+      <point x="502" y="417" type="curve"/>
+      <point x="668" y="417" type="line"/>
+      <point x="729" y="417"/>
+      <point x="778" y="368"/>
+      <point x="778" y="307" type="curve"/>
+      <point x="778" y="0" type="line"/>
+      <point x="865" y="0" type="line"/>
+      <point x="865" y="307" type="line"/>
+      <point x="865" y="416"/>
+      <point x="777" y="504"/>
+      <point x="668" y="504" type="curve"/>
+      <point x="502" y="504" type="line"/>
+      <point x="393" y="504"/>
+      <point x="305" y="416"/>
+      <point x="305" y="307" type="curve"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
 </glyph>

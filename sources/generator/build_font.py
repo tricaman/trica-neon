@@ -170,8 +170,13 @@ def build_symbols(d, dot):
     y_colon = d / 2 + max(MI - d, d * 1.5)     # upper dot, as in the colon
     put("semicolon", d, dot(d / 2, y_colon), dot(d / 2, d / 2), ln((d / 2, d / 2), (d / 2, -d * 1.1), cap=BUTT))
     put("quotedbl", S * 3, ln((h, bot_q), (h, top_q)), ln((S * 3 - h, bot_q), (S * 3 - h, top_q)))
-    put("quoteleft", S, ln((h, bot_q), (h, top_q)))
-    put("quotedblleft", S * 3, ln((h, bot_q), (h, top_q)), ln((S * 3 - h, bot_q), (S * 3 - h, top_q)))
+    # typographic quotes: the comma (a dot with a tail), raised to the cap height; ' and " stay straight
+    qr = lambda x: union(dot(x + d / 2, H - d / 2), ln((x + d / 2, H - d / 2), (x + d / 2, H - d * 2.1), cap=BUTT))
+    ql = lambda x: union(dot(x + d / 2, H - d * 1.6), ln((x + d / 2, H - d * 1.6), (x + d / 2, H), cap=BUTT))
+    put("quoteright", d, qr(0))
+    put("quoteleft", d, ql(0))
+    put("quotedblright", d * 2.5, qr(0), qr(d * 1.5))
+    put("quotedblleft", d * 2.5, ql(0), ql(d * 1.5))
     put("grave", 200, ln((40, H + 200), (160, H + 90), cap=BUTT))
 
     # brackets: same rule as the rest -- outer corners rounded for (), sharp for []
@@ -258,7 +263,7 @@ def build_symbols(d, dot):
     q = qp.transform(-1, 0, 0, -1, qw, H)
     GLYPHS["questiondown"] = (qw, q)
 
-    for n, c in {"semicolon": ";", "quotedbl": '"', "quoteleft": "\u2018", "quotedblleft": "\u201c\u201d",
+    for n, c in {"semicolon": ";", "quotedbl": '"', "quoteleft": "\u2018", "quotedblleft": "\u201c", "quoteright": "\u2019", "quotedblright": "\u201d",
                  "grave": "`", "parenleft": "(", "parenright": ")", "bracketleft": "[", "bracketright": "]",
                  "braceleft": "{", "braceright": "}", "bar": "|\u00a6", "backslash": "\\", "underscore": "_",
                  "plus": "+", "minus": "\u2212", "equal": "=", "less": "<", "greater": ">", "multiply": "\u00d7",
@@ -357,7 +362,7 @@ def build_glyphs(stroke):
             cmap[ord(n)] = n                                   # caps and lowercase each map to themselves
     chars = {"zero": "0", "one": "1", "two": "2", "three": "3", "four": "4", "five": "5",
              "six": "6", "seven": "7", "eight": "8", "nine": "9", "period": ".", "comma": ",",
-             "colon": ":", "exclam": "!", "quotesingle": "'’", "hyphen": "-", "question": "?",
+             "colon": ":", "exclam": "!", "quotesingle": "'", "hyphen": "-", "question": "?",
              "slash": "/", "space": " \u00a0",
              }
     for n, cs in CHARS.items():

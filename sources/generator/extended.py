@@ -187,8 +187,8 @@ def install(bf, d, dot):
     put1("ldot", lw + 100, lp, circle(lw + 50, XM, d / 2), ch="ŀ")
     put1("Lslash", Lw + 80, shift(Lp, 80), ln((h, MI - 90), (80 + h + 160, MI + 90)), ch="Ł")
     put1("lslash", lw + 80, shift(lp, 80), ln((h, yb - 90), (80 + h + 160, yb + 90)), ch="ł")
-    nw, np_ = G["n"]; qw, _ = G["quotesingle"]
-    put1("napostrophe", nw + qw + 60, ln((h, T - 2 * r), (h, T)), shift(np_, qw + 60), ch="ŉ")
+    nw, np_ = G["n"]; qw, qp = G["quoteright"]
+    put1("napostrophe", nw + qw + 60, qp, shift(np_, qw + 60), ch="ŉ")
     L, R = h, W - h
     DBc = -round(H * 0.22) + h
     put1("Eng", W, ln((L, BT), (L, T), (R, T), (R, DBc), (W / 2, DBc), radii=[0, r, r, r, 0]), ch="Ŋ")
@@ -325,8 +325,9 @@ def install(bf, d, dot):
     reg("hyphen", "‐‑")             # hyphen, non-breaking hyphen; no soft hyphen (U+00AD)
 
     # --------------------------------------------------- general punctuation
-    put1("quotesinglbase", S, ln((h, -2 * r + 120), (h, 120 - 40), cap=BUTT), ch="‚")
-    put1("quotedblbase", S * 3, ln((h, -2 * r + 120), (h, 80), cap=BUTT), ln((S * 3 - h, -2 * r + 120), (S * 3 - h, 80), cap=BUTT), ch="„")
+    cmw, cmp = G["comma"]                       # low quotes: the comma, single and double
+    put1("quotesinglbase", cmw, cmp, ch="‚")
+    put1("quotedblbase", cmw * 2.5, cmp, shift(cmp, cmw * 1.5), ch="„")
     dg = W * 0.5
     put1("dagger", dg, ln((dg / 2, -80), (dg / 2, T)), ln((h, T - 200), (dg - h, T - 200)), ch="†")
     put1("daggerdbl", dg, ln((dg / 2, -80), (dg / 2, T)), ln((h, T - 200), (dg - h, T - 200)), ln((h, 180), (dg - h, 180)), ch="‡")

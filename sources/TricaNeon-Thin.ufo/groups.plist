@@ -61,6 +61,8 @@
       <string>quotedbl</string>
       <string>quoteleft</string>
       <string>quotedblleft</string>
+      <string>quoteright</string>
+      <string>quotedblright</string>
     </array>
     <key>public.kern1.r</key>
     <array>
@@ -171,6 +173,8 @@
       <string>quotedbl</string>
       <string>quoteleft</string>
       <string>quotedblleft</string>
+      <string>quoteright</string>
+      <string>quotedblright</string>
     </array>
   </dict>
 </plist>

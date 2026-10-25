@@ -1,13 +1,33 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="quotesinglbase" format="2">
-  <advance width="210"/>
+  <advance width="245"/>
   <unicode hex="201A"/>
   <outline>
     <contour>
-      <point x="88" y="-212" type="line"/>
-      <point x="123" y="-212" type="line"/>
-      <point x="123" y="80" type="line"/>
-      <point x="88" y="80" type="line"/>
+      <point x="158" y="35" type="curve"/>
+      <point x="158" y="54"/>
+      <point x="142" y="70"/>
+      <point x="123" y="70" type="curve"/>
+      <point x="103" y="70"/>
+      <point x="88" y="54"/>
+      <point x="88" y="35" type="curve"/>
+      <point x="88" y="16"/>
+      <point x="103" y="0"/>
+      <point x="123" y="0" type="curve"/>
+      <point x="142" y="0"/>
+      <point x="158" y="16"/>
+    </contour>
+    <contour>
+      <point x="140" y="35" type="line"/>
+      <point x="105" y="35" type="line"/>
+      <point x="105" y="-77" type="line"/>
+      <point x="140" y="-77" type="line"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
 </glyph>

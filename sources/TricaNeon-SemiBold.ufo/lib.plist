@@ -52,7 +52,9 @@
       <string>space</string>
       <string>semicolon</string>
       <string>quotedbl</string>
+      <string>quoteright</string>
       <string>quoteleft</string>
+      <string>quotedblright</string>
       <string>quotedblleft</string>
       <string>grave</string>
       <string>parenleft</string>
@@ -1092,7 +1094,11 @@
       <string>base</string>
       <key>quotedblleft</key>
       <string>base</string>
+      <key>quotedblright</key>
+      <string>base</string>
       <key>quoteleft</key>
+      <string>base</string>
+      <key>quoteright</key>
       <string>base</string>
       <key>quotesinglbase</key>
       <string>base</string>

@@ -16,7 +16,7 @@ LEFT = {"A": "A", "F": "F", "L": "L", "P": "P", "T": "T", "V": "V", "W": "W", "Y
         "r": "r", "v": "v", "y": "y", "quotes": "quotesingle"}
 RIGHT = {"A": "A", "T": "T", "V": "V", "W": "W", "Y": "Y", "a": "a", "e": "e", "o": "o",
          "period": "period", "quotes": "quotesingle"}
-LISTS = {"quotes": ["quotesingle", "quotedbl", "quoteleft", "quotedblleft"],
+LISTS = {"quotes": ["quotesingle", "quotedbl", "quoteleft", "quotedblleft", "quoteright", "quotedblright"],
          "period": ["period", "comma", "ellipsis"]}
 PAIRS = [("A", "V"), ("A", "W"), ("A", "Y"), ("A", "T"), ("A", "quotes"), ("quotes", "A"),
          ("L", "T"), ("L", "V"), ("L", "Y"), ("P", "A"), ("P", "period"), ("F", "period"),
