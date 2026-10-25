@@ -290,8 +290,8 @@ def install(bf, d, dot):
     put1("cent", cw, cp_, ln((cw / 2, -80), (cw / 2, XH + 80), cap=BUTT), ch="¢")
     cx, cy, a = w / 2, MI, w * 0.22
     put1("currency", w, ln((cx - a, cy + a), (cx + a, cy + a), (cx + a, cy - a), (cx - a, cy - a), radii=[a * 0.5] * 4, closed=True),
-         ln((cx - a * 1.7, cy + a * 1.7), (cx - a, cy + a), cap=BUTT), ln((cx + a * 1.7, cy + a * 1.7), (cx + a, cy + a), cap=BUTT),
-         ln((cx - a * 1.7, cy - a * 1.7), (cx - a, cy - a), cap=BUTT), ln((cx + a * 1.7, cy - a * 1.7), (cx + a, cy - a), cap=BUTT), ch="¤")
+         *[ln((cx + sx * a * 0.85, cy + sy * a * 0.85), (cx + sx * a * 1.6, cy + sy * a * 1.6), cap=BUTT)   # spokes from the ring
+           for sx in (-1, 1) for sy in (-1, 1)], ch="¤")
     Yw, Yp = G["Y"]
     put1("yen", Yw, Yp, ln((W * 0.25, MI * 0.62), (W * 0.75, MI * 0.62)), ln((W * 0.25, MI * 0.3), (W * 0.75, MI * 0.3)), ch="¥")
     sw_ = W * 0.6; rs = r * 0.55; L1, R1 = h, sw_ - h
@@ -364,7 +364,14 @@ def install(bf, d, dot):
     put1("lessequal", lsw, lsp.transform(1, 0, 0, 1, 0, 70), ln((mc - ma, MI - ma - 40), (mc + ma, MI - ma - 40)), ch="≤")
     put1("greaterequal", gtw, gtp.transform(1, 0, 0, 1, 0, 70), ln((mc - ma, MI - ma - 40), (mc + ma, MI - ma - 40)), ch="≥")
     tlw, tlp = G["asciitilde"]
-    put1("approxequal", tlw, tlp.transform(1, 0, 0, 1, 0, 70), tlp.transform(1, 0, 0, 1, 0, -70), ch="≈")
+    # ≈: two flatter waves of the ~, one above the other with a clear gap
+    wx, wa = tlw / 2, tlw * 0.36                # centre and half width of the ~
+    tw2 = wa * 0.66 * 0.6; ra = min(r * 0.3, tw2 / 2)
+    def wave(y):
+        return ln((wx - wa, y - tw2 / 2), (wx - wa, y + tw2 / 2), (wx, y + tw2 / 2), (wx, y - tw2 / 2),
+                  (wx + wa, y - tw2 / 2), (wx + wa, y + tw2 / 2), radii=[0, ra, ra, ra, ra, 0])
+    ay = tw2 / 2 + h + max(S * 0.4, 28)
+    put1("approxequal", tlw, wave(MI + ay), wave(MI - ay), ch="≈")
     iq = W * 0.28
     put1("infinity", W * 1.0, ln((h, MI + iq / 2), (W / 2, MI + iq / 2), (W / 2, MI - iq / 2), (h, MI - iq / 2), radii=[iq * 0.45] * 4, closed=True),
          ln((W / 2, MI), (W / 2, MI + iq / 2), (W - h, MI + iq / 2), (W - h, MI - iq / 2), (W / 2, MI - iq / 2), (W / 2, MI),
