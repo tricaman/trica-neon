@@ -61,8 +61,15 @@ def install(bf, d, dot):
     # ------------------------------------------------------------------ marks
     def m_grave(cx, y): return ln((cx - 60, y + 200), (cx + 60, y + 90), cap=BUTT)
     def m_acute(cx, y): return ln((cx - 60, y + 90), (cx + 60, y + 200), cap=BUTT)
-    def m_circ(cx, y): return ln((cx - 90, y + 90), (cx, y + 190), (cx + 90, y + 90), cap=BUTT)
-    def m_caron(cx, y): return ln((cx - 90, y + 190), (cx, y + 90), (cx + 90, y + 190), cap=BUTT)
+    def m_chevron(cx, y, down):              # caron (point down) or circumflex: a small v cut flat at both ends, as the letter V
+        y0, y1, a = y + 75, y + 210, 110          # bottom and top of the mark, half width of the centreline at the top
+        yv = y0 + h - S * 0.6                     # the point runs past the bottom too, so it is cut flat
+        ye = y1 + 60
+        k = (ye - yv) / (y1 - yv)
+        o = bf.clip(stroke(rounded([(cx - a * k, ye), (cx, yv), (cx + a * k, ye)])), cx - 2 * a, y0, cx + 2 * a, y1)
+        return o if down else o.transform(1, 0, 0, -1, 0, y0 + y1)
+    def m_circ(cx, y): return m_chevron(cx, y, False)
+    def m_caron(cx, y): return m_chevron(cx, y, True)
     def m_tilde(cx, y, a=150):                # a: half the width
         y0, y1, rr = y + 105, y + 185, a * 0.3
         return ln((cx - a, y0), (cx - a, y1), (cx, y1), (cx, y0), (cx + a, y0), (cx + a, y1),
