@@ -5,7 +5,7 @@
   <anchor x="209" y="700" name="top"/>
   <anchor x="209" y="0" name="bottom"/>
   <anchor x="276" y="0" name="ogonek"/>
-  <anchor x="414" y="622" name="caron"/>
+  <anchor x="431" y="622" name="caron"/>
   <outline>
     <contour>
       <point x="183" y="622" type="line"/>

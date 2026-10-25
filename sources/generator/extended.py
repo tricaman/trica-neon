@@ -28,6 +28,25 @@ def install(bf, d, dot):
         xs = [p[0] for _, segs in G[name][1].contours for g in segs for p in g[1:]]
         return min(xs), max(xs)
 
+    def x_right(name, y0, y1):     # rightmost x of a glyph between two heights (curves sampled)
+        xs, n = [], 32
+        for start, segs in G[name][1].contours:
+            cur = start
+            for g in segs:
+                for i in range(n + 1):
+                    t, u = i / n, 1 - i / n
+                    if g[0] == "line":
+                        p = (u * cur[0] + t * g[1][0], u * cur[1] + t * g[1][1])
+                    else:
+                        p = tuple(u ** 3 * cur[k] + 3 * u * u * t * g[1][k] + 3 * u * t * t * g[2][k] + t ** 3 * g[3][k] for k in (0, 1))
+                    if y0 <= p[1] <= y1:
+                        xs.append(p[0])
+                cur = g[-1]
+        return max(xs)
+
+    def caron_x(name, ytop):       # the vertical caron of ď ľ ť Ľ: one stroke (at least 40) right of what the letter has at its height
+        return x_right(name, ytop - 170, ytop) + max(S, 40) + h
+
     # ------------------------------------------------------------------ marks
     def m_grave(cx, y): return ln((cx - 60, y + 200), (cx + 60, y + 90), cap=BUTT)
     def m_acute(cx, y): return ln((cx - 60, y + 90), (cx + 60, y + 200), cap=BUTT)
@@ -133,9 +152,9 @@ def install(bf, d, dot):
                 ytop = T + h if base in "dlL" else XT + (T - XT) * 0.6 + h
                 if base == "L":
                     ytop = T + h
-                x = x_extent(bname)[1] + 40            # right of the letter, whose crossbar (t) can pass its box
+                x = caron_x(bname, ytop)
                 comps.append(("caroncomb.alt", x - mx, ytop))
-                bw = x + 40
+                bw = max(bw, x)                        # half the caron sticks out into the sidebearing
             elif m == 0x303 and bname in ("I", "dotlessi"):
                 # the narrow tilde, and room for it, so that a run of these letters does not touch
                 need = 2 * 90 + S + max(S * 0.5, 30) - 2 * bf.SB
@@ -171,7 +190,7 @@ def install(bf, d, dot):
     # d l t L take the vertical caron on their right, where ď ľ ť Ľ have it (ccmp swaps the mark)
     for b in "dltL":
         ytop = XT + (T - XT) * 0.6 + h if b == "t" else T + h
-        bf.ANCHORS[b].append(("caron", x_extent(b)[1] + 40, ytop))
+        bf.ANCHORS[b].append(("caron", caron_x(b, ytop), ytop))
     bf.ANCHORS["caroncomb.alt"] = [("_caron", mx, 0)]
 
     # ------------------------------------------------------- special letters
