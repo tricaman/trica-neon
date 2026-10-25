@@ -1,27 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="exclam" format="2">
-  <advance width="192"/>
+  <advance width="176"/>
   <unicode hex="0021"/>
   <outline>
     <contour>
-      <point x="88" y="148" type="line"/>
-      <point x="105" y="148" type="line"/>
-      <point x="105" y="700" type="line"/>
-      <point x="88" y="700" type="line"/>
+      <point x="79" y="148" type="line"/>
+      <point x="97" y="148" type="line"/>
+      <point x="97" y="700" type="line"/>
+      <point x="79" y="700" type="line"/>
     </contour>
     <contour>
-      <point x="120" y="24" type="curve"/>
-      <point x="120" y="37"/>
-      <point x="110" y="48"/>
-      <point x="96" y="48" type="curve"/>
-      <point x="83" y="48"/>
-      <point x="72" y="37"/>
-      <point x="72" y="24" type="curve"/>
-      <point x="72" y="11"/>
-      <point x="83" y="0"/>
-      <point x="96" y="0" type="curve"/>
-      <point x="110" y="0"/>
-      <point x="120" y="11"/>
+      <point x="112" y="24" type="curve"/>
+      <point x="112" y="37"/>
+      <point x="101" y="48"/>
+      <point x="88" y="48" type="curve"/>
+      <point x="75" y="48"/>
+      <point x="64" y="37"/>
+      <point x="64" y="24" type="curve"/>
+      <point x="64" y="11"/>
+      <point x="75" y="0"/>
+      <point x="88" y="0" type="curve"/>
+      <point x="101" y="0"/>
+      <point x="112" y="11"/>
     </contour>
   </outline>
 </glyph>

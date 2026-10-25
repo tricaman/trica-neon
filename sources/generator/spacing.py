@@ -7,31 +7,46 @@ the x-height (lowercase) or the cap height (capitals and figures), matches the w
 or H. As in HT Letterspacer, open areas count only up to a depth, a share of the x-height.
 A side where a part outside the zone reaches into that depth (the hook of j, the bar of ł)
 keeps its sidebearing. Accented letters take the sidebearings of their base letter.
+Punctuation and symbols are spaced the same way: the marks of the lowercase band (dashes, math
+signs, guillemets, . , : ; … · •) over the x-height, against n, the others over the cap height,
+against H, each zone stretched to the whole height of the glyph; they keep a quarter of the
+sidebearing at least, so that small marks (* ° ™) do not run into their neighbours.
 """
 import unicodedata
 
 STEPS = 60          # heights sampled in the zone
 DEPTH = 0.15        # open areas count up to this share of the x-height
+LEAST = 0.25        # punctuation keeps this share of the sidebearing at least
+LOWER_BAND = {"hyphen", "endash", "emdash", "minus", "plus", "equal", "multiply", "divide", "less", "greater",
+              "plusminus", "notequal", "lessequal", "greaterequal", "approxequal", "asciitilde", "logicalnot",
+              "infinity", "guilsinglleft", "guilsinglright", "guillemotleft", "guillemotright", "periodcentered",
+              "bullet", "period", "comma", "colon", "semicolon", "ellipsis"}
+SKIP = {"underscore", "fraction", "dottedcircle"}   # drawn to fill their advance, or a base for marks
 
 
-def respace(builds, xheight, cap):
-    """Change the sidebearings of the letters and figures of every master, in place. Whether a side
-    keeps its sidebearing is decided once for all the masters, so that the weights progress evenly."""
+def respace(builds, xheight, cap, sidebearing):
+    """Change the sidebearings of the letters, figures and punctuation of every master, in place. Whether
+    a side keeps its sidebearing is decided once for all the masters, so that the weights progress evenly."""
     first = builds[0]
-    kinds = {}                                                 # glyph -> "lc" or "uc"
+    kinds = {}                       # glyph -> "lc", "uc" (letters, figures), "lp", "up" (punctuation, symbols)
     for cp, name in first["cmap"].items():
         cat = unicodedata.category(chr(cp))
         if cat in ("Ll", "Lu", "Lt", "Nd"):
             kinds[name] = "lc" if cat == "Ll" else "uc"
+        elif cat[0] in "PS" and cat != "Sk" and name not in SKIP and name not in first["components"]:
+            kinds.setdefault(name, "lp" if name in LOWER_BAND else "up")
     drawn = [n for n in kinds if n not in first["components"]]
     depth = DEPTH * xheight
-    zones = {"lc": (0, xheight), "uc": (0, cap)}
+    zones = {"lc": (0, xheight), "uc": (0, cap), "lp": (0, xheight), "up": (0, cap)}
 
     def white(glyphs, name):
         """Optical space on the left and right of a drawn glyph (sidebearing plus the white inside it), and
         whether a part outside the zone (the hook of j or ſ, the bar of ł đ ħ ...) reaches the measured depth."""
         lines = _polylines(glyphs[name][1].contours)
         lo, hi = zones[kinds[name]]
+        if kinds[name] in ("lp", "up"):                       # the zone stretched to the whole height of the mark
+            ys = [p[1] for c in lines for p in c]
+            lo, hi = min(lo, min(ys)), max(hi, max(ys))
         rows = [_extent(lines, lo + (hi - lo) * (k + 0.5) / STEPS) for k in range(STEPS)]
         ink = [r for r in rows if r]
         x0, x1 = min(r[0] for r in ink), max(r[1] for r in ink)
@@ -47,11 +62,16 @@ def respace(builds, xheight, cap):
     keep = {n: (any(m[n][2] for m in measured), any(m[n][3] for m in measured)) for n in drawn}
     for build, m in zip(builds, measured):
         glyphs, comps, anchors = build["glyphs"], build["components"], build["anchors"]
-        ref = {"lc": m["n"], "uc": m["H"]}
+        ref = {"lc": m["n"], "uc": m["H"], "lp": m["n"], "up": m["H"]}
         shift = {}                                             # glyph -> (change on the left, on the right)
         for name in drawn:
             (l, r, _, _), (rl, rr, _, _) = m[name], ref[kinds[name]]
-            shift[name] = (0 if keep[name][0] else rl - l, 0 if keep[name][1] else rr - r)
+            dl, dr = (0 if keep[name][0] else rl - l, 0 if keep[name][1] else rr - r)
+            if kinds[name] in ("lp", "up"):
+                xs = [p[0] for _, segs in glyphs[name][1].contours for g in segs for p in g[1:]]
+                dl = max(dl, LEAST * sidebearing - min(xs))
+                dr = max(dr, LEAST * sidebearing - (glyphs[name][0] - max(xs)))
+            shift[name] = (dl, dr)
         for name in kinds:
             if name in comps and comps[name][0][0] in shift:  # accented letters follow their base
                 shift[name] = shift[comps[name][0][0]]

@@ -1,29 +1,29 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="parenright" format="2">
-  <advance width="455"/>
+  <advance width="375"/>
   <unicode hex="0029"/>
   <outline>
     <contour>
-      <point x="88" y="700" type="line"/>
-      <point x="88" y="613" type="line"/>
-      <point x="131" y="613" type="line"/>
-      <point x="213" y="613"/>
-      <point x="280" y="546"/>
-      <point x="280" y="464" type="curve"/>
-      <point x="280" y="152" type="line"/>
-      <point x="280" y="70"/>
-      <point x="213" y="4"/>
-      <point x="131" y="4" type="curve"/>
-      <point x="88" y="4" type="line"/>
-      <point x="88" y="-84" type="line"/>
-      <point x="131" y="-84" type="line"/>
-      <point x="262" y="-84"/>
-      <point x="368" y="22"/>
-      <point x="368" y="152" type="curve"/>
-      <point x="368" y="464" type="line"/>
-      <point x="368" y="594"/>
-      <point x="262" y="700"/>
-      <point x="131" y="700" type="curve"/>
+      <point x="30" y="700" type="line"/>
+      <point x="30" y="613" type="line"/>
+      <point x="73" y="613" type="line"/>
+      <point x="155" y="613"/>
+      <point x="222" y="546"/>
+      <point x="222" y="464" type="curve"/>
+      <point x="222" y="152" type="line"/>
+      <point x="222" y="70"/>
+      <point x="155" y="4"/>
+      <point x="73" y="4" type="curve"/>
+      <point x="30" y="4" type="line"/>
+      <point x="30" y="-84" type="line"/>
+      <point x="73" y="-84" type="line"/>
+      <point x="204" y="-84"/>
+      <point x="310" y="22"/>
+      <point x="310" y="152" type="curve"/>
+      <point x="310" y="464" type="line"/>
+      <point x="310" y="594"/>
+      <point x="204" y="700"/>
+      <point x="73" y="700" type="curve"/>
     </contour>
   </outline>
 </glyph>

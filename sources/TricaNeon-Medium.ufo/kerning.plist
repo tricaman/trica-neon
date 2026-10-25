@@ -68,7 +68,7 @@
       <key>public.kern2.o</key>
       <integer>-80</integer>
       <key>public.kern2.period</key>
-      <integer>-130</integer>
+      <integer>-100</integer>
     </dict>
     <key>public.kern1.W</key>
     <dict>
@@ -79,7 +79,7 @@
       <key>public.kern2.o</key>
       <integer>-15</integer>
       <key>public.kern2.period</key>
-      <integer>-50</integer>
+      <integer>-15</integer>
     </dict>
     <key>public.kern1.Y</key>
     <dict>
@@ -102,7 +102,7 @@
     <key>public.kern1.v</key>
     <dict>
       <key>public.kern2.period</key>
-      <integer>-95</integer>
+      <integer>-60</integer>
     </dict>
   </dict>
 </plist>

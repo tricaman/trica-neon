@@ -1,27 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="semicolon" format="2">
-  <advance width="223"/>
+  <advance width="163"/>
   <unicode hex="003B"/>
   <outline>
     <contour>
-      <point x="136" y="480" type="curve"/>
-      <point x="136" y="493"/>
-      <point x="125" y="504"/>
-      <point x="112" y="504" type="curve"/>
-      <point x="98" y="504"/>
-      <point x="88" y="493"/>
-      <point x="88" y="480" type="curve"/>
-      <point x="88" y="467"/>
-      <point x="98" y="456"/>
-      <point x="112" y="456" type="curve"/>
-      <point x="125" y="456"/>
-      <point x="136" y="467"/>
+      <point x="123" y="480" type="curve"/>
+      <point x="123" y="493"/>
+      <point x="112" y="504"/>
+      <point x="99" y="504" type="curve"/>
+      <point x="85" y="504"/>
+      <point x="75" y="493"/>
+      <point x="75" y="480" type="curve"/>
+      <point x="75" y="467"/>
+      <point x="85" y="456"/>
+      <point x="99" y="456" type="curve"/>
+      <point x="112" y="456"/>
+      <point x="123" y="467"/>
     </contour>
     <contour>
-      <point x="128" y="45" type="line"/>
-      <point x="112" y="51" type="line"/>
-      <point x="52" y="-123" type="line"/>
-      <point x="68" y="-129" type="line"/>
+      <point x="115" y="45" type="line"/>
+      <point x="99" y="51" type="line"/>
+      <point x="39" y="-123" type="line"/>
+      <point x="55" y="-129" type="line"/>
     </contour>
   </outline>
 </glyph>

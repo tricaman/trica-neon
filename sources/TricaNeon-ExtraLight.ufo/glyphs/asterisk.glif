@@ -1,25 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="asterisk" format="2">
-  <advance width="735"/>
+  <advance width="374"/>
   <unicode hex="002A"/>
   <outline>
     <contour>
-      <point x="350" y="322" type="line"/>
-      <point x="385" y="322" type="line"/>
-      <point x="385" y="680" type="line"/>
-      <point x="350" y="680" type="line"/>
+      <point x="169" y="322" type="line"/>
+      <point x="204" y="322" type="line"/>
+      <point x="204" y="680" type="line"/>
+      <point x="169" y="680" type="line"/>
     </contour>
     <contour>
-      <point x="203" y="427" type="line"/>
-      <point x="220" y="397" type="line"/>
-      <point x="532" y="575" type="line"/>
-      <point x="515" y="606" type="line"/>
+      <point x="22" y="427" type="line"/>
+      <point x="39" y="397" type="line"/>
+      <point x="352" y="575" type="line"/>
+      <point x="335" y="606" type="line"/>
     </contour>
     <contour>
-      <point x="220" y="606" type="line"/>
-      <point x="203" y="575" type="line"/>
-      <point x="515" y="397" type="line"/>
-      <point x="532" y="427" type="line"/>
+      <point x="39" y="606" type="line"/>
+      <point x="22" y="575" type="line"/>
+      <point x="335" y="397" type="line"/>
+      <point x="352" y="427" type="line"/>
     </contour>
   </outline>
   <lib>
