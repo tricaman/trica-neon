@@ -1,0 +1,18 @@
+# gftools builder configuration, run by `make build`.
+# Output: fonts/variable, fonts/ttf (autohinted), fonts/otf and fonts/webfonts (WOFF2).
+sources:
+  - TricaNeon.designspace
+familyName: Trica Neon
+buildVariable: true
+buildStatic: true
+buildTTF: true
+buildOTF: true
+buildWebfont: true
+autohintTTF: true
+# Give the accented letters the anchors of their components, so that a further combining mark
+# stacks on top of the accent (before the static fonts decompose them).
+extraFontmakeArgs: --filter "PropagateAnchorsFilter(pre=True)"
+# Static fonts: decompose the accented letters first (overlaps are only removed from outlines,
+# not between components), then remove the overlaps with Skia, as the generator was checked with it.
+# The variable font keeps the components and the overlaps.
+extraStaticFontmakeArgs: --filter "DecomposeComponentsFilter(pre=True)" --overlaps-backend pathops

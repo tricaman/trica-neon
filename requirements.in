@@ -1,0 +1,11 @@
+# Build dependencies. requirements.txt pins the whole set: regenerate it with `make update`.
+fontmake
+gftools
+ufo2ft
+ufoLib2
+fonttools
+skia-pathops
+ttfautohint-py
+glyphsets
+diffenator3
+pillow
