@@ -49,7 +49,9 @@ def install(bf, d, dot):
         return ln((cx - a, y + 230), (cx + a, y + 230), (cx + a, y + 90), (cx - a, y + 90), radii=[35] * 4, closed=True)
     def m_dblacute(cx, y): return union(m_acute(cx - 75, y), m_acute(cx + 75, y))
     def m_cedilla(cx, y): return ln((cx, BT), (cx, -110), (cx - 90, -110), radii=[0, 35, 0], cap=BUTT)
-    def m_ogonek(cx, y): return ln((cx, BT), (cx, -110), (cx + 90, -110), radii=[0, 35, 0], cap=BUTT)
+    def m_ogonek(cx, y): return ln((cx, BT), (cx, -110), (cx + 90, -110), radii=[0, 90, 0], cap=BUTT)   # a quarter circle, as the foot of the t
+    def ogonek_x(name, bw):        # where the ogonek hangs: as the end of the right stem of A and a, under the stem of I and i
+        return bw - h if name in ("A", "a") else bw / 2 if name in ("I", "i", "dotlessi") else bw * 0.78
     def m_commabelow(cx, y): return ln((cx, -50), (cx, -170), cap=BUTT)
     def m_commaturned(cx, y): return ln((cx, y + 90), (cx, y + 210), cap=BUTT)   # turned comma above, as in ģ
     def m_caronalt(cx, y): return ln((cx, y - 170), (cx, y), cap=BUTT)       # vertical caron of ď ľ ť Ľ
@@ -144,7 +146,7 @@ def install(bf, d, dot):
             elif m in ABOVE:
                 comps.append((ABOVE[m], bw / 2 - mx, top))
             elif m in BELOW:
-                cx = bw * 0.78 if m == 0x328 else bw / 2
+                cx = ogonek_x(bname, bw) if m == 0x328 else bw / 2
                 comps.append((BELOW[m], cx - mx, 0))
             else:
                 return False
@@ -165,7 +167,7 @@ def install(bf, d, dot):
     for b in [*"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", "dotlessi", "dotlessj"]:
         bw = G[b][0]
         top = H if b.isupper() else (T + h if b in ASCENDERS else XH)
-        bf.ANCHORS[b] = [("top", bw / 2, top), ("bottom", bw / 2, 0), ("ogonek", bw * 0.78, 0)]
+        bf.ANCHORS[b] = [("top", bw / 2, top), ("bottom", bw / 2, 0), ("ogonek", ogonek_x(b, bw), 0)]
     # d l t L take the vertical caron on their right, where ď ľ ť Ľ have it (ccmp swaps the mark)
     for b in "dltL":
         ytop = XT + (T - XT) * 0.6 + h if b == "t" else T + h
@@ -321,7 +323,7 @@ def install(bf, d, dot):
     # i with ogonek and no dot, for a mark above it (ccmp)
     iw = G["dotlessi"][0]
     G["iogonek.dotless"] = (iw, bf.Outline())
-    bf.COMPONENTS["iogonek.dotless"] = [("dotlessi", 0, 0), ("ogonekcomb", iw * 0.78 - mx, 0)]
+    bf.COMPONENTS["iogonek.dotless"] = [("dotlessi", 0, 0), ("ogonekcomb", ogonek_x("dotlessi", iw) - mx, 0)]
 
     # ------------------------------------------------------- Latin-1 symbols
     cw, cp_ = G["c"]
