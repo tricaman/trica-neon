@@ -1,20 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="seven.dnom" format="2">
-  <advance width="360"/>
+  <advance width="316"/>
   <outline>
     <contour>
-      <point x="22" y="368" type="line"/>
-      <point x="22" y="279" type="line"/>
-      <point x="219" y="279" type="line"/>
-      <point x="236" y="279"/>
-      <point x="249" y="266"/>
-      <point x="249" y="249" type="curve"/>
-      <point x="249" y="-18" type="line"/>
-      <point x="338" y="-18" type="line"/>
-      <point x="338" y="249" type="line"/>
-      <point x="338" y="315"/>
-      <point x="285" y="368"/>
-      <point x="219" y="368" type="curve"/>
+      <point x="-22" y="368" type="line"/>
+      <point x="-22" y="279" type="line"/>
+      <point x="176" y="279" type="line"/>
+      <point x="192" y="279"/>
+      <point x="205" y="266"/>
+      <point x="205" y="249" type="curve"/>
+      <point x="205" y="-18" type="line"/>
+      <point x="295" y="-18" type="line"/>
+      <point x="295" y="249" type="line"/>
+      <point x="295" y="315"/>
+      <point x="241" y="368"/>
+      <point x="176" y="368" type="curve"/>
     </contour>
   </outline>
 </glyph>

@@ -108,15 +108,17 @@ def build():
     # -------- digits (narrower box, same radii) -------------------------------------
     Wd = H * 0.8; L2, R2, C2 = h, Wd - h, Wd / 2
     glyph("zero", Wd, [([(L2, T), (R2, T), (R2, BT), (L2, BT)], [r, r, r, r], True)])
-    Wone = H * 0.4
-    glyph("one", Wone, [([(h, T), (Wone - h, T), (Wone - h, BT)],)])
+    # 1 and 7 are open on the left: the flag of the 1 reaches o1 units into the left sidebearing,
+    # the bar of the 7 all of it
+    Wone, o1, o7 = H * 0.4, 50, SB
+    glyph("one", Wone - o1, [([(h - o1, T), (Wone - h - o1, T), (Wone - h - o1, BT)],)])
     glyph("two", Wd, [([(L2, T), (R2, T), (R2, MI), (L2, MI), (L2, BT), (R2, BT)], [0, r, r, r, 0, 0])])
     glyph("three", Wd, [([(L2, T), (R2, T), (R2, MI), (L2, MI)], [0, r, r, 0]),
                         ([(R2 - r, MI), (R2, MI), (R2, BT), (L2, BT)], [0, r, r, 0])])
     glyph("four", Wd, [([(L2, T), (L2, MI), (R2, MI)], [0, r, 0]), ([(R2, T), (R2, BT)],)])
     glyph("five", Wd, [([(R2, T), (L2, T), (L2, MI), (R2, MI), (R2, BT), (L2, BT)], [0, 0, 0, r, r, 0])])
     glyph("six", Wd, [([(R2, T), (L2, T), (L2, BT), (R2, BT), (R2, MI), (L2, MI)], [0, r, r, r, r, 0])])
-    glyph("seven", Wd, [([(L2, T), (R2, T), (R2, BT)], [0, r, 0])])
+    glyph("seven", Wd - o7, [([(L2 - o7, T), (R2 - o7, T), (R2 - o7, BT)], [0, r, 0])])
     glyph("eight", Wd, [pill(L2, R2, MI, T), pill(L2, R2, BT, MI)])
     glyph("nine", Wd, [([(L2, BT), (R2, BT), (R2, T), (L2, T), (L2, MI), (R2, MI)], [0, r, r, r, r, 0])])
 

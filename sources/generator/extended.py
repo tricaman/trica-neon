@@ -253,15 +253,16 @@ def install(bf, d, dot):
 
     # figures for the OpenType features: numerators (the superiors) and denominators (the same
     # small figures on the baseline, as in ½ ¼ ¾) with a 40 unit sidebearing; tabular figures
-    # all as wide as the zero
+    # all as wide as the zero, with the figure centred
     tight = 40 - bf.SB
     for nm in ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]:
         wd, p = small(nm, sc, 0, 0, sw)
         G[nm + ".dnom"] = (wd + 2 * tight, shift(p, tight))
         G[nm + ".numr"] = (wd + 2 * tight, bf.Outline())
         bf.COMPONENTS[nm + ".numr"] = [(nm + "superior", tight, 0)]
+        x0, x1 = x_extent(nm)
         G[nm + ".tf"] = (G["zero"][0], bf.Outline())
-        bf.COMPONENTS[nm + ".tf"] = [(nm, (G["zero"][0] - G[nm][0]) / 2, 0)]
+        bf.COMPONENTS[nm + ".tf"] = [(nm, (G["zero"][0] - x0 - x1) / 2, 0)]
 
     # brackets for all-capital text (case): they reach below the baseline, so raise them
     # to sit centred on the capitals

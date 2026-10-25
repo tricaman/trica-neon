@@ -1,21 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="uni2077" format="2">
-  <advance width="455"/>
+  <advance width="411"/>
   <unicode hex="2077"/>
   <outline>
     <contour>
-      <point x="75" y="712" type="line"/>
-      <point x="75" y="653" type="line"/>
-      <point x="271" y="653" type="line"/>
-      <point x="298" y="653"/>
-      <point x="320" y="631"/>
-      <point x="320" y="604" type="curve"/>
-      <point x="320" y="338" type="line"/>
-      <point x="380" y="338" type="line"/>
-      <point x="380" y="604" type="line"/>
-      <point x="380" y="664"/>
-      <point x="331" y="712"/>
-      <point x="271" y="712" type="curve"/>
+      <point x="32" y="712" type="line"/>
+      <point x="32" y="653" type="line"/>
+      <point x="228" y="653" type="line"/>
+      <point x="255" y="653"/>
+      <point x="277" y="631"/>
+      <point x="277" y="604" type="curve"/>
+      <point x="277" y="338" type="line"/>
+      <point x="336" y="338" type="line"/>
+      <point x="336" y="604" type="line"/>
+      <point x="336" y="664"/>
+      <point x="287" y="712"/>
+      <point x="228" y="712" type="curve"/>
     </contour>
   </outline>
 </glyph>
