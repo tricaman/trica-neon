@@ -44,6 +44,17 @@ def install(bf, d, dot):
                 cur = g[-1]
         return max(xs)
 
+    def stem_x(name):              # axis of the stem of r, l and t: the middle of the glyph at half the x-height
+        xs = []
+        for start, segs in G[name][1].contours:
+            cur = start
+            for g in segs:
+                p, q = cur, g[-1]
+                if g[0] == "line" and (p[1] - XM) * (q[1] - XM) < 0:
+                    xs.append(p[0] + (XM - p[1]) * (q[0] - p[0]) / (q[1] - p[1]))
+                cur = q
+        return (min(xs) + max(xs)) / 2
+
     def caron_x(name, ytop):       # the vertical caron of ď ľ ť Ľ: one stroke (at least 40) right of what the letter has at its height
         return x_right(name, ytop - 170, ytop) + max(S, 40) + h
 
@@ -165,7 +176,7 @@ def install(bf, d, dot):
             elif m in ABOVE:
                 comps.append((ABOVE[m], bw / 2 - mx, top))
             elif m in BELOW:
-                cx = ogonek_x(bname, bw) if m == 0x328 else bw / 2
+                cx = ogonek_x(bname, bw) if m == 0x328 else stem_x(bname) if m == 0x326 and bname in "rlt" else bw / 2
                 comps.append((BELOW[m], cx - mx, 0))
             else:
                 return False
@@ -182,7 +193,8 @@ def install(bf, d, dot):
         if unicodedata.category(ch).startswith("L") and ch not in bf.CHARS_ALL():
             compose(ch)
 
-    # anchors where the marks attach to the base letters (the positions compose() uses)
+    # anchors where the marks attach to the base letters (the positions compose() uses, but for the comma of
+    # ŗ ļ ț under the stem: the bottom anchor stays in the centre, where the cedilla of l and t attaches)
     for b in [*"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", "dotlessi", "dotlessj"]:
         bw = G[b][0]
         top = H if b.isupper() else (T + h if b in ASCENDERS else XH)
