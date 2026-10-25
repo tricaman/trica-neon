@@ -234,10 +234,13 @@ def build_symbols(d, dot):
     g = a * 0.6; gx = g * 1.1
     put("guilsinglleft", gx * 1.2, ln((gx, my + g), (h, my), (gx, my - g)))
     put("guilsinglright", gx * 1.2, ln((h, my + g), (gx, my), (h, my - g)))
-    # the second chevron keeps a clear gap of at least 0.3 S from the first
-    tip = max(gx * 1.1, h + S * math.hypot(g, gx - h) / g + S * 0.3)
-    put("guillemotleft", tip + gx * 1.3, ln((gx, my + g), (h, my), (gx, my - g)), ln((tip + gx, my + g), (tip, my), (tip + gx, my - g)))
-    put("guillemotright", tip + gx * 1.3, ln((h, my + g), (gx, my), (h, my - g)), ln((tip, my + g), (tip + gx, my), (tip, my - g)))
+    # « »: two identical chevrons, the second shifted so that a clear gap of 0.8 S stays between them
+    span = gx - h                                                   # horizontal reach of a chevron
+    off = max(gx * 0.9, S * math.hypot(g, span) / g + S * 0.8)
+    chev_l = lambda x: ln((x + span, my + g), (x, my), (x + span, my - g))
+    chev_r = lambda x: ln((x, my + g), (x + span, my), (x, my - g))
+    put("guillemotleft", h + off + span + gx * 0.2, chev_l(h), chev_l(h + off))
+    put("guillemotright", h + off + span + gx * 0.2, chev_r(h), chev_r(h + off))
 
     # # % & @ $ euro
     put("numbersign", Wm, ln((Wm * 0.33, BT + 60), (Wm * 0.33, T - 60), cap=BUTT), ln((Wm * 0.67, BT + 60), (Wm * 0.67, T - 60), cap=BUTT),

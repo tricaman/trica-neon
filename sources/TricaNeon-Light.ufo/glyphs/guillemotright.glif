@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="guillemotright" format="2">
-  <advance width="494"/>
+  <advance width="454"/>
   <unicode hex="00BB"/>
   <outline>
     <contour>
@@ -12,12 +12,12 @@
       <point x="256" y="350" type="line"/>
     </contour>
     <contour>
-      <point x="232" y="508" type="line"/>
-      <point x="197" y="469" type="line"/>
-      <point x="328" y="350" type="line"/>
-      <point x="197" y="231" type="line"/>
-      <point x="232" y="192" type="line"/>
-      <point x="406" y="350" type="line"/>
+      <point x="236" y="508" type="line"/>
+      <point x="196" y="473" type="line"/>
+      <point x="305" y="350" type="line"/>
+      <point x="196" y="227" type="line"/>
+      <point x="236" y="192" type="line"/>
+      <point x="375" y="350" type="line"/>
     </contour>
   </outline>
 </glyph>
