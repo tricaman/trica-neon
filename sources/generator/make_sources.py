@@ -95,6 +95,75 @@ def draw(glyph, contours):
         pen.endPath()
 
 
+FIGURES = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+TOP_MARKS = ["gravecomb", "acutecomb", "circumflexcomb", "tildecomb", "macroncomb", "brevecomb",
+             "dotaccentcomb", "dieresiscomb", "ringcomb", "hungarumlautcomb", "caroncomb"]
+BRACKETS = ["parenleft", "parenright", "bracketleft", "bracketright", "braceleft", "braceright"]
+
+
+def feature_code(names):
+    """features.fea, the same for every master. kern, mark and mkmk are not here: ufo2ft
+    writes them from the kerning and the anchors."""
+    def cls(glyphs):
+        return "[" + " ".join(names[g] for g in glyphs) + "]"
+    return "\n".join([
+        "# Trica Neon OpenType features, written by sources/generator/make_sources.py.",
+        "# kern, mark and mkmk come from the kerning and the anchors of the UFOs.",
+        "",
+        "languagesystem DFLT dflt;",
+        "languagesystem latn dflt;",
+        "languagesystem latn ROM;",
+        "languagesystem latn MOL;",
+        "",
+        f"@figures = {cls(FIGURES)};",
+        f"@figures_numr = {cls([f + '.numr' for f in FIGURES])};",
+        f"@figures_dnom = {cls([f + '.dnom' for f in FIGURES])};",
+        f"@figures_sups = {cls([f + 'superior' for f in FIGURES])};",
+        f"@figures_tf = {cls([f + '.tf' for f in FIGURES])};",
+        f"@marks_top = {cls(TOP_MARKS)};",
+        "",
+        "# i, j and į lose their dot under a mark above, also with marks below in between (the",
+        "# filtering set skips every mark that is not above); d l t L take the vertical caron",
+        "lookup soft_dotted {",
+        "    lookupflag UseMarkFilteringSet @marks_top;",
+        f"    sub {cls(['i', 'j', 'uni012F'])}' @marks_top by {cls(['dotlessi', 'dotlessj', 'iogonek.dotless'])};",
+        "} soft_dotted;",
+        "lookup vertical_caron {",
+        f"    sub {cls(['d', 'l', 't', 'L'])} {names['caroncomb']}' by {names['caroncomb.alt']};",
+        "} vertical_caron;",
+        "feature ccmp {",
+        "    lookup soft_dotted;",
+        "    lookup vertical_caron;",
+        "} ccmp;",
+        "",
+        "# Romanian and Moldovan: S and T take a comma below, not a cedilla",
+        "lookup romanian {",
+        f"    sub {cls(['uni015E', 'uni015F', 'uni0162', 'uni0163'])} by {cls(['uni0218', 'uni0219', 'uni021A', 'uni021B'])};",
+        "} romanian;",
+        "feature locl {",
+        "    script latn;",
+        "    language ROM;",
+        "    lookup romanian;",
+        "    language MOL;",
+        "    lookup romanian;",
+        "} locl;",
+        "",
+        "# fractions: figures before the slash become numerators, after it denominators",
+        "feature frac {",
+        f"    lookup frac_slash {{ sub {names['slash']} by {names['fraction']}; }} frac_slash;",
+        "    lookup frac_numr { sub @figures by @figures_numr; } frac_numr;",
+        f"    lookup frac_dnom {{ sub [{names['fraction']} @figures_dnom] @figures_numr' by @figures_dnom; }} frac_dnom;",
+        "} frac;",
+        "feature numr { sub @figures by @figures_numr; } numr;",
+        "feature dnom { sub @figures by @figures_dnom; } dnom;",
+        "feature sups { sub @figures by @figures_sups; } sups;",
+        f"feature ordn {{ sub @figures {cls(['a', 'o'])}' by {cls(['ordfeminine', 'ordmasculine'])}; }} ordn;",
+        "feature tnum { sub @figures by @figures_tf; } tnum;",
+        f"feature case {{ sub {cls(BRACKETS)} by {cls([b + '.case' for b in BRACKETS])}; }} case;",
+        "",
+    ])
+
+
 def style_map_family(style):
     return FAMILY if style == "Regular" else f"{FAMILY} {style}"
 
@@ -179,6 +248,7 @@ def write_sources(out):
         unicodes.setdefault(n, []).append(cp)
     kern_groups = kerning.groups(builds[WEIGHTS[0][0]]["components"])
     kern_values = {s: kerning.values(flat[s], {n: data[s][n][0] for n in order}, 2 * bf.SB) for s in data}
+    fea = feature_code(names)
     ys = [p[1] for s in flat for cs in flat[s].values() for _, segs in cs for g in segs for p in g[1:]]
     win = (max(ys), max(0, -min(ys)))
     os.makedirs(out, exist_ok=True)
@@ -198,6 +268,7 @@ def write_sources(out):
             g.anchors = [Anchor(x, y, a) for a, x, y in anchors[style].get(n, [])]
         font.groups = {g: [names[n] for n in members] for g, members in kern_groups.items()}
         font.kerning = kern_values[style]
+        font.features.text = fea
         font.lib["public.glyphOrder"] = [names[n] for n in order]
         font.lib["public.openTypeCategories"] = {names[n]: "mark" if n in marks else "base" for n in order}
         font.lib["public.openTypeMeta"] = {"dlng": ["Latn"], "slng": ["Latn"]}   # designed for / supports Latin

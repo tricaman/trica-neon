@@ -1,0 +1,53 @@
+# Trica Neon OpenType features, written by sources/generator/make_sources.py.
+# kern, mark and mkmk come from the kerning and the anchors of the UFOs.
+
+languagesystem DFLT dflt;
+languagesystem latn dflt;
+languagesystem latn ROM;
+languagesystem latn MOL;
+
+@figures = [zero one two three four five six seven eight nine];
+@figures_numr = [zero.numr one.numr two.numr three.numr four.numr five.numr six.numr seven.numr eight.numr nine.numr];
+@figures_dnom = [zero.dnom one.dnom two.dnom three.dnom four.dnom five.dnom six.dnom seven.dnom eight.dnom nine.dnom];
+@figures_sups = [uni2070 uni00B9 uni00B2 uni00B3 uni2074 uni2075 uni2076 uni2077 uni2078 uni2079];
+@figures_tf = [zero.tf one.tf two.tf three.tf four.tf five.tf six.tf seven.tf eight.tf nine.tf];
+@marks_top = [gravecomb acutecomb uni0302 tildecomb uni0304 uni0306 uni0307 uni0308 uni030A uni030B uni030C];
+
+# i, j and į lose their dot under a mark above, also with marks below in between (the
+# filtering set skips every mark that is not above); d l t L take the vertical caron
+lookup soft_dotted {
+    lookupflag UseMarkFilteringSet @marks_top;
+    sub [i j iogonek]' @marks_top by [dotlessi uni0237 iogonek.dotless];
+} soft_dotted;
+lookup vertical_caron {
+    sub [d l t L] uni030C' by caroncomb.alt;
+} vertical_caron;
+feature ccmp {
+    lookup soft_dotted;
+    lookup vertical_caron;
+} ccmp;
+
+# Romanian and Moldovan: S and T take a comma below, not a cedilla
+lookup romanian {
+    sub [Scedilla scedilla uni0162 uni0163] by [uni0218 uni0219 uni021A uni021B];
+} romanian;
+feature locl {
+    script latn;
+    language ROM;
+    lookup romanian;
+    language MOL;
+    lookup romanian;
+} locl;
+
+# fractions: figures before the slash become numerators, after it denominators
+feature frac {
+    lookup frac_slash { sub slash by fraction; } frac_slash;
+    lookup frac_numr { sub @figures by @figures_numr; } frac_numr;
+    lookup frac_dnom { sub [fraction @figures_dnom] @figures_numr' by @figures_dnom; } frac_dnom;
+} frac;
+feature numr { sub @figures by @figures_numr; } numr;
+feature dnom { sub @figures by @figures_dnom; } dnom;
+feature sups { sub @figures by @figures_sups; } sups;
+feature ordn { sub @figures [a o]' by [ordfeminine ordmasculine]; } ordn;
+feature tnum { sub @figures by @figures_tf; } tnum;
+feature case { sub [parenleft parenright bracketleft bracketright braceleft braceright] by [parenleft.case parenright.case bracketleft.case bracketright.case braceleft.case braceright.case]; } case;

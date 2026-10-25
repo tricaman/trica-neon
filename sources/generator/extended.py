@@ -141,6 +141,11 @@ def install(bf, d, dot):
         bw = G[b][0]
         top = H if b.isupper() else (T + h if b in ASCENDERS else XH)
         bf.ANCHORS[b] = [("top", bw / 2, top), ("bottom", bw / 2, 0), ("ogonek", bw * 0.78, 0)]
+    # d l t L take the vertical caron on their right, where ď ľ ť Ľ have it (ccmp swaps the mark)
+    for b in "dltL":
+        ytop = XT + (T - XT) * 0.6 + h if b == "t" else T + h
+        bf.ANCHORS[b].append(("caron", G[b][0] + 40, ytop))
+    bf.ANCHORS["caroncomb.alt"] = [("_caron", mx, 0)]
 
     # ------------------------------------------------------- special letters
     def put1(name, width, *paths, ch=""):
