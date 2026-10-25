@@ -282,7 +282,7 @@ def write_sources(out):
                 pen.addComponent(names[c], (1, 0, 0, 1, x, y))
             g.anchors = [Anchor(x, y, a) for a, x, y in anchors[style].get(n, [])]
         font.groups = {g: [names[n] for n in members] for g, members in kern_groups.items()}
-        font.kerning = kern_values[style]
+        font.kerning = {tuple(names.get(k, k) for k in pair): v for pair, v in kern_values[style].items()}
         font.features.text = fea
         font.lib["public.glyphOrder"] = [names[n] for n in order]
         font.lib["public.openTypeCategories"] = {names[n]: "mark" if n in marks else "base" for n in order}
