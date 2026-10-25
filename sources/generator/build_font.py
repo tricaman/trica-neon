@@ -197,7 +197,8 @@ def build_symbols(d, dot):
         ln((Wn - nib, cy), (Wn - h, cy)))
     put("bar", S, ln((h, yb), (h, yt)))
     put("backslash", W / 2, ln((h, T), (W / 2 - h, BT)))
-    put("underscore", W * 0.8, ln((h, -H * 0.12), (W * 0.8 - h, -H * 0.12)))
+    # the underscore fills its advance, flat at both ends, so repeated underscores form one line
+    put("underscore", W * 0.8, ln((-SB, -H * 0.12), (W * 0.8 + SB, -H * 0.12), cap=BUTT))
 
     # math, same width as the digits
     Wm = H * 0.8; cx = Wm / 2; a = Wm * 0.36; my = MI
