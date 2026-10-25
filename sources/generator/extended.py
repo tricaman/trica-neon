@@ -467,8 +467,11 @@ def install(bf, d, dot):
     put1("pi", w, ln((h, XT), (lR, XT)), ln((w * 0.28, XT), (w * 0.28, BT)), ln((w * 0.72, XT), (w * 0.72, BT)), ch="π")
     put1("lozenge", W * 0.8, ln((W * 0.4, T), (h, MI), (W * 0.4, BT), (W * 0.8 - h, MI), closed=True), ch="◊")
     put1("estimated", W, ln((L, MI), (R, MI), (R, T), (L, T), (L, BT), (R, BT), radii=[0, 0, r, r, r, 0]), ch="℮")
-    put1("numero", W * 1.5, G["N"][1], small("o", 0.6, W + 20, H * 0.32, S * 0.85)[1],
-         ln((W + 20 + h, H * 0.2), (W * 1.5 - h - 30, H * 0.2)), ch="№")
+    # №: the small o with its top level with the top of the N, one stroke (at least 40) after it, over a bar as wide as it
+    no = small("o", 0.6, 0, 0, S * 0.85)[1]
+    o0, o1 = xb(no)
+    nx, ny = W + max(S, 40) - o0, H - max(p[1] for _, segs in no.contours for g in segs for p in g[1:])
+    put1("numero", nx + o1, G["N"][1], shift(no, nx, ny), ln((nx + o0 + h, ny - H * 0.12), (nx + o1 - h, ny - H * 0.12)), ch="№")
     # more currency: rupee, ruble, bitcoin, lira
     put1("lira", W * 0.8, *[G["sterling"][1]], ch="₤")
     # ₩: two bars, one stroke (at least 70 units) above and below the middle, that stick out 60 units on both sides of the W
