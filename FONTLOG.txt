@@ -1,0 +1,30 @@
+FONTLOG for Trica Neon
+======================
+
+This file provides detailed information on the Trica Neon font software. This information should be distributed along with the Trica Neon fonts and any derivative works.
+
+
+Basic Font Information
+----------------------
+
+Trica Neon is a geometric typeface generated from centerline skeletons stroked at a single width. Wide letters fit a square module, outer corners are rounded and inner joints stay sharp.
+
+
+ChangeLog
+---------
+
+(This should list both major and minor changes, most recent first.)
+
+Unreleased
+- Version 1.000 in development.
+
+
+Acknowledgements
+----------------
+
+(Here is where contributors can be acknowledged. If you make modifications be sure to add your name (N), email (E), web-address (if you have one) (W) and description (D). This list is in alphabetical order.)
+
+N: Marius Trica
+E: trica.assistance.apps@gmail.com
+W: https://mariustrica.com
+D: Designer
