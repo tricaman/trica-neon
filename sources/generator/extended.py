@@ -55,8 +55,9 @@ def install(bf, d, dot):
                 cur = q
         return (min(xs) + max(xs)) / 2
 
-    def caron_x(name, ytop):       # the vertical caron of ď ľ ť Ľ: one stroke (at least 40) right of what the letter has at its height
-        return x_right(name, ytop - 170, ytop) + max(S, 40) + h
+    def caron_x(name, ytop):       # the caron of ď ľ ť Ľ: one stroke (at least 40) right of what the letter has at its height
+        left = min(p[0] for _, segs in m_caronalt(0, 0).contours for g in segs for p in g[1:])
+        return x_right(name, ytop - 175, ytop) + max(S, 40) - left
 
     # ------------------------------------------------------------------ marks
     def m_grave(cx, y): return ln((cx - 70, y + 215), (cx + 70, y + 80), cap=BUTT)
@@ -102,7 +103,8 @@ def install(bf, d, dot):
     cm = (min(cxs) + max(cxs)) / 2
     def m_commabelow(cx, y): return G["comma"][1].transform(kc, 0, 0, kc, cx - kc * cm, -40 - kc * max(cys))
     def m_commaturned(cx, y): return G["comma"][1].transform(-kc, 0, 0, kc, cx + kc * cm, y + 90 - kc * min(cys))
-    def m_caronalt(cx, y): return ln((cx, y - 170), (cx, y), cap=BUTT)       # vertical caron of ď ľ ť Ľ
+    def m_caronalt(cx, y):                   # caron of ď ľ ť Ľ: a straight stroke slanted as the apostrophe
+        return ln((cx + 175 / 2 * 0.5 / 1.45, y), (cx - 175 / 2 * 0.5 / 1.45, y - 175), cap=BUTT)
 
     # Combining marks: zero-width glyphs drawn left of the origin, over the centre of the
     # previous lowercase letter (where renderers without mark positioning leave them).

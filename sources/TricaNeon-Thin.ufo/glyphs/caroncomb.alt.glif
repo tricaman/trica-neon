@@ -3,10 +3,10 @@
   <anchor x="-367" y="0" name="_caron"/>
   <outline>
     <contour>
-      <point x="-376" y="-170" type="line"/>
-      <point x="-359" y="-170" type="line"/>
-      <point x="-359" y="0" type="line"/>
-      <point x="-376" y="0" type="line"/>
+      <point x="-329" y="-3" type="line"/>
+      <point x="-346" y="3" type="line"/>
+      <point x="-406" y="-172" type="line"/>
+      <point x="-389" y="-178" type="line"/>
     </contour>
   </outline>
 </glyph>
