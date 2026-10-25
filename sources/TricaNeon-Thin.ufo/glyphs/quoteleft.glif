@@ -4,22 +4,22 @@
   <unicode hex="2018"/>
   <outline>
     <contour>
-      <point x="79" y="628" type="curve"/>
-      <point x="79" y="614"/>
-      <point x="90" y="604"/>
-      <point x="103" y="604" type="curve"/>
-      <point x="116" y="604"/>
-      <point x="127" y="614"/>
-      <point x="127" y="628" type="curve"/>
-      <point x="127" y="641"/>
-      <point x="116" y="652"/>
-      <point x="103" y="652" type="curve"/>
-      <point x="90" y="652"/>
-      <point x="79" y="641"/>
+      <point x="52" y="547" type="curve"/>
+      <point x="52" y="534"/>
+      <point x="62" y="523"/>
+      <point x="76" y="523" type="curve"/>
+      <point x="89" y="523"/>
+      <point x="100" y="534"/>
+      <point x="100" y="547" type="curve"/>
+      <point x="100" y="560"/>
+      <point x="89" y="571"/>
+      <point x="76" y="571" type="curve"/>
+      <point x="62" y="571"/>
+      <point x="52" y="560"/>
     </contour>
     <contour>
-      <point x="95" y="630" type="line"/>
-      <point x="112" y="625" type="line"/>
+      <point x="67" y="550" type="line"/>
+      <point x="84" y="544" type="line"/>
       <point x="136" y="694" type="line"/>
       <point x="119" y="700" type="line"/>
     </contour>

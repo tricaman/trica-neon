@@ -168,7 +168,8 @@ def build_symbols(d, dot):
     top_q, bot_q = T, T - 2 * r            # vertical span used by quote marks
 
     # the comma: a dot with a diagonal tail; the semicolon and the typographic quotes are made of it
-    comma = lambda x, y: union(dot(x, y), ln((x, y), (x - d * 0.5, y - d * 1.45), cap=BUTT))
+    tl = max(d * 1.45, 150)                    # drop of the tail: never too short in the light weights
+    comma = lambda x, y: union(dot(x, y), ln((x, y), (x - tl * 0.5 / 1.45, y - tl), cap=BUTT))
     put("comma", d, comma(d / 2, d / 2))
     y_colon = XH - d / 2                       # upper dot, as in the colon
     put("semicolon", d, dot(d / 2, y_colon), comma(d / 2, d / 2))

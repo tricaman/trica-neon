@@ -2,25 +2,19 @@
 <glyph name="uni030B" format="2">
   <unicode hex="030B"/>
   <anchor x="-367" y="0" name="_top"/>
-  <anchor x="-367" y="219" name="top"/>
+  <anchor x="-367" y="234" name="top"/>
   <outline>
     <contour>
-      <point x="-520" y="109" type="line"/>
-      <point x="-485" y="71" type="line"/>
-      <point x="-365" y="181" type="line"/>
-      <point x="-400" y="219" type="line"/>
+      <point x="-522" y="99" type="line"/>
+      <point x="-486" y="61" type="line"/>
+      <point x="-346" y="196" type="line"/>
+      <point x="-382" y="234" type="line"/>
     </contour>
     <contour>
-      <point x="-370" y="109" type="line"/>
-      <point x="-335" y="71" type="line"/>
-      <point x="-215" y="181" type="line"/>
-      <point x="-250" y="219" type="line"/>
+      <point x="-389" y="99" type="line"/>
+      <point x="-353" y="61" type="line"/>
+      <point x="-213" y="196" type="line"/>
+      <point x="-249" y="234" type="line"/>
     </contour>
   </outline>
-  <lib>
-    <dict>
-      <key>public.truetype.overlap</key>
-      <true/>
-    </dict>
-  </lib>
 </glyph>

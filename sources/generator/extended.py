@@ -59,8 +59,8 @@ def install(bf, d, dot):
         return x_right(name, ytop - 170, ytop) + max(S, 40) + h
 
     # ------------------------------------------------------------------ marks
-    def m_grave(cx, y): return ln((cx - 60, y + 200), (cx + 60, y + 90), cap=BUTT)
-    def m_acute(cx, y): return ln((cx - 60, y + 90), (cx + 60, y + 200), cap=BUTT)
+    def m_grave(cx, y): return ln((cx - 70, y + 215), (cx + 70, y + 80), cap=BUTT)
+    def m_acute(cx, y): return ln((cx - 70, y + 80), (cx + 70, y + 215), cap=BUTT)
     def m_chevron(cx, y, down):              # caron (point down) or circumflex: a small v cut flat at both ends, as the letter V
         y0, y1, a = y + 75, y + 210, 110          # bottom and top of the mark, half width of the centreline at the top
         yv = y0 + h - S * 0.6                     # the point runs past the bottom too, so it is cut flat
@@ -84,7 +84,9 @@ def install(bf, d, dot):
     def m_ring(cx, y):
         a = 70
         return ln((cx - a, y + 230), (cx + a, y + 230), (cx + a, y + 90), (cx - a, y + 90), radii=[35] * 4, closed=True)
-    def m_dblacute(cx, y): return union(m_acute(cx - 75, y), m_acute(cx + 75, y))
+    def m_dblacute(cx, y):                   # the two acutes a clear gap apart, measured across their strokes
+        off = (S + max(S * 0.6, 40)) * math.hypot(140, 135) / 135 / 2
+        return union(m_acute(cx - off, y), m_acute(cx + off, y))
     def m_cedilla(cx, y): return ln((cx, BT), (cx, -110), (cx - 90, -110), radii=[0, 90, 0], cap=BUTT)  # the ogonek turned to the left
     def m_ogonek(cx, y): return ln((cx, BT), (cx, -110), (cx + 90, -110), radii=[0, 90, 0], cap=BUTT)   # a quarter circle, as the foot of the t
     def ogonek_x(name, bw):        # where the ogonek hangs: as the end of the right stem of A and a, under the stem of I and i

@@ -2,7 +2,7 @@
 <glyph name="uni0312" format="2">
   <unicode hex="0312"/>
   <anchor x="-367" y="0" name="_top"/>
-  <anchor x="-367" y="219" name="top"/>
+  <anchor x="-367" y="240" name="top"/>
   <outline>
     <contour>
       <point x="-399" y="122" type="curve"/>
@@ -21,8 +21,8 @@
     <contour>
       <point x="-386" y="128" type="line"/>
       <point x="-349" y="115" type="line"/>
-      <point x="-317" y="206" type="line"/>
-      <point x="-355" y="219" type="line"/>
+      <point x="-310" y="228" type="line"/>
+      <point x="-347" y="240" type="line"/>
     </contour>
   </outline>
   <lib>
