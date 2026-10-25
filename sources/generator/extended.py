@@ -34,7 +34,7 @@ def install(bf, d, dot):
     def m_circ(cx, y): return ln((cx - 90, y + 90), (cx, y + 190), (cx + 90, y + 90), cap=BUTT)
     def m_caron(cx, y): return ln((cx - 90, y + 190), (cx, y + 90), (cx + 90, y + 190), cap=BUTT)
     def m_tilde(cx, y):
-        a, y0, y1, rr = 100, y + 105, y + 185, 30
+        a, y0, y1, rr = 190, y + 105, y + 185, 57
         return ln((cx - a, y0), (cx - a, y1), (cx, y1), (cx, y0), (cx + a, y0), (cx + a, y1),
                   radii=[0, rr, rr, rr, rr, 0], cap=BUTT)
     def m_macron(cx, y): return ln((cx - 100, y + 140), (cx + 100, y + 140), cap=BUTT)

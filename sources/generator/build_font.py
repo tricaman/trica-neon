@@ -212,7 +212,7 @@ def build_symbols(d, dot):
     dy = max(a * 0.75, h + d / 2 + H * 0.066)          # the dots never touch the bar
     put("divide", Wm, ln((cx - a, my), (cx + a, my)), dot(cx, my + dy), dot(cx, my - dy))
     put("asciicircum", Wm, ln((cx - a, T - a * 1.1), (cx, T), (cx + a, T - a * 1.1)))
-    tw = a * 0.66
+    tw = a * 0.42                                   # a long, low wave
     put("asciitilde", Wm, ln((cx - a, my - tw / 2), (cx - a, my + tw / 2), (cx, my + tw / 2), (cx, my - tw / 2),
                              (cx + a, my - tw / 2), (cx + a, my + tw / 2), radii=[0, rs * 0.6, rs * 0.6, rs * 0.6, rs * 0.6, 0]))
     ay = T - a * 0.9
