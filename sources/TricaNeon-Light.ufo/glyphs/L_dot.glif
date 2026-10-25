@@ -18,18 +18,18 @@
       <point x="140" y="188" type="curve"/>
     </contour>
     <contour>
-      <point x="525" y="350" type="curve"/>
-      <point x="525" y="379"/>
-      <point x="501" y="403"/>
-      <point x="473" y="403" type="curve"/>
-      <point x="444" y="403"/>
-      <point x="420" y="379"/>
-      <point x="420" y="350" type="curve"/>
-      <point x="420" y="321"/>
-      <point x="444" y="298"/>
-      <point x="473" y="298" type="curve"/>
-      <point x="501" y="298"/>
-      <point x="525" y="321"/>
+      <point x="515" y="350" type="curve"/>
+      <point x="515" y="373"/>
+      <point x="496" y="392"/>
+      <point x="473" y="392" type="curve"/>
+      <point x="449" y="392"/>
+      <point x="431" y="373"/>
+      <point x="431" y="350" type="curve"/>
+      <point x="431" y="327"/>
+      <point x="449" y="308"/>
+      <point x="473" y="308" type="curve"/>
+      <point x="496" y="308"/>
+      <point x="515" y="327"/>
     </contour>
   </outline>
 </glyph>

@@ -2,35 +2,35 @@
 <glyph name="uni0308" format="2">
   <unicode hex="0308"/>
   <anchor x="-367" y="0" name="_top"/>
-  <anchor x="-367" y="219" name="top"/>
+  <anchor x="-367" y="205" name="top"/>
   <outline>
     <contour>
-      <point x="-385" y="140" type="curve"/>
-      <point x="-385" y="183"/>
-      <point x="-420" y="219"/>
-      <point x="-464" y="219" type="curve"/>
-      <point x="-507" y="219"/>
-      <point x="-542" y="183"/>
-      <point x="-542" y="140" type="curve"/>
-      <point x="-542" y="97"/>
-      <point x="-507" y="61"/>
-      <point x="-464" y="61" type="curve"/>
-      <point x="-420" y="61"/>
-      <point x="-385" y="97"/>
+      <point x="-393" y="140" type="curve"/>
+      <point x="-393" y="176"/>
+      <point x="-422" y="205"/>
+      <point x="-457" y="205" type="curve"/>
+      <point x="-493" y="205"/>
+      <point x="-522" y="176"/>
+      <point x="-522" y="140" type="curve"/>
+      <point x="-522" y="104"/>
+      <point x="-493" y="75"/>
+      <point x="-457" y="75" type="curve"/>
+      <point x="-422" y="75"/>
+      <point x="-393" y="104"/>
     </contour>
     <contour>
-      <point x="-192" y="140" type="curve"/>
-      <point x="-192" y="183"/>
-      <point x="-228" y="219"/>
-      <point x="-271" y="219" type="curve"/>
-      <point x="-315" y="219"/>
-      <point x="-350" y="183"/>
-      <point x="-350" y="140" type="curve"/>
-      <point x="-350" y="97"/>
-      <point x="-315" y="61"/>
-      <point x="-271" y="61" type="curve"/>
-      <point x="-228" y="61"/>
-      <point x="-192" y="97"/>
+      <point x="-213" y="140" type="curve"/>
+      <point x="-213" y="176"/>
+      <point x="-242" y="205"/>
+      <point x="-277" y="205" type="curve"/>
+      <point x="-313" y="205"/>
+      <point x="-342" y="176"/>
+      <point x="-342" y="140" type="curve"/>
+      <point x="-342" y="104"/>
+      <point x="-313" y="75"/>
+      <point x="-277" y="75" type="curve"/>
+      <point x="-242" y="75"/>
+      <point x="-213" y="104"/>
     </contour>
   </outline>
 </glyph>

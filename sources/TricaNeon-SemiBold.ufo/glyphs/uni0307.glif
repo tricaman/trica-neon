@@ -2,21 +2,21 @@
 <glyph name="uni0307" format="2">
   <unicode hex="0307"/>
   <anchor x="-367" y="0" name="_top"/>
-  <anchor x="-367" y="228" name="top"/>
+  <anchor x="-367" y="214" name="top"/>
   <outline>
     <contour>
-      <point x="-280" y="140" type="curve"/>
-      <point x="-280" y="188"/>
-      <point x="-319" y="228"/>
-      <point x="-367" y="228" type="curve"/>
-      <point x="-416" y="228"/>
-      <point x="-455" y="188"/>
-      <point x="-455" y="140" type="curve"/>
-      <point x="-455" y="92"/>
-      <point x="-416" y="53"/>
-      <point x="-367" y="53" type="curve"/>
-      <point x="-319" y="53"/>
-      <point x="-280" y="92"/>
+      <point x="-294" y="140" type="curve"/>
+      <point x="-294" y="181"/>
+      <point x="-327" y="214"/>
+      <point x="-367" y="214" type="curve"/>
+      <point x="-408" y="214"/>
+      <point x="-441" y="181"/>
+      <point x="-441" y="140" type="curve"/>
+      <point x="-441" y="99"/>
+      <point x="-408" y="67"/>
+      <point x="-367" y="67" type="curve"/>
+      <point x="-327" y="67"/>
+      <point x="-294" y="99"/>
     </contour>
   </outline>
 </glyph>

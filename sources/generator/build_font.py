@@ -124,11 +124,11 @@ def build():
     glyph("nine", Wd, [([(L2, BT), (R2, BT), (R2, T), (L2, T), (L2, MI), (R2, MI)], [0, r, r, r, r, 0])])
 
     # -------- punctuation ---------------------------------------------------------------
-    d = max(min(S * 2, S + 70), 60)  # dot diameter: twice the stroke up to the Regular, then it grows with it
+    d = max(min(S * 1.6, S + 42), 48)  # dot diameter: 1.6 times the stroke up to the Regular, then it grows with it
     dot = lambda cx, cy: circle(cx, cy, d / 2)
     glyph("period", d, extra=[dot(d / 2, d / 2)])
     glyph("comma", d, [([(d / 2, d / 2), (d / 2, -d * 1.6)],)], extra=[dot(d / 2, d / 2)])
-    y_colon = d / 2 + max(MI - d, d * 1.5)     # upper dot of : and ;, at least half a dot above the lower one
+    y_colon = XH - d / 2                       # upper dot of : and ; at the x-height
     glyph("colon", d, extra=[dot(d / 2, d / 2), dot(d / 2, y_colon)])
     glyph("exclam", S, [([(h, d * 2.2), (h, T)],)], extra=[dot(h, d / 2)])     # spaced on the stem, as the i
     glyph("quotesingle", S, [([(h, T - 2 * r), (h, T)],)])
@@ -167,7 +167,7 @@ def build_symbols(d, dot):
 
     # fix: shorter comma tail
     put("comma", d, dot(d / 2, d / 2), ln((d / 2, d / 2), (d / 2, -d * 1.1), cap=BUTT))
-    y_colon = d / 2 + max(MI - d, d * 1.5)     # upper dot, as in the colon
+    y_colon = XH - d / 2                       # upper dot, as in the colon
     put("semicolon", d, dot(d / 2, y_colon), dot(d / 2, d / 2), ln((d / 2, d / 2), (d / 2, -d * 1.1), cap=BUTT))
     put("quotedbl", S * 3, ln((h, bot_q), (h, top_q)), ln((S * 3 - h, bot_q), (S * 3 - h, top_q)))
     # typographic quotes: the comma (a dot with a tail), raised to the cap height; ' and " stay straight
