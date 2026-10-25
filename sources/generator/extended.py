@@ -497,12 +497,15 @@ def install(bf, d, dot):
     wy = max(70, S)
     put1("won", W + 120, shift(G["W"][1], 60), *[ln((h, y), (W + 120 - h, y)) for y in (MI - wy, MI + wy)], ch="₩")
     Pw, Pp = G["P"]
-    put1("ruble", Pw + 60, shift(Pp, 60), ln((h, H * 0.25), (60 + h + 300, H * 0.25)), ch="₽")
+    # ₽: the P, its bowl closing to the left past the stem as the bar under it does
+    put1("ruble", Pw + 60, shift(Pp, 60), ln((h, MI), (60 + h, MI)), ln((h, H * 0.25), (60 + h + 300, H * 0.25)), ch="₽")
     Bw, Bp = G["B"]
     # ₿: the B with two short ticks that stick out above and below it, from inside its top and bottom strokes
     put1("bitcoin", Bw, Bp, *[ln((x, T), (x, H + 80), cap=BUTT) for x in (W * 0.3, W * 0.55)],
          *[ln((x, BT), (x, -80), cap=BUTT) for x in (W * 0.3, W * 0.55)], ch="₿")
     rw = W * 0.75
-    put1("rupee", rw, ln((h, T), (rw - h, T)), ln((h, MI + 120), (rw - h, MI + 120)),
-         ln((rw * 0.55 - r * 0.6, T), (rw * 0.55, T), (rw * 0.55, MI - 40), (h, MI - 40), (rw - h, BT),
-            radii=[0, r * 0.6, r * 0.6, 0, 0]), ch="₹")               # starts inside the top bar
+    # ₹: a bowl as the P's, narrower than the glyph, the leg leaving from its end; the top bar and a second bar
+    # halving the bowl run past it to the right
+    xb = rw * 0.62
+    put1("rupee", rw, ln((h, T), (xb, T), (xb, MI), (h, MI), (rw - h, BT), radii=[0, r, r, 0, 0]),
+         ln((h, T), (rw - h, T)), ln((h, (T + MI) / 2), (rw - h, (T + MI) / 2)), ch="₹")

@@ -32,6 +32,12 @@
       <point x="659" y="376" type="curve"/>
     </contour>
     <contour>
+      <point x="88" y="376" type="line"/>
+      <point x="88" y="324" type="line"/>
+      <point x="200" y="324" type="line"/>
+      <point x="200" y="376" type="line"/>
+    </contour>
+    <contour>
       <point x="88" y="201" type="line"/>
       <point x="88" y="149" type="line"/>
       <point x="500" y="149" type="line"/>
