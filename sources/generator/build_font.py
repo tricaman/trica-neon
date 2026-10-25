@@ -234,13 +234,14 @@ def build_symbols(d, dot):
     ds = H * 0.32
     put("degree", ds, ln((h, T), (ds - h, T), (ds - h, T - ds + S), (h, T - ds + S), radii=[rs * 0.6] * 4, closed=True))
     g = a * 0.6; gx = g * 1.1
-    put("guilsinglleft", gx * 1.2, ln((gx, my + g), (h, my), (gx, my - g)))
-    put("guilsinglright", gx * 1.2, ln((h, my + g), (gx, my), (h, my - g)))
+    gy = XH * 0.53                               # guillemets centred on the lowercase, a little above the middle
+    put("guilsinglleft", gx * 1.2, ln((gx, gy + g), (h, gy), (gx, gy - g)))
+    put("guilsinglright", gx * 1.2, ln((h, gy + g), (gx, gy), (h, gy - g)))
     # « »: two identical chevrons, the second shifted so that a clear gap of 0.8 S stays between them
     span = gx - h                                                   # horizontal reach of a chevron
     off = max(gx * 0.9, S * math.hypot(g, span) / g + S * 0.8)
-    chev_l = lambda x: ln((x + span, my + g), (x, my), (x + span, my - g))
-    chev_r = lambda x: ln((x, my + g), (x + span, my), (x, my - g))
+    chev_l = lambda x: ln((x + span, gy + g), (x, gy), (x + span, gy - g))
+    chev_r = lambda x: ln((x, gy + g), (x + span, gy), (x, gy - g))
     put("guillemotleft", h + off + span + gx * 0.2, chev_l(h), chev_l(h + off))
     put("guillemotright", h + off + span + gx * 0.2, chev_r(h), chev_r(h + off))
 
