@@ -207,6 +207,13 @@ def install(bf, d, dot):
     # capital sharp s: the construction of the ß in the caps box
     put1("Germandbls", W, ln((L, BT), (L, T), (R, T), (R, ym), (W / 2, ym), radii=[0, r, r, r, 0]),
          ln((R - r, ym), (R, ym), (R, BT), (W * 0.45, BT), radii=[0, r, r, 0]), ch="ẞ")
+    # anchors on these letters too, so that a combining mark typed after them sits in place (ǽ, ǿ ...)
+    for b in ["AE", "Eth", "Oslash", "Thorn", "Germandbls", "Hbar", "Lslash", "Eng", "OE", "Tbar", "ae", "eth",
+              "oslash", "thorn", "germandbls", "dcroat", "hbar", "kgreenlandic", "lslash", "eng", "oe", "tbar", "longs"]:
+        bw = G[b][0]
+        tall = b in ("eth", "thorn", "germandbls", "dcroat", "hbar", "lslash", "tbar", "longs")
+        top = H if b[0].isupper() else (T + h if tall else XH)
+        bf.ANCHORS[b] = [("top", bw / 2, top), ("bottom", bw / 2, 0), ("ogonek", bw * 0.78, 0)]
 
     # ------------------------------------------------- small figures (superscripts, fractions)
     def small(name, scale, dx, dy, sw):

@@ -2,6 +2,9 @@
 <glyph name="Thorn" format="2">
   <advance width="875"/>
   <unicode hex="00DE"/>
+  <anchor x="438" y="700" name="top"/>
+  <anchor x="438" y="0" name="bottom"/>
+  <anchor x="634" y="0" name="ogonek"/>
   <outline>
     <contour>
       <point x="88" y="0" type="line"/>

@@ -2,6 +2,9 @@
 <glyph name="hbar" format="2">
   <advance width="805"/>
   <unicode hex="0127"/>
+  <anchor x="403" y="700" name="top"/>
+  <anchor x="403" y="0" name="bottom"/>
+  <anchor x="579" y="0" name="ogonek"/>
   <outline>
     <contour>
       <point x="158" y="0" type="line"/>
