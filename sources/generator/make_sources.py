@@ -16,6 +16,7 @@ from fontTools.designspaceLib import DesignSpaceDocument
 from fontTools.misc.roundTools import otRound
 
 import build_font as bf
+import kerning
 
 FAMILY, PS_FAMILY = "Trica Neon", "TricaNeon"
 REPO = "https://github.com/tricaman/trica-neon"
@@ -176,6 +177,8 @@ def write_sources(out):
     unicodes = {}
     for cp, n in cmap.items():
         unicodes.setdefault(n, []).append(cp)
+    kern_groups = kerning.groups(builds[WEIGHTS[0][0]]["components"])
+    kern_values = {s: kerning.values(flat[s], {n: data[s][n][0] for n in order}, 2 * bf.SB) for s in data}
     ys = [p[1] for s in flat for cs in flat[s].values() for _, segs in cs for g in segs for p in g[1:]]
     win = (max(ys), max(0, -min(ys)))
     os.makedirs(out, exist_ok=True)
@@ -193,6 +196,8 @@ def write_sources(out):
             for c, x, y in comps[style].get(n, []):
                 pen.addComponent(names[c], (1, 0, 0, 1, x, y))
             g.anchors = [Anchor(x, y, a) for a, x, y in anchors[style].get(n, [])]
+        font.groups = {g: [names[n] for n in members] for g, members in kern_groups.items()}
+        font.kerning = kern_values[style]
         font.lib["public.glyphOrder"] = [names[n] for n in order]
         font.lib["public.openTypeCategories"] = {names[n]: "mark" if n in marks else "base" for n in order}
         font.lib["public.openTypeMeta"] = {"dlng": ["Latn"], "slng": ["Latn"]}   # designed for / supports Latin
