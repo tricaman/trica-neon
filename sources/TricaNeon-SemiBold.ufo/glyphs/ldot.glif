@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="ldot" format="2">
-  <advance width="510"/>
+  <advance width="532"/>
   <unicode hex="0140"/>
   <outline>
     <contour>
@@ -18,18 +18,18 @@
       <point x="193" y="142" type="curve"/>
     </contour>
     <contour>
-      <point x="446" y="252" type="curve"/>
-      <point x="446" y="293"/>
-      <point x="413" y="326"/>
-      <point x="373" y="326" type="curve"/>
-      <point x="332" y="326"/>
-      <point x="299" y="293"/>
-      <point x="299" y="252" type="curve"/>
-      <point x="299" y="211"/>
-      <point x="332" y="179"/>
-      <point x="373" y="179" type="curve"/>
-      <point x="413" y="179"/>
-      <point x="446" y="211"/>
+      <point x="445" y="350" type="curve"/>
+      <point x="445" y="391"/>
+      <point x="412" y="424"/>
+      <point x="371" y="424" type="curve"/>
+      <point x="330" y="424"/>
+      <point x="298" y="391"/>
+      <point x="298" y="350" type="curve"/>
+      <point x="298" y="309"/>
+      <point x="330" y="277"/>
+      <point x="371" y="277" type="curve"/>
+      <point x="412" y="277"/>
+      <point x="445" y="309"/>
     </contour>
   </outline>
 </glyph>

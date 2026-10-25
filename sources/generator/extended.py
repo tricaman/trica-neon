@@ -233,7 +233,8 @@ def install(bf, d, dot):
     Lw, Lp = G["L"]
     put1("Ldot", Lw, Lp, circle(Lw * 0.55, MI, d / 2), ch="Ŀ")
     lw, lp = G["l"]
-    put1("ldot", lw + 100, lp, circle(lw + 50, XM, d / 2), ch="ŀ")
+    lx = S + max(S, 40) + d / 2                 # the dot of ŀ: half the height of the l, one stroke from the stem
+    put1("ldot", max(lw, lx + d / 2), lp, circle(lx, MI, d / 2), ch="ŀ")
     put1("Lslash", Lw + 80, shift(Lp, 80), ln((h, MI - 90), (80 + h + 160, MI + 90)), ch="Ł")
     put1("lslash", lw + 80, shift(lp, 80), ln((h, yb - 90), (80 + h + 160, yb + 90)), ch="ł")
     nw, np_ = G["n"]; qw, qp = G["quoteright"]
