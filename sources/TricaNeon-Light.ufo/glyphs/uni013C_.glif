@@ -6,4 +6,10 @@
     <component base="l"/>
     <component base="uni0326" xOffset="481"/>
   </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
 </glyph>

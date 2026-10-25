@@ -2,13 +2,33 @@
 <glyph name="uni0312" format="2">
   <unicode hex="0312"/>
   <anchor x="-367" y="0" name="_top"/>
-  <anchor x="-367" y="210" name="top"/>
+  <anchor x="-367" y="162" name="top"/>
   <outline>
     <contour>
-      <point x="-376" y="90" type="line"/>
-      <point x="-359" y="90" type="line"/>
-      <point x="-359" y="210" type="line"/>
-      <point x="-376" y="210" type="line"/>
+      <point x="-385" y="108" type="curve"/>
+      <point x="-385" y="98"/>
+      <point x="-377" y="90"/>
+      <point x="-367" y="90" type="curve"/>
+      <point x="-358" y="90"/>
+      <point x="-349" y="98"/>
+      <point x="-349" y="108" type="curve"/>
+      <point x="-349" y="118"/>
+      <point x="-358" y="126"/>
+      <point x="-367" y="126" type="curve"/>
+      <point x="-377" y="126"/>
+      <point x="-385" y="118"/>
+    </contour>
+    <contour>
+      <point x="-374" y="110" type="line"/>
+      <point x="-361" y="106" type="line"/>
+      <point x="-343" y="158" type="line"/>
+      <point x="-356" y="162" type="line"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
 </glyph>
