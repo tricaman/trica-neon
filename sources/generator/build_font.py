@@ -135,7 +135,7 @@ def build():
     glyph("question", Wq, [([(L2, MI), (L2, T), (R2, T), (R2, MI), (C2, MI), (C2, d * 2.2)],
                             [0, r, r, r, 0, 0])], extra=[dot(C2, d / 2)])
     glyph("slash", W / 2, [([(h, BT), (W / 2 - h, T)],)])
-    GLYPHS["space"] = (W * 0.45, Outline())
+    GLYPHS["space"] = (350 - 2 * SB, Outline())     # word space: 350 units
 
     build_symbols(d, dot)
     build_lowercase(d, dot)
