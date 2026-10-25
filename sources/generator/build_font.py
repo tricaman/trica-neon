@@ -165,14 +165,19 @@ def build_symbols(d, dot):
     rs = r * 0.5                           # small radius for small shapes
     top_q, bot_q = T, T - 2 * r            # vertical span used by quote marks
 
-    # fix: shorter comma tail
-    put("comma", d, dot(d / 2, d / 2), ln((d / 2, d / 2), (d / 2, -d * 1.1), cap=BUTT))
+    # the comma: a dot with a diagonal tail; the semicolon and the typographic quotes are made of it
+    comma = lambda x, y: union(dot(x, y), ln((x, y), (x - d * 0.5, y - d * 1.45), cap=BUTT))
+    put("comma", d, comma(d / 2, d / 2))
     y_colon = XH - d / 2                       # upper dot, as in the colon
-    put("semicolon", d, dot(d / 2, y_colon), dot(d / 2, d / 2), ln((d / 2, d / 2), (d / 2, -d * 1.1), cap=BUTT))
+    put("semicolon", d, dot(d / 2, y_colon), comma(d / 2, d / 2))
     put("quotedbl", S * 3, ln((h, bot_q), (h, top_q)), ln((S * 3 - h, bot_q), (S * 3 - h, top_q)))
     # typographic quotes: the comma (a dot with a tail), raised to the cap height; ' and " stay straight
-    qr = lambda x: union(dot(x + d / 2, H - d / 2), ln((x + d / 2, H - d / 2), (x + d / 2, H - d * 2.1), cap=BUTT))
-    ql = lambda x: union(dot(x + d / 2, H - d * 1.6), ln((x + d / 2, H - d * 1.6), (x + d / 2, H), cap=BUTT))
+    def turned(o):                              # turned by 180 degrees within its own box
+        xs = [p[0] for _, segs in o.contours for g in segs for p in g[1:]]
+        ys = [p[1] for _, segs in o.contours for g in segs for p in g[1:]]
+        return o.transform(-1, 0, 0, -1, min(xs) + max(xs), min(ys) + max(ys))
+    qr = lambda x: comma(x + d / 2, H - d / 2)
+    ql = lambda x: turned(qr(x))
     put("quoteright", d, qr(0))
     put("quoteleft", d, ql(0))
     put("quotedblright", d * 2.5, qr(0), qr(d * 1.5))

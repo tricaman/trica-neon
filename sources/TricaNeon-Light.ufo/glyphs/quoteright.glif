@@ -18,10 +18,10 @@
       <point x="172" y="635"/>
     </contour>
     <contour>
-      <point x="156" y="658" type="line"/>
-      <point x="103" y="658" type="line"/>
-      <point x="103" y="524" type="line"/>
-      <point x="156" y="524" type="line"/>
+      <point x="154" y="649" type="line"/>
+      <point x="105" y="667" type="line"/>
+      <point x="63" y="545" type="line"/>
+      <point x="112" y="528" type="line"/>
     </contour>
   </outline>
   <lib>
