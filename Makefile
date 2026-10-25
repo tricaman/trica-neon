@@ -2,23 +2,36 @@
 # PYTHON falls back to the python.org framework build when python3.13 is not on PATH.
 PYTHON ?= $(shell command -v python3.13 || echo /Library/Frameworks/Python.framework/Versions/3.13/bin/python3.13)
 GENERATOR = $(wildcard sources/generator/*.py)
+STYLES = Thin ExtraLight Light Regular Medium SemiBold
 VERSION = $(shell $(PYTHON) -c 'import plistlib; i = plistlib.load(open("sources/TricaNeon-Regular.ufo/fontinfo.plist", "rb")); print("%d.%03d" % (i["versionMajor"], i["versionMinor"]))')
 
-.PHONY: venv update sources check-sources build release version clean
+.PHONY: venv venv-test update sources check-sources build test proof release version clean
 
+# venv holds the build tools, venv-test the QA tools: FontBakery's googlefonts
+# profile needs protobuf<4, gftools needs protobuf>=6.33.
 venv: venv/touchfile
+
+venv-test: venv-test/touchfile
 
 venv/touchfile: requirements.txt
 	test -d venv || $(PYTHON) -m venv venv
 	venv/bin/pip install -r requirements.txt
 	touch venv/touchfile
 
-# Re-pin every dependency in requirements.txt from requirements.in.
-update: venv
+venv-test/touchfile: requirements-test.txt
+	test -d venv-test || $(PYTHON) -m venv venv-test
+	venv-test/bin/pip install -r requirements-test.txt
+	touch venv-test/touchfile
+
+# Re-pin every dependency in requirements*.txt from requirements*.in.
+update: venv venv-test
 	venv/bin/pip install --upgrade pip-tools
 	venv/bin/pip-compile --upgrade requirements.in
 	venv/bin/pip-sync requirements.txt
-	touch venv/touchfile
+	venv-test/bin/pip install --upgrade pip-tools
+	venv-test/bin/pip-compile --upgrade requirements-test.in
+	venv-test/bin/pip-sync requirements-test.txt
+	touch venv/touchfile venv-test/touchfile
 
 # Regenerate the UFO masters and the designspace from the generator.
 sources: venv
@@ -38,6 +51,25 @@ build.stamp: venv/touchfile sources/config.yaml $(GENERATOR)
 	. venv/bin/activate && gftools builder sources/config.yaml
 	touch build.stamp
 
+# FontBakery (googlefonts profile) on the variable font, the one Google Fonts publishes,
+# and on the static TTFs. Reports in out/fontbakery; fails if any check FAILs.
+test: build.stamp venv-test/touchfile
+	rm -rf out/fontbakery && mkdir -p out/fontbakery
+	status=0; \
+	venv-test/bin/fontbakery check-googlefonts -l WARN --succinct --full-lists \
+		--html out/fontbakery/variable.html --ghmarkdown out/fontbakery/variable.md fonts/variable/*.ttf || status=1; \
+	venv-test/bin/fontbakery check-googlefonts -l WARN --succinct --full-lists \
+		--html out/fontbakery/static.html --ghmarkdown out/fontbakery/static.md fonts/ttf/*.ttf || status=1; \
+	exit $$status
+
+# Proofs in out/proof: an HTML page with every glyph and sample texts (diffenator3)
+# and a PNG specimen of the six weights.
+proof: build.stamp
+	rm -rf out/proof && mkdir -p out/proof
+	venv/bin/diff3proof fonts/variable/*.ttf --output out/proof
+	venv/bin/python scripts/render_labeled.py out/proof/specimen.png 40 scripts/specimen.txt \
+		$(foreach s,$(STYLES),"$(s)::fonts/ttf/TricaNeon-$(s).ttf")
+
 # The zip published with each GitHub release: fonts, license and README.
 release: build.stamp
 	rm -rf release && mkdir -p release/trica-neon-$(VERSION)
@@ -49,5 +81,5 @@ version:
 	@echo $(VERSION)
 
 clean:
-	rm -rf venv fonts release build.stamp
+	rm -rf venv venv-test fonts out release build.stamp
 	find . -name "*.pyc" -delete

@@ -1,0 +1,4 @@
+# QA dependencies, kept apart from the build tools: FontBakery's googlefonts profile
+# needs protobuf<4, gftools needs protobuf>=6.33.
+# requirements-test.txt pins the whole set: regenerate it with `make update`.
+fontbakery[googlefonts]

@@ -1,4 +1,4 @@
-# Build every font on each push to main and on pull requests.
+# Build every font and check it with FontBakery on each push to main and on pull requests.
 # A tag such as v1.000 also publishes a GitHub release with the zip of the fonts,
 # but only when every check passed.
 name: Build
@@ -27,6 +27,10 @@ jobs:
         with:
           path: ./venv/
           key: ${{ runner.os }}-venv${{ steps.python.outputs.python-version }}-${{ hashFiles('requirements.txt') }}
+      - uses: actions/cache@v5
+        with:
+          path: ./venv-test/
+          key: ${{ runner.os }}-venv-test${{ steps.python.outputs.python-version }}-${{ hashFiles('requirements-test.txt') }}
       - name: Check that the UFO sources match the generator
         run: make check-sources
       - name: Build the fonts
@@ -36,6 +40,17 @@ jobs:
         with:
           name: trica-neon-fonts
           path: fonts
+      - name: Check the fonts with FontBakery
+        run: make test
+      - name: Make the proofs
+        if: ${{ !cancelled() }}
+        run: make proof
+      - name: Upload the FontBakery reports and the proofs
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v6
+        with:
+          name: trica-neon-reports
+          path: out
       - name: Publish the release
         if: github.ref_type == 'tag'
         env:
