@@ -133,6 +133,7 @@
       <string>uni030A</string>
       <string>uni030B</string>
       <string>uni030C</string>
+      <string>uni0312</string>
       <string>uni0326</string>
       <string>uni0327</string>
       <string>uni0328</string>
@@ -1254,6 +1255,8 @@
       <key>uni030B</key>
       <string>mark</string>
       <key>uni030C</key>
+      <string>mark</string>
+      <key>uni0312</key>
       <string>mark</string>
       <key>uni0326</key>
       <string>mark</string>

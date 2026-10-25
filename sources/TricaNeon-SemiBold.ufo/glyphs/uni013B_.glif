@@ -4,12 +4,6 @@
   <unicode hex="013B"/>
   <outline>
     <component base="L"/>
-    <component base="uni0327" xOffset="805"/>
+    <component base="uni0326" xOffset="805"/>
   </outline>
-  <lib>
-    <dict>
-      <key>public.truetype.overlap</key>
-      <true/>
-    </dict>
-  </lib>
 </glyph>

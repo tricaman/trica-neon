@@ -97,7 +97,7 @@ def draw(glyph, contours):
 
 FIGURES = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 TOP_MARKS = ["gravecomb", "acutecomb", "circumflexcomb", "tildecomb", "macroncomb", "brevecomb",
-             "dotaccentcomb", "dieresiscomb", "ringcomb", "hungarumlautcomb", "caroncomb"]
+             "dotaccentcomb", "dieresiscomb", "ringcomb", "hungarumlautcomb", "caroncomb", "commaturnedabovecomb"]
 BRACKETS = ["parenleft", "parenright", "bracketleft", "bracketright", "braceleft", "braceright"]
 
 

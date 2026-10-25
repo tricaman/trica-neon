@@ -49,6 +49,7 @@ def install(bf, d, dot):
     def m_cedilla(cx, y): return ln((cx, BT), (cx, -110), (cx - 90, -110), radii=[0, 35, 0], cap=BUTT)
     def m_ogonek(cx, y): return ln((cx, BT), (cx, -110), (cx + 90, -110), radii=[0, 35, 0], cap=BUTT)
     def m_commabelow(cx, y): return ln((cx, -50), (cx, -170), cap=BUTT)
+    def m_commaturned(cx, y): return ln((cx, y + 90), (cx, y + 210), cap=BUTT)   # turned comma above, as in ģ
     def m_caronalt(cx, y): return ln((cx, y - 170), (cx, y), cap=BUTT)       # vertical caron of ď ľ ť Ľ
 
     # Combining marks: zero-width glyphs drawn left of the origin, over the centre of the
@@ -62,7 +63,8 @@ def install(bf, d, dot):
             ("macroncomb", 0x304, m_macron, "top"), ("brevecomb", 0x306, m_breve, "top"),
             ("dotaccentcomb", 0x307, m_dot, "top"), ("dieresiscomb", 0x308, m_dier, "top"),
             ("ringcomb", 0x30A, m_ring, "top"), ("hungarumlautcomb", 0x30B, m_dblacute, "top"),
-            ("caroncomb", 0x30C, m_caron, "top"), ("commaaccentcomb", 0x326, m_commabelow, "bottom"),
+            ("caroncomb", 0x30C, m_caron, "top"), ("commaturnedabovecomb", 0x312, m_commaturned, "top"),
+            ("commaaccentcomb", 0x326, m_commabelow, "bottom"),
             ("cedillacomb", 0x327, m_cedilla, "bottom"), ("ogonekcomb", 0x328, m_ogonek, "ogonek")]:
         outline = fn(mx, 0)
         ys = [p[1] for _, segs in outline.contours for g in segs for p in g[1:]]
@@ -102,6 +104,12 @@ def install(bf, d, dot):
         marks = [int(x, 16) for x in dec[1:]]
         if base not in G and base_name(base) not in G:
             return False
+        # Latvian letters take a comma below instead of the cedilla of their decomposition,
+        # and ģ a turned comma above
+        if base in "GKLNRklnr":
+            marks = [0x326 if m == 0x327 else m for m in marks]
+        elif base == "g":
+            marks = [0x312 if m == 0x327 else m for m in marks]
         # caron on d, l, t (and capital L) is drawn as a small vertical apostrophe on the right
         vertical_caron = 0x30C in marks and base in "dltL"
         above = any(m in ABOVE for m in marks)
