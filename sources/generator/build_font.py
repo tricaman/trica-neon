@@ -245,12 +245,13 @@ def build_symbols(d, dot):
     ew = W
     put("Euro", ew, ln((ew - h, T), (h + 80, T), (h + 80, BT), (ew - h, BT), radii=[0, r, r, 0]),
         ln((h, MI + 90), (ew * 0.7, MI + 90)), ln((h, MI - 90), (ew * 0.7, MI - 90)))
-    # & : the 8, but at the bottom right the two strokes don't join -- they cross and run on
+    # & : the top pill of the 8; below it a bowl whose right side rises into a short tail, crossed by
+    # a straight leg that runs from the pill to the bottom right, trimmed flush with the baseline as in V
     bw = H * 0.8; Rb = bw - h; e = r * 0.6
     put("ampersand", bw + e,
         stroke(rounded([(h, MI), (Rb, MI), (Rb, T), (h, T)], [r, r, r, r], True)),      # top pill
-        ln((Rb + e, BT), (h, BT), (h, MI), (h + r, MI), radii=[0, r, r, 0]),          # the pill covers
-        ln((Rb - r, MI), (Rb, MI), (Rb, BT - e), radii=[0, r, 0]))                     # the middle
+        ln((h + r, MI), (h, MI), (h, BT), (Rb, BT), (Rb, MI * 0.62), radii=[0, r, r, r, 0]),   # bowl and tail
+        clip(ln((Rb - r, MI + S), (bw + e * 0.75, BT - S * 0.6)), -H, 0, 2 * H, MI))           # leg
     # @ : the O with a smaller rounded square inside, open at the right
     i0, i1 = W * 0.3, W * 0.7
     put("at", W, ln((W - h, BT + r), (W - h, T), (h, T), (h, BT), (W - h, BT), radii=[0, r, r, r, 0]),
