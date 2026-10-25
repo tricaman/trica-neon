@@ -41,7 +41,9 @@ def install(bf, d, dot):
     def m_breve(cx, y): return ln((cx - 90, y + 200), (cx - 90, y + 100), (cx + 90, y + 100), (cx + 90, y + 200),
                                   radii=[0, 45, 45, 0], cap=BUTT)
     def m_dot(cx, y): return circle(cx, y + 140, d / 2)
-    def m_dier(cx, y): return union(circle(cx - 90, y + 140, d / 2), circle(cx + 90, y + 140, d / 2))
+    def m_dier(cx, y):
+        sp = max(90, (d + S * 0.4) / 2)          # the two dots never touch
+        return union(circle(cx - sp, y + 140, d / 2), circle(cx + sp, y + 140, d / 2))
     def m_ring(cx, y):
         a = 70
         return ln((cx - a, y + 230), (cx + a, y + 230), (cx + a, y + 90), (cx - a, y + 90), radii=[35] * 4, closed=True)

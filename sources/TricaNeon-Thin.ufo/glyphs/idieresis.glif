@@ -6,10 +6,4 @@
     <component base="dotlessi"/>
     <component base="uni0308" xOffset="464" yOffset="504"/>
   </outline>
-  <lib>
-    <dict>
-      <key>public.truetype.overlap</key>
-      <true/>
-    </dict>
-  </lib>
 </glyph>

@@ -19,9 +19,6 @@
       <point x="173" y="333"/>
       <point x="236" y="333" type="curve"/>
       <point x="385" y="333" type="line"/>
-      <point x="385" y="333"/>
-      <point x="385" y="333"/>
-      <point x="385" y="333" type="curve"/>
       <point x="385" y="564" type="line"/>
       <point x="350" y="564" type="line"/>
       <point x="350" y="368" type="line"/>
@@ -53,10 +50,4 @@
       <point x="333" y="684"/>
     </contour>
   </outline>
-  <lib>
-    <dict>
-      <key>public.truetype.overlap</key>
-      <true/>
-    </dict>
-  </lib>
 </glyph>

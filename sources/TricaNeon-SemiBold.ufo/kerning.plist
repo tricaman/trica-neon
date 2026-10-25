@@ -73,7 +73,7 @@
       <key>public.kern2.o</key>
       <integer>-35</integer>
       <key>public.kern2.period</key>
-      <integer>-45</integer>
+      <integer>-50</integer>
     </dict>
     <key>public.kern1.Y</key>
     <dict>

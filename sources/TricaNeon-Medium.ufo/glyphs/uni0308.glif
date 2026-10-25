@@ -2,41 +2,35 @@
 <glyph name="uni0308" format="2">
   <unicode hex="0308"/>
   <anchor x="-367" y="0" name="_top"/>
-  <anchor x="-367" y="228" name="top"/>
+  <anchor x="-367" y="219" name="top"/>
   <outline>
     <contour>
-      <point x="-370" y="140" type="curve"/>
-      <point x="-370" y="188"/>
-      <point x="-409" y="228"/>
-      <point x="-457" y="228" type="curve"/>
-      <point x="-506" y="228"/>
-      <point x="-545" y="188"/>
-      <point x="-545" y="140" type="curve"/>
-      <point x="-545" y="92"/>
-      <point x="-506" y="53"/>
-      <point x="-457" y="53" type="curve"/>
-      <point x="-409" y="53"/>
-      <point x="-370" y="92"/>
+      <point x="-385" y="140" type="curve"/>
+      <point x="-385" y="183"/>
+      <point x="-420" y="219"/>
+      <point x="-464" y="219" type="curve"/>
+      <point x="-507" y="219"/>
+      <point x="-542" y="183"/>
+      <point x="-542" y="140" type="curve"/>
+      <point x="-542" y="97"/>
+      <point x="-507" y="61"/>
+      <point x="-464" y="61" type="curve"/>
+      <point x="-420" y="61"/>
+      <point x="-385" y="97"/>
     </contour>
     <contour>
-      <point x="-190" y="140" type="curve"/>
-      <point x="-190" y="188"/>
-      <point x="-229" y="228"/>
-      <point x="-277" y="228" type="curve"/>
-      <point x="-326" y="228"/>
-      <point x="-365" y="188"/>
-      <point x="-365" y="140" type="curve"/>
-      <point x="-365" y="92"/>
-      <point x="-326" y="53"/>
-      <point x="-277" y="53" type="curve"/>
-      <point x="-229" y="53"/>
-      <point x="-190" y="92"/>
+      <point x="-192" y="140" type="curve"/>
+      <point x="-192" y="183"/>
+      <point x="-228" y="219"/>
+      <point x="-271" y="219" type="curve"/>
+      <point x="-315" y="219"/>
+      <point x="-350" y="183"/>
+      <point x="-350" y="140" type="curve"/>
+      <point x="-350" y="97"/>
+      <point x="-315" y="61"/>
+      <point x="-271" y="61" type="curve"/>
+      <point x="-228" y="61"/>
+      <point x="-192" y="97"/>
     </contour>
   </outline>
-  <lib>
-    <dict>
-      <key>public.truetype.overlap</key>
-      <true/>
-    </dict>
-  </lib>
 </glyph>

@@ -33,10 +33,4 @@
       <point x="-225" y="111"/>
     </contour>
   </outline>
-  <lib>
-    <dict>
-      <key>public.truetype.overlap</key>
-      <true/>
-    </dict>
-  </lib>
 </glyph>

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="guillemotleft" format="2">
-  <advance width="494"/>
+  <advance width="527"/>
   <unicode hex="00AB"/>
   <outline>
     <contour>
@@ -12,18 +12,12 @@
       <point x="186" y="350" type="line"/>
     </contour>
     <contour>
-      <point x="429" y="468" type="line"/>
-      <point x="370" y="533" type="line"/>
-      <point x="169" y="350" type="line"/>
-      <point x="370" y="167" type="line"/>
-      <point x="429" y="232" type="line"/>
-      <point x="299" y="350" type="line"/>
+      <point x="461" y="468" type="line"/>
+      <point x="402" y="533" type="line"/>
+      <point x="201" y="350" type="line"/>
+      <point x="402" y="167" type="line"/>
+      <point x="461" y="232" type="line"/>
+      <point x="331" y="350" type="line"/>
     </contour>
   </outline>
-  <lib>
-    <dict>
-      <key>public.truetype.overlap</key>
-      <true/>
-    </dict>
-  </lib>
 </glyph>

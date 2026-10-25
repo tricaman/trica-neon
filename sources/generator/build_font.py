@@ -11,6 +11,7 @@ Every glyph is a set of centerline skeletons (polylines with rounded vertices)
 stroked at one weight, so changing the stroke regenerates a coherent family.
 make_sources.py calls build_glyphs() once per weight and writes the UFO masters.
 """
+import math
 import geometry
 from geometry import BUTT, SQUARE, Outline, circle, clip, rounded, union
 
@@ -123,16 +124,17 @@ def build():
     glyph("nine", Wd, [([(L2, BT), (R2, BT), (R2, T), (L2, T), (L2, MI), (R2, MI)], [0, r, r, r, r, 0])])
 
     # -------- punctuation ---------------------------------------------------------------
-    d = max(S * 2, 60)               # dot diameter
+    d = max(min(S * 2, S + 70), 60)  # dot diameter: twice the stroke up to the Regular, then it grows with it
     dot = lambda cx, cy: circle(cx, cy, d / 2)
     glyph("period", d, extra=[dot(d / 2, d / 2)])
     glyph("comma", d, [([(d / 2, d / 2), (d / 2, -d * 1.6)],)], extra=[dot(d / 2, d / 2)])
-    glyph("colon", d, extra=[dot(d / 2, d / 2), dot(d / 2, MI - d / 2)])
+    y_colon = d / 2 + max(MI - d, d * 1.5)     # upper dot of : and ;, at least half a dot above the lower one
+    glyph("colon", d, extra=[dot(d / 2, d / 2), dot(d / 2, y_colon)])
     glyph("exclam", S, [([(h, d * 2.2), (h, T)],)], extra=[dot(h, d / 2)])     # spaced on the stem, as the i
     glyph("quotesingle", S, [([(h, T - 2 * r), (h, T)],)])
     glyph("hyphen", W / 2, [([(h, MI), (W / 2 - h, MI)],)])
     Wq = Wd
-    glyph("question", Wq, [([(L2, MI), (L2, T), (R2, T), (R2, MI), (C2, MI), (C2, d * 2.2)],
+    glyph("question", Wq, [([(L2, MI), (L2, T), (R2, T), (R2, MI), (C2, MI), (C2, min(d * 2.2, MI - h))],
                             [0, r, r, r, 0, 0])], extra=[dot(C2, d / 2)])
     glyph("slash", W / 2, [([(h, BT), (W / 2 - h, T)],)])
     GLYPHS["space"] = (350 - 2 * SB, Outline())     # word space: 350 units
@@ -165,7 +167,8 @@ def build_symbols(d, dot):
 
     # fix: shorter comma tail
     put("comma", d, dot(d / 2, d / 2), ln((d / 2, d / 2), (d / 2, -d * 1.1), cap=BUTT))
-    put("semicolon", d, dot(d / 2, MI - d / 2), dot(d / 2, d / 2), ln((d / 2, d / 2), (d / 2, -d * 1.1), cap=BUTT))
+    y_colon = d / 2 + max(MI - d, d * 1.5)     # upper dot, as in the colon
+    put("semicolon", d, dot(d / 2, y_colon), dot(d / 2, d / 2), ln((d / 2, d / 2), (d / 2, -d * 1.1), cap=BUTT))
     put("quotedbl", S * 3, ln((h, bot_q), (h, top_q)), ln((S * 3 - h, bot_q), (S * 3 - h, top_q)))
     put("quoteleft", S, ln((h, bot_q), (h, top_q)))
     put("quotedblleft", S * 3, ln((h, bot_q), (h, top_q)), ln((S * 3 - h, bot_q), (S * 3 - h, top_q)))
@@ -195,7 +198,8 @@ def build_symbols(d, dot):
     put("greater", Wm, ln((cx - a, my + a), (cx + a, my), (cx - a, my - a)))
     k = a * 0.75
     put("multiply", Wm, ln((cx - k, my - k), (cx + k, my + k)), ln((cx - k, my + k), (cx + k, my - k)))
-    put("divide", Wm, ln((cx - a, my), (cx + a, my)), dot(cx, my + a * 0.75), dot(cx, my - a * 0.75))
+    dy = max(a * 0.75, h + d / 2 + H * 0.066)          # the dots never touch the bar
+    put("divide", Wm, ln((cx - a, my), (cx + a, my)), dot(cx, my + dy), dot(cx, my - dy))
     put("asciicircum", Wm, ln((cx - a, T - a * 1.1), (cx, T), (cx + a, T - a * 1.1)))
     tw = a * 0.66
     put("asciitilde", Wm, ln((cx - a, my - tw / 2), (cx - a, my + tw / 2), (cx, my + tw / 2), (cx, my - tw / 2),
@@ -219,8 +223,10 @@ def build_symbols(d, dot):
     g = a * 0.6; gx = g * 1.1
     put("guilsinglleft", gx * 1.2, ln((gx, my + g), (h, my), (gx, my - g)))
     put("guilsinglright", gx * 1.2, ln((h, my + g), (gx, my), (h, my - g)))
-    put("guillemotleft", gx * 2.4, ln((gx, my + g), (h, my), (gx, my - g)), ln((gx * 2.1, my + g), (gx * 1.1, my), (gx * 2.1, my - g)))
-    put("guillemotright", gx * 2.4, ln((h, my + g), (gx, my), (h, my - g)), ln((gx * 1.1, my + g), (gx * 2.1, my), (gx * 1.1, my - g)))
+    # the second chevron keeps a clear gap of at least 0.3 S from the first
+    tip = max(gx * 1.1, h + S * math.hypot(g, gx - h) / g + S * 0.3)
+    put("guillemotleft", tip + gx * 1.3, ln((gx, my + g), (h, my), (gx, my - g)), ln((tip + gx, my + g), (tip, my), (tip + gx, my - g)))
+    put("guillemotright", tip + gx * 1.3, ln((h, my + g), (gx, my), (h, my - g)), ln((tip, my + g), (tip + gx, my), (tip, my - g)))
 
     # # % & @ $ euro
     put("numbersign", Wm, ln((Wm * 0.33, BT + 60), (Wm * 0.33, T - 60), cap=BUTT), ln((Wm * 0.67, BT + 60), (Wm * 0.67, T - 60), cap=BUTT),
@@ -289,7 +295,7 @@ def build_lowercase(d, dot):
     inner joints sharp. x-height 0.72 l, ascenders at cap height, descenders 0.28 l."""
     w = H * 0.8; L, R, C = h, w - h, w / 2
     AT = T
-    idot = lambda cx: dot(cx, XH + d * 1.1)
+    idot = lambda cx: dot(cx, XH + min(d * 0.6, H * 0.12) + d / 2)
 
     bowl_r = ([(L, XT), (R, XT), (R, BT), (L, BT)], [0, r, r, 0], True)     # stem on the left
     bowl_l = ([(L, XT), (R, XT), (R, BT), (L, BT)], [r, 0, 0, r], True)     # stem on the right

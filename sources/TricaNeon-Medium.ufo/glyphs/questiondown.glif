@@ -18,13 +18,10 @@
       <point x="175" y="273"/>
       <point x="208" y="306"/>
       <point x="249" y="306" type="curve"/>
-      <point x="368" y="306" type="line"/>
-      <point x="368" y="350"/>
-      <point x="368" y="350"/>
-      <point x="324" y="350" type="curve"/>
-      <point x="324" y="271" type="line"/>
-      <point x="411" y="271" type="line"/>
-      <point x="411" y="394" type="line"/>
+      <point x="411" y="306" type="line"/>
+      <point x="411" y="438" type="line"/>
+      <point x="324" y="438" type="line"/>
+      <point x="324" y="394" type="line"/>
       <point x="249" y="394" type="line"/>
       <point x="160" y="394"/>
       <point x="88" y="321"/>
@@ -39,24 +36,18 @@
       <point x="648" y="197" type="curve"/>
     </contour>
     <contour>
-      <point x="280" y="613" type="curve"/>
-      <point x="280" y="564"/>
-      <point x="319" y="525"/>
-      <point x="368" y="525" type="curve"/>
-      <point x="416" y="525"/>
-      <point x="455" y="564"/>
-      <point x="455" y="613" type="curve"/>
-      <point x="455" y="661"/>
-      <point x="416" y="700"/>
+      <point x="289" y="621" type="curve"/>
+      <point x="289" y="578"/>
+      <point x="324" y="543"/>
+      <point x="368" y="543" type="curve"/>
+      <point x="411" y="543"/>
+      <point x="446" y="578"/>
+      <point x="446" y="621" type="curve"/>
+      <point x="446" y="665"/>
+      <point x="411" y="700"/>
       <point x="368" y="700" type="curve"/>
-      <point x="319" y="700"/>
-      <point x="280" y="661"/>
+      <point x="324" y="700"/>
+      <point x="289" y="665"/>
     </contour>
   </outline>
-  <lib>
-    <dict>
-      <key>public.truetype.overlap</key>
-      <true/>
-    </dict>
-  </lib>
 </glyph>
