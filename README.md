@@ -64,6 +64,7 @@ make test            # FontBakery with the Google Fonts profile; reports in out/
 make proof           # HTML proof and PNG specimen in out/proof
 make specimen        # the specimen page in out/specimen, ready for GitHub Pages
 make images          # the images of this README in documentation/images
+make npm             # npm package with the web fonts and ready-made CSS in out/npm
 make release         # zip of the fonts, the license and this README
 ```
 

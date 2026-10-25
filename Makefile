@@ -5,7 +5,7 @@ GENERATOR = $(wildcard sources/generator/*.py)
 STYLES = Thin ExtraLight Light Regular Medium SemiBold
 VERSION = $(shell $(PYTHON) -c 'import plistlib; i = plistlib.load(open("sources/TricaNeon-Regular.ufo/fontinfo.plist", "rb")); print("%d.%03d" % (i["versionMajor"], i["versionMinor"]))')
 
-.PHONY: venv venv-test update sources check-sources build test proof specimen images release version clean
+.PHONY: venv venv-test update sources check-sources build test proof specimen images npm release version clean
 
 # venv holds the build tools, venv-test the QA tools: FontBakery's googlefonts
 # profile needs protobuf<4, gftools needs protobuf>=6.33.
@@ -80,6 +80,12 @@ specimen: build.stamp
 # The specimen images of the README in documentation/images.
 images: build.stamp
 	venv/bin/python scripts/specimen_images.py "fonts/variable/TricaNeon[wght].ttf" documentation/images
+
+# The npm package in out/npm: the WOFF2 files with ready-made CSS. It is published by hand,
+# with `npm publish out/npm`.
+npm: build.stamp
+	rm -rf out/npm
+	venv/bin/python scripts/npm_package.py fonts/webfonts OFL.txt $(VERSION) out/npm
 
 # The zip published with each GitHub release: fonts, license and README.
 release: build.stamp
