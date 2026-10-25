@@ -186,10 +186,14 @@ def set_info(info, style, wght, win):
     info.openTypeOS2Selection = [7]                   # USE_TYPO_METRICS
     info.openTypeOS2Type = []                         # fsType 0: installable embedding
     info.unitsPerEm, info.capHeight, info.xHeight, info.italicAngle = bf.UPM, bf.H, bf.XH, 0
-    # provisional line metrics, settled in the vertical metrics phase; win metrics cover every glyph
-    info.ascender, info.descender = 950, -250
-    info.openTypeOS2TypoAscender, info.openTypeOS2TypoDescender, info.openTypeOS2TypoLineGap = 950, -250, 0
-    info.openTypeHheaAscender, info.openTypeHheaDescender, info.openTypeHheaLineGap = 950, -250, 0
+    info.ascender, info.descender = bf.H, -round(bf.H * 0.28)     # lowercase ascenders reach the cap height
+    # line metrics as the Google Fonts guide asks (https://googlefonts.github.io/gf-guide/metrics.html),
+    # the same in every master: a 1.3 em line with the capitals centred in it (typoAscender - capHeight
+    # = -typoDescender), no line gap, hhea equal to typo; the win metrics cover every glyph
+    line = otRound(1.3 * bf.UPM)
+    asc = otRound((line + bf.H) / 2)
+    info.openTypeOS2TypoAscender, info.openTypeOS2TypoDescender, info.openTypeOS2TypoLineGap = asc, asc - line, 0
+    info.openTypeHheaAscender, info.openTypeHheaDescender, info.openTypeHheaLineGap = asc, asc - line, 0
     info.openTypeOS2WinAscent, info.openTypeOS2WinDescent = win
     # one underline for the whole family (Google Fonts wants it consistent): the Regular underscore
     regular = stroke_width(DEFAULT_WEIGHT)
