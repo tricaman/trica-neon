@@ -130,11 +130,13 @@ def build():
     glyph("comma", d, [([(d / 2, d / 2), (d / 2, -d * 1.6)],)], extra=[dot(d / 2, d / 2)])
     y_colon = XH - d / 2                       # upper dot of : and ; at the x-height
     glyph("colon", d, extra=[dot(d / 2, d / 2), dot(d / 2, y_colon)])
-    glyph("exclam", S, [([(h, d * 2.2), (h, T)],)], extra=[dot(h, d / 2)])     # spaced on the stem, as the i
+    ye = d + max(d * 1.25, 100) + h              # bottom of the stem of ! and ?: a clear gap above the dot
+    glyph("exclam", S, [([(h, ye), (h, T)],)], extra=[dot(h, d / 2)])     # spaced on the stem, as the i
     glyph("quotesingle", S, [([(h, T - 2 * r), (h, T)],)])
     glyph("hyphen", W / 2, [([(h, MI), (W / 2 - h, MI)],)])
     Wq = Wd
-    glyph("question", Wq, [([(L2, MI), (L2, T), (R2, T), (R2, MI), (C2, MI), (C2, min(d * 2.2, MI - h))],
+    yq = max(MI, ye + h)                         # the hook rises when its stem would get shorter than half a stroke
+    glyph("question", Wq, [([(L2, yq), (L2, T), (R2, T), (R2, yq), (C2, yq), (C2, ye)],
                             [0, r, r, r, 0, 0])], extra=[dot(C2, d / 2)])
     glyph("slash", W / 2, [([(h, BT), (W / 2 - h, T)],)])
     GLYPHS["space"] = (350 - 2 * SB, Outline())     # word space: 350 units
@@ -226,7 +228,7 @@ def build_symbols(d, dot):
     put("periodcentered", d, dot(d / 2, MI))
     put("bullet", d * 2, circle(d, MI, d))
     put("ellipsis", d * 5, dot(d / 2, d / 2), dot(d * 2.5, d / 2), dot(d * 4.5, d / 2))
-    put("exclamdown", S, ln((h, H - d * 2.2), (h, BT)), dot(h, H - d / 2))
+    GLYPHS["exclamdown"] = (S, GLYPHS["exclam"][1].transform(-1, 0, 0, -1, S, XH))   # ! turned, hanging from the x-height
 
     # degree, guillemets
     ds = H * 0.32
@@ -268,9 +270,9 @@ def build_symbols(d, dot):
     put("sterling", W * 0.8, ln((W * 0.8 - h, T), (W * 0.25 + h, T), (W * 0.25 + h, BT), radii=[0, r, 0]),
         ln((h, MI), (W * 0.6, MI)), ln((h, BT), (W * 0.8 - h, BT)))
 
-    # inverted question mark: the ? rotated 180 degrees
+    # inverted question mark: the ? rotated 180 degrees, hanging from the x-height as the ¡
     qw, qp = GLYPHS["question"]
-    q = qp.transform(-1, 0, 0, -1, qw, H)
+    q = qp.transform(-1, 0, 0, -1, qw, XH)
     GLYPHS["questiondown"] = (qw, q)
 
     for n, c in {"semicolon": ";", "quotedbl": '"', "quoteleft": "\u2018", "quotedblleft": "\u201c", "quoteright": "\u2019", "quotedblright": "\u201d",
