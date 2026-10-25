@@ -423,9 +423,11 @@ def install(bf, d, dot):
     cmw, cmp = G["comma"]                       # low quotes: the comma, single and double
     put1("quotesinglbase", cmw, cmp, ch="‚")
     put1("quotedblbase", cmw * 2.5, cmp, shift(cmp, cmw * 1.5), ch="„")
-    dg = W * 0.5
-    put1("dagger", dg, ln((dg / 2, -80), (dg / 2, T)), ln((h, T - 200), (dg - h, T - 200)), ch="†")
-    put1("daggerdbl", dg, ln((dg / 2, -80), (dg / 2, T)), ln((h, T - 200), (dg - h, T - 200)), ln((h, 180), (dg - h, 180)), ch="‡")
+    # † ‡: hung from the cap height down to near half the x-height, smaller than the letters
+    dg = W * 0.42; d0 = XH * 0.45; dh = T - d0
+    put1("dagger", dg, ln((dg / 2, d0), (dg / 2, T)), ln((h, d0 + dh * 0.68), (dg - h, d0 + dh * 0.68)), ch="†")
+    put1("daggerdbl", dg, ln((dg / 2, d0), (dg / 2, T)), ln((h, d0 + dh * 0.75), (dg - h, d0 + dh * 0.75)),
+         ln((h, d0 + dh * 0.3), (dg - h, d0 + dh * 0.3)), ch="‡")
     pcw, pcp = G["percent"]
     # ‰: the % with a copy of its lower zero on the right, a clear gap of one stroke (at least 40 units) away
     sq = H * 0.3
