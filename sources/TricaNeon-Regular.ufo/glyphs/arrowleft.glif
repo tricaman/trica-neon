@@ -4,8 +4,8 @@
   <unicode hex="2190"/>
   <outline>
     <contour>
-      <point x="88" y="385" type="line"/>
-      <point x="88" y="315" type="line"/>
+      <point x="123" y="385" type="line"/>
+      <point x="123" y="315" type="line"/>
       <point x="788" y="315" type="line"/>
       <point x="788" y="385" type="line"/>
     </contour>

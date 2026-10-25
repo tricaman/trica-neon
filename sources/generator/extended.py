@@ -431,11 +431,12 @@ def install(bf, d, dot):
 
     # ------------------------------------------------------------ arrows
     aw_ = W; ac = aw_ / 2; hd = W * 0.22
-    put1("arrowright", aw_, ln((h, MI), (aw_ - h, MI)), ln((aw_ - h - hd, MI + hd), (aw_ - h, MI), (aw_ - h - hd, MI - hd)), ch="→")
-    put1("arrowleft", aw_, ln((h, MI), (aw_ - h, MI)), ln((h + hd, MI + hd), (h, MI), (h + hd, MI - hd)), ch="←")
-    put1("arrowup", W * 0.6, ln((W * 0.3, BT), (W * 0.3, T)), ln((W * 0.3 - hd, T - hd), (W * 0.3, T), (W * 0.3 + hd, T - hd)), ch="↑")
-    put1("arrowdown", W * 0.6, ln((W * 0.3, BT), (W * 0.3, T)), ln((W * 0.3 - hd, BT + hd), (W * 0.3, BT), (W * 0.3 + hd, BT + hd)), ch="↓")
-    put1("arrowboth", aw_, ln((h, MI), (aw_ - h, MI)), ln((aw_ - h - hd, MI + hd), (aw_ - h, MI), (aw_ - h - hd, MI - hd)),
+    # the shaft ends flat at the point of the head, which covers it (a square end would stick out of the point)
+    put1("arrowright", aw_, ln((0, MI), (aw_ - h, MI), cap=BUTT), ln((aw_ - h - hd, MI + hd), (aw_ - h, MI), (aw_ - h - hd, MI - hd)), ch="→")
+    put1("arrowleft", aw_, ln((h, MI), (aw_, MI), cap=BUTT), ln((h + hd, MI + hd), (h, MI), (h + hd, MI - hd)), ch="←")
+    put1("arrowup", W * 0.6, ln((W * 0.3, 0), (W * 0.3, T), cap=BUTT), ln((W * 0.3 - hd, T - hd), (W * 0.3, T), (W * 0.3 + hd, T - hd)), ch="↑")
+    put1("arrowdown", W * 0.6, ln((W * 0.3, BT), (W * 0.3, H), cap=BUTT), ln((W * 0.3 - hd, BT + hd), (W * 0.3, BT), (W * 0.3 + hd, BT + hd)), ch="↓")
+    put1("arrowboth", aw_, ln((h, MI), (aw_ - h, MI), cap=BUTT), ln((aw_ - h - hd, MI + hd), (aw_ - h, MI), (aw_ - h - hd, MI - hd)),
          ln((h + hd, MI + hd), (h, MI), (h + hd, MI - hd)), ch="↔")
 
     # ------------------------------------------------------------ math
