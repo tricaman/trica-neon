@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="acircumflex" format="2">
+  <advance width="735"/>
+  <unicode hex="00E2"/>
+  <outline>
+    <component base="a"/>
+    <component base="uni0302" xOffset="735" yOffset="504"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

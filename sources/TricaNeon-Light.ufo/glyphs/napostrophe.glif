@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="napostrophe" format="2">
+  <advance width="848"/>
+  <unicode hex="0149"/>
+  <outline>
+    <contour>
+      <point x="88" y="324" type="line"/>
+      <point x="140" y="324" type="line"/>
+      <point x="140" y="700" type="line"/>
+      <point x="88" y="700" type="line"/>
+    </contour>
+    <contour>
+      <point x="200" y="0" type="line"/>
+      <point x="253" y="0" type="line"/>
+      <point x="253" y="316" type="line"/>
+      <point x="253" y="391"/>
+      <point x="313" y="452"/>
+      <point x="388" y="452" type="curve"/>
+      <point x="572" y="452" type="line"/>
+      <point x="647" y="452"/>
+      <point x="708" y="391"/>
+      <point x="708" y="316" type="curve"/>
+      <point x="708" y="0" type="line"/>
+      <point x="760" y="0" type="line"/>
+      <point x="760" y="316" type="line"/>
+      <point x="760" y="420"/>
+      <point x="676" y="504"/>
+      <point x="572" y="504" type="curve"/>
+      <point x="388" y="504" type="line"/>
+      <point x="284" y="504"/>
+      <point x="200" y="420"/>
+      <point x="200" y="316" type="curve"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="tbar" format="2">
+  <advance width="511"/>
+  <unicode hex="0167"/>
+  <outline>
+    <contour>
+      <point x="241" y="622" type="line"/>
+      <point x="189" y="622" type="line"/>
+      <point x="189" y="123" type="line"/>
+      <point x="189" y="55"/>
+      <point x="244" y="0"/>
+      <point x="312" y="0" type="curve"/>
+      <point x="424" y="0" type="line"/>
+      <point x="424" y="53" type="line"/>
+      <point x="312" y="53" type="line"/>
+      <point x="273" y="53"/>
+      <point x="241" y="84"/>
+      <point x="241" y="123" type="curve"/>
+    </contour>
+    <contour>
+      <point x="88" y="504" type="line"/>
+      <point x="88" y="452" type="line"/>
+      <point x="424" y="452" type="line"/>
+      <point x="424" y="504" type="line"/>
+    </contour>
+    <contour>
+      <point x="88" y="278" type="line"/>
+      <point x="88" y="226" type="line"/>
+      <point x="424" y="226" type="line"/>
+      <point x="424" y="278" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

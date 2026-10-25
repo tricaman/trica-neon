@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni2074" format="2">
+  <advance width="455"/>
+  <unicode hex="2074"/>
+  <outline>
+    <contour>
+      <point x="135" y="712" type="line"/>
+      <point x="75" y="712" type="line"/>
+      <point x="75" y="604" type="line"/>
+      <point x="75" y="544"/>
+      <point x="124" y="495"/>
+      <point x="184" y="495" type="curve"/>
+      <point x="380" y="495" type="line"/>
+      <point x="380" y="555" type="line"/>
+      <point x="184" y="555" type="line"/>
+      <point x="157" y="555"/>
+      <point x="135" y="577"/>
+      <point x="135" y="604" type="curve"/>
+    </contour>
+    <contour>
+      <point x="380" y="712" type="line"/>
+      <point x="320" y="712" type="line"/>
+      <point x="320" y="338" type="line"/>
+      <point x="380" y="338" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

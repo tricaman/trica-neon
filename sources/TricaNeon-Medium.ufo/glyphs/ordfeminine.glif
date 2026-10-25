@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ordfeminine" format="2">
+  <advance width="483"/>
+  <unicode hex="00AA"/>
+  <outline>
+    <contour>
+      <point x="409" y="510" type="line"/>
+      <point x="409" y="584" type="line"/>
+      <point x="196" y="584" type="line"/>
+      <point x="129" y="584"/>
+      <point x="74" y="530"/>
+      <point x="74" y="463" type="curve"/>
+      <point x="74" y="402" type="line"/>
+      <point x="74" y="335"/>
+      <point x="129" y="281"/>
+      <point x="196" y="281" type="curve"/>
+      <point x="409" y="281" type="line"/>
+      <point x="409" y="355" type="line"/>
+      <point x="196" y="355" type="line"/>
+      <point x="170" y="355"/>
+      <point x="149" y="376"/>
+      <point x="149" y="402" type="curve"/>
+      <point x="149" y="463" type="line"/>
+      <point x="149" y="489"/>
+      <point x="170" y="510"/>
+      <point x="196" y="510" type="curve"/>
+    </contour>
+    <contour>
+      <point x="409" y="584" type="line"/>
+      <point x="334" y="584" type="line"/>
+      <point x="334" y="281" type="line"/>
+      <point x="409" y="281" type="line"/>
+    </contour>
+    <contour>
+      <point x="88" y="254" type="line"/>
+      <point x="88" y="166" type="line"/>
+      <point x="396" y="166" type="line"/>
+      <point x="396" y="254" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

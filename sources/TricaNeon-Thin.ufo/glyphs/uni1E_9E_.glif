@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni1E9E" format="2">
+  <advance width="875"/>
+  <unicode hex="1E9E"/>
+  <outline>
+    <contour>
+      <point x="88" y="0" type="line"/>
+      <point x="105" y="0" type="line"/>
+      <point x="105" y="521" type="line"/>
+      <point x="105" y="610"/>
+      <point x="177" y="683"/>
+      <point x="267" y="683" type="curve"/>
+      <point x="626" y="683" type="line"/>
+      <point x="705" y="683"/>
+      <point x="770" y="618"/>
+      <point x="770" y="538" type="curve"/>
+      <point x="770" y="458"/>
+      <point x="705" y="394"/>
+      <point x="626" y="394" type="curve"/>
+      <point x="429" y="394" type="line"/>
+      <point x="429" y="376" type="line"/>
+      <point x="626" y="376" type="line"/>
+      <point x="715" y="376"/>
+      <point x="788" y="449"/>
+      <point x="788" y="538" type="curve"/>
+      <point x="788" y="628"/>
+      <point x="715" y="700"/>
+      <point x="626" y="700" type="curve"/>
+      <point x="267" y="700" type="line"/>
+      <point x="168" y="700"/>
+      <point x="88" y="620"/>
+      <point x="88" y="521" type="curve"/>
+    </contour>
+    <contour>
+      <point x="599" y="394" type="line"/>
+      <point x="599" y="376" type="line"/>
+      <point x="608" y="376" type="line"/>
+      <point x="698" y="376"/>
+      <point x="770" y="304"/>
+      <point x="770" y="214" type="curve"/>
+      <point x="770" y="179" type="line"/>
+      <point x="770" y="90"/>
+      <point x="698" y="18"/>
+      <point x="608" y="18" type="curve"/>
+      <point x="394" y="18" type="line"/>
+      <point x="394" y="0" type="line"/>
+      <point x="608" y="0" type="line"/>
+      <point x="707" y="0"/>
+      <point x="788" y="80"/>
+      <point x="788" y="179" type="curve"/>
+      <point x="788" y="214" type="line"/>
+      <point x="788" y="313"/>
+      <point x="707" y="394"/>
+      <point x="608" y="394" type="curve"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

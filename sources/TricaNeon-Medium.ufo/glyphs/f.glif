@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="f" format="2">
+  <advance width="511"/>
+  <unicode hex="0066"/>
+  <anchor x="256" y="700" name="top"/>
+  <anchor x="256" y="0" name="bottom"/>
+  <anchor x="350" y="0" name="ogonek"/>
+  <outline>
+    <contour>
+      <point x="424" y="613" type="line"/>
+      <point x="424" y="700" type="line"/>
+      <point x="368" y="700" type="line"/>
+      <point x="260" y="700"/>
+      <point x="171" y="612"/>
+      <point x="171" y="503" type="curve"/>
+      <point x="171" y="0" type="line"/>
+      <point x="259" y="0" type="line"/>
+      <point x="259" y="503" type="line"/>
+      <point x="259" y="564"/>
+      <point x="308" y="613"/>
+      <point x="368" y="613" type="curve"/>
+    </contour>
+    <contour>
+      <point x="88" y="504" type="line"/>
+      <point x="88" y="417" type="line"/>
+      <point x="424" y="417" type="line"/>
+      <point x="424" y="504" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="kgreenlandic" format="2">
+  <advance width="735"/>
+  <unicode hex="0138"/>
+  <outline>
+    <contour>
+      <point x="88" y="0" type="line"/>
+      <point x="193" y="0" type="line"/>
+      <point x="193" y="504" type="line"/>
+      <point x="88" y="504" type="line"/>
+    </contour>
+    <contour>
+      <point x="88" y="305" type="line"/>
+      <point x="88" y="200" type="line"/>
+      <point x="446" y="200" type="line"/>
+      <point x="557" y="200"/>
+      <point x="648" y="290"/>
+      <point x="648" y="401" type="curve"/>
+      <point x="648" y="504" type="line"/>
+      <point x="543" y="504" type="line"/>
+      <point x="543" y="401" type="line"/>
+      <point x="543" y="348"/>
+      <point x="499" y="305"/>
+      <point x="446" y="305" type="curve"/>
+    </contour>
+    <contour>
+      <point x="394" y="305" type="line"/>
+      <point x="394" y="200" type="line"/>
+      <point x="446" y="200" type="line"/>
+      <point x="499" y="200"/>
+      <point x="543" y="156"/>
+      <point x="543" y="103" type="curve"/>
+      <point x="543" y="0" type="line"/>
+      <point x="648" y="0" type="line"/>
+      <point x="648" y="103" type="line"/>
+      <point x="648" y="214"/>
+      <point x="557" y="305"/>
+      <point x="446" y="305" type="curve"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

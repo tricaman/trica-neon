@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Ntilde" format="2">
+  <advance width="875"/>
+  <unicode hex="00D1"/>
+  <outline>
+    <component base="N"/>
+    <component base="tildecomb" xOffset="805" yOffset="700"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

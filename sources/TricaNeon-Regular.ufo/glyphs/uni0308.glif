@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni0308" format="2">
+  <unicode hex="0308"/>
+  <anchor x="-367" y="0" name="_top"/>
+  <anchor x="-367" y="210" name="top"/>
+  <outline>
+    <contour>
+      <point x="-387" y="140" type="curve"/>
+      <point x="-387" y="179"/>
+      <point x="-419" y="210"/>
+      <point x="-457" y="210" type="curve"/>
+      <point x="-496" y="210"/>
+      <point x="-527" y="179"/>
+      <point x="-527" y="140" type="curve"/>
+      <point x="-527" y="101"/>
+      <point x="-496" y="70"/>
+      <point x="-457" y="70" type="curve"/>
+      <point x="-419" y="70"/>
+      <point x="-387" y="101"/>
+    </contour>
+    <contour>
+      <point x="-207" y="140" type="curve"/>
+      <point x="-207" y="179"/>
+      <point x="-239" y="210"/>
+      <point x="-277" y="210" type="curve"/>
+      <point x="-316" y="210"/>
+      <point x="-347" y="179"/>
+      <point x="-347" y="140" type="curve"/>
+      <point x="-347" y="101"/>
+      <point x="-316" y="70"/>
+      <point x="-277" y="70" type="curve"/>
+      <point x="-239" y="70"/>
+      <point x="-207" y="101"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

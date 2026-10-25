@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="pi" format="2">
+  <advance width="735"/>
+  <unicode hex="03C0"/>
+  <outline>
+    <contour>
+      <point x="88" y="504" type="line"/>
+      <point x="88" y="487" type="line"/>
+      <point x="648" y="487" type="line"/>
+      <point x="648" y="504" type="line"/>
+    </contour>
+    <contour>
+      <point x="253" y="504" type="line"/>
+      <point x="236" y="504" type="line"/>
+      <point x="236" y="0" type="line"/>
+      <point x="253" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="499" y="504" type="line"/>
+      <point x="482" y="504" type="line"/>
+      <point x="482" y="0" type="line"/>
+      <point x="499" y="0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

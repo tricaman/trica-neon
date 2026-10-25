@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="divide" format="2">
+  <advance width="735"/>
+  <unicode hex="00F7"/>
+  <outline>
+    <contour>
+      <point x="122" y="394" type="line"/>
+      <point x="122" y="306" type="line"/>
+      <point x="613" y="306" type="line"/>
+      <point x="613" y="394" type="line"/>
+    </contour>
+    <contour>
+      <point x="455" y="501" type="curve"/>
+      <point x="455" y="550"/>
+      <point x="416" y="589"/>
+      <point x="368" y="589" type="curve"/>
+      <point x="319" y="589"/>
+      <point x="280" y="550"/>
+      <point x="280" y="501" type="curve"/>
+      <point x="280" y="453"/>
+      <point x="319" y="414"/>
+      <point x="368" y="414" type="curve"/>
+      <point x="416" y="414"/>
+      <point x="455" y="453"/>
+    </contour>
+    <contour>
+      <point x="455" y="199" type="curve"/>
+      <point x="455" y="247"/>
+      <point x="416" y="286"/>
+      <point x="368" y="286" type="curve"/>
+      <point x="319" y="286"/>
+      <point x="280" y="247"/>
+      <point x="280" y="199" type="curve"/>
+      <point x="280" y="150"/>
+      <point x="319" y="111"/>
+      <point x="368" y="111" type="curve"/>
+      <point x="416" y="111"/>
+      <point x="455" y="150"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

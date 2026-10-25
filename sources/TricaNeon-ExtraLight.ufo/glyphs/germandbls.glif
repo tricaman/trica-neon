@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="germandbls" format="2">
+  <advance width="735"/>
+  <unicode hex="00DF"/>
+  <outline>
+    <contour>
+      <point x="88" y="0" type="line"/>
+      <point x="123" y="0" type="line"/>
+      <point x="123" y="516" type="line"/>
+      <point x="123" y="598"/>
+      <point x="189" y="665"/>
+      <point x="271" y="665" type="curve"/>
+      <point x="481" y="665" type="line"/>
+      <point x="554" y="665"/>
+      <point x="613" y="606"/>
+      <point x="613" y="534" type="curve"/>
+      <point x="613" y="461"/>
+      <point x="554" y="403"/>
+      <point x="481" y="403" type="curve"/>
+      <point x="350" y="403" type="line"/>
+      <point x="350" y="368" type="line"/>
+      <point x="481" y="368" type="line"/>
+      <point x="573" y="368"/>
+      <point x="648" y="442"/>
+      <point x="648" y="534" type="curve"/>
+      <point x="648" y="626"/>
+      <point x="573" y="700"/>
+      <point x="481" y="700" type="curve"/>
+      <point x="271" y="700" type="line"/>
+      <point x="170" y="700"/>
+      <point x="88" y="618"/>
+      <point x="88" y="516" type="curve"/>
+    </contour>
+    <contour>
+      <point x="446" y="403" type="line"/>
+      <point x="446" y="368" type="line"/>
+      <point x="464" y="368" type="line"/>
+      <point x="546" y="368"/>
+      <point x="613" y="301"/>
+      <point x="613" y="219" type="curve"/>
+      <point x="613" y="184" type="line"/>
+      <point x="613" y="102"/>
+      <point x="546" y="35"/>
+      <point x="464" y="35" type="curve"/>
+      <point x="322" y="35" type="line"/>
+      <point x="322" y="0" type="line"/>
+      <point x="464" y="0" type="line"/>
+      <point x="565" y="0"/>
+      <point x="648" y="82"/>
+      <point x="648" y="184" type="curve"/>
+      <point x="648" y="219" type="line"/>
+      <point x="648" y="320"/>
+      <point x="565" y="403"/>
+      <point x="464" y="403" type="curve"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

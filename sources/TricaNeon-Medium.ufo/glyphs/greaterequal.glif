@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="greaterequal" format="2">
+  <advance width="735"/>
+  <unicode hex="2265"/>
+  <outline>
+    <contour>
+      <point x="146" y="680" type="line"/>
+      <point x="107" y="602" type="line"/>
+      <point x="471" y="420" type="line"/>
+      <point x="107" y="238" type="line"/>
+      <point x="146" y="160" type="line"/>
+      <point x="667" y="420" type="line"/>
+    </contour>
+    <contour>
+      <point x="122" y="152" type="line"/>
+      <point x="122" y="65" type="line"/>
+      <point x="613" y="65" type="line"/>
+      <point x="613" y="152" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

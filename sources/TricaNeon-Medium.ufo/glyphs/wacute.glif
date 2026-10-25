@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="wacute" format="2">
+  <advance width="987"/>
+  <unicode hex="1E83"/>
+  <outline>
+    <component base="w"/>
+    <component base="acutecomb" xOffset="861" yOffset="504"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

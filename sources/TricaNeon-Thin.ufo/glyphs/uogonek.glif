@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uogonek" format="2">
+  <advance width="735"/>
+  <unicode hex="0173"/>
+  <outline>
+    <component base="u"/>
+    <component base="uni0328" xOffset="892"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

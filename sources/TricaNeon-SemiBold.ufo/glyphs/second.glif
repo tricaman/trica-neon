@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="second" format="2">
+  <advance width="395"/>
+  <unicode hex="2033"/>
+  <outline>
+    <contour>
+      <point x="228" y="635" type="line"/>
+      <point x="127" y="660" type="line"/>
+      <point x="77" y="460" type="line"/>
+      <point x="178" y="435" type="line"/>
+    </contour>
+    <contour>
+      <point x="328" y="635" type="line"/>
+      <point x="227" y="660" type="line"/>
+      <point x="177" y="460" type="line"/>
+      <point x="278" y="435" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

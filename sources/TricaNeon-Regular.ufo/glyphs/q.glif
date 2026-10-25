@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="q" format="2">
+  <advance width="735"/>
+  <unicode hex="0071"/>
+  <anchor x="368" y="504" name="top"/>
+  <anchor x="368" y="0" name="bottom"/>
+  <anchor x="524" y="0" name="ogonek"/>
+  <outline>
+    <contour>
+      <point x="578" y="-196" type="line"/>
+      <point x="648" y="-196" type="line"/>
+      <point x="648" y="504" type="line"/>
+      <point x="578" y="504" type="line"/>
+    </contour>
+    <contour>
+      <point x="88" y="193" type="line"/>
+      <point x="88" y="86"/>
+      <point x="174" y="0"/>
+      <point x="280" y="0" type="curve"/>
+      <point x="648" y="0" type="line"/>
+      <point x="648" y="504" type="line"/>
+      <point x="280" y="504" type="line"/>
+      <point x="174" y="504"/>
+      <point x="88" y="418"/>
+      <point x="88" y="312" type="curve"/>
+    </contour>
+    <contour>
+      <point x="158" y="193" type="curve"/>
+      <point x="158" y="312" type="line"/>
+      <point x="158" y="379"/>
+      <point x="212" y="434"/>
+      <point x="280" y="434" type="curve"/>
+      <point x="578" y="434" type="line"/>
+      <point x="578" y="70" type="line"/>
+      <point x="280" y="70" type="line"/>
+      <point x="212" y="70"/>
+      <point x="158" y="125"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="arrowleft" format="2">
+  <advance width="875"/>
+  <unicode hex="2190"/>
+  <outline>
+    <contour>
+      <point x="88" y="368" type="line"/>
+      <point x="88" y="333" type="line"/>
+      <point x="788" y="333" type="line"/>
+      <point x="788" y="368" type="line"/>
+    </contour>
+    <contour>
+      <point x="284" y="504" type="line"/>
+      <point x="259" y="529" type="line"/>
+      <point x="80" y="350" type="line"/>
+      <point x="259" y="171" type="line"/>
+      <point x="284" y="196" type="line"/>
+      <point x="130" y="350" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

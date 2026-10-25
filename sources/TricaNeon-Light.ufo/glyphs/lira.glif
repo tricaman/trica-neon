@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="lira" format="2">
+  <advance width="735"/>
+  <unicode hex="20A4"/>
+  <outline>
+    <contour>
+      <point x="648" y="648" type="line"/>
+      <point x="648" y="700" type="line"/>
+      <point x="451" y="700" type="line"/>
+      <point x="347" y="700"/>
+      <point x="263" y="616"/>
+      <point x="263" y="512" type="curve"/>
+      <point x="263" y="0" type="line"/>
+      <point x="315" y="0" type="line"/>
+      <point x="315" y="512" type="line"/>
+      <point x="315" y="587"/>
+      <point x="376" y="648"/>
+      <point x="451" y="648" type="curve"/>
+    </contour>
+    <contour>
+      <point x="88" y="376" type="line"/>
+      <point x="88" y="324" type="line"/>
+      <point x="534" y="324" type="line"/>
+      <point x="534" y="376" type="line"/>
+    </contour>
+    <contour>
+      <point x="88" y="53" type="line"/>
+      <point x="88" y="0" type="line"/>
+      <point x="648" y="0" type="line"/>
+      <point x="648" y="53" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

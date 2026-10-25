@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="IJ" format="2">
+  <advance width="1050"/>
+  <unicode hex="0132"/>
+  <outline>
+    <contour>
+      <point x="88" y="0" type="line"/>
+      <point x="175" y="0" type="line"/>
+      <point x="175" y="700" type="line"/>
+      <point x="88" y="700" type="line"/>
+    </contour>
+    <contour>
+      <point x="963" y="700" type="line"/>
+      <point x="875" y="700" type="line"/>
+      <point x="875" y="197" type="line"/>
+      <point x="875" y="136"/>
+      <point x="826" y="88"/>
+      <point x="766" y="88" type="curve"/>
+      <point x="459" y="88" type="line"/>
+      <point x="399" y="88"/>
+      <point x="350" y="136"/>
+      <point x="350" y="197" type="curve"/>
+      <point x="350" y="394" type="line"/>
+      <point x="263" y="394" type="line"/>
+      <point x="263" y="197" type="line"/>
+      <point x="263" y="88"/>
+      <point x="351" y="0"/>
+      <point x="459" y="0" type="curve"/>
+      <point x="766" y="0" type="line"/>
+      <point x="874" y="0"/>
+      <point x="963" y="88"/>
+      <point x="963" y="197" type="curve"/>
+    </contour>
+  </outline>
+</glyph>

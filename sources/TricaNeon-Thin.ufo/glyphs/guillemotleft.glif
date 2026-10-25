@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="guillemotleft" format="2">
+  <advance width="494"/>
+  <unicode hex="00AB"/>
+  <outline>
+    <contour>
+      <point x="233" y="471" type="line"/>
+      <point x="221" y="483" type="line"/>
+      <point x="84" y="350" type="line"/>
+      <point x="221" y="217" type="line"/>
+      <point x="233" y="229" type="line"/>
+      <point x="109" y="350" type="line"/>
+    </contour>
+    <contour>
+      <point x="379" y="470" type="line"/>
+      <point x="368" y="483" type="line"/>
+      <point x="221" y="350" type="line"/>
+      <point x="368" y="217" type="line"/>
+      <point x="379" y="230" type="line"/>
+      <point x="247" y="350" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

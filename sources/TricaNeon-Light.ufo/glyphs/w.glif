@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="w" format="2">
+  <advance width="987"/>
+  <unicode hex="0077"/>
+  <anchor x="494" y="504" name="top"/>
+  <anchor x="494" y="0" name="bottom"/>
+  <anchor x="721" y="0" name="ogonek"/>
+  <outline>
+    <contour>
+      <point x="140" y="504" type="line"/>
+      <point x="88" y="504" type="line"/>
+      <point x="88" y="188" type="line"/>
+      <point x="88" y="84"/>
+      <point x="172" y="0"/>
+      <point x="276" y="0" type="curve"/>
+      <point x="332" y="0" type="line"/>
+      <point x="436" y="0"/>
+      <point x="520" y="84"/>
+      <point x="520" y="188" type="curve"/>
+      <point x="520" y="504" type="line"/>
+      <point x="467" y="504" type="line"/>
+      <point x="467" y="188" type="line"/>
+      <point x="467" y="113"/>
+      <point x="407" y="53"/>
+      <point x="332" y="53" type="curve"/>
+      <point x="276" y="53" type="line"/>
+      <point x="201" y="53"/>
+      <point x="140" y="113"/>
+      <point x="140" y="188" type="curve"/>
+    </contour>
+    <contour>
+      <point x="520" y="214" type="line"/>
+      <point x="467" y="214" type="line"/>
+      <point x="467" y="188" type="line"/>
+      <point x="467" y="84"/>
+      <point x="551" y="0"/>
+      <point x="655" y="0" type="curve"/>
+      <point x="711" y="0" type="line"/>
+      <point x="815" y="0"/>
+      <point x="900" y="84"/>
+      <point x="900" y="188" type="curve"/>
+      <point x="900" y="504" type="line"/>
+      <point x="847" y="504" type="line"/>
+      <point x="847" y="188" type="line"/>
+      <point x="847" y="113"/>
+      <point x="786" y="53"/>
+      <point x="711" y="53" type="curve"/>
+      <point x="655" y="53" type="line"/>
+      <point x="580" y="53"/>
+      <point x="520" y="113"/>
+      <point x="520" y="188" type="curve"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="daggerdbl" format="2">
+  <advance width="525"/>
+  <unicode hex="2021"/>
+  <outline>
+    <contour>
+      <point x="236" y="-106" type="line"/>
+      <point x="289" y="-106" type="line"/>
+      <point x="289" y="700" type="line"/>
+      <point x="236" y="700" type="line"/>
+    </contour>
+    <contour>
+      <point x="88" y="500" type="line"/>
+      <point x="88" y="448" type="line"/>
+      <point x="438" y="448" type="line"/>
+      <point x="438" y="500" type="line"/>
+    </contour>
+    <contour>
+      <point x="88" y="206" type="line"/>
+      <point x="88" y="154" type="line"/>
+      <point x="438" y="154" type="line"/>
+      <point x="438" y="206" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

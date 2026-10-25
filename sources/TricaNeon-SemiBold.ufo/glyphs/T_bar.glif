@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Tbar" format="2">
+  <advance width="875"/>
+  <unicode hex="0166"/>
+  <outline>
+    <contour>
+      <point x="88" y="700" type="line"/>
+      <point x="88" y="595" type="line"/>
+      <point x="788" y="595" type="line"/>
+      <point x="788" y="700" type="line"/>
+    </contour>
+    <contour>
+      <point x="490" y="700" type="line"/>
+      <point x="385" y="700" type="line"/>
+      <point x="385" y="0" type="line"/>
+      <point x="490" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="245" y="403" type="line"/>
+      <point x="245" y="298" type="line"/>
+      <point x="630" y="298" type="line"/>
+      <point x="630" y="403" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

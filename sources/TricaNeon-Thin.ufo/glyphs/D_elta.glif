@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Delta" format="2">
+  <advance width="875"/>
+  <unicode hex="2206"/>
+  <outline>
+    <contour>
+      <point x="449" y="695" type="line"/>
+      <point x="434" y="703" type="line"/>
+      <point x="82" y="0" type="line"/>
+      <point x="793" y="0" type="line"/>
+      <point x="441" y="703" type="line"/>
+      <point x="426" y="695" type="line"/>
+      <point x="765" y="18" type="line"/>
+      <point x="110" y="18" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

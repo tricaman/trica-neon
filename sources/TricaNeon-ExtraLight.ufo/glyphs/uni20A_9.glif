@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni20A9" format="2">
+  <advance width="875"/>
+  <unicode hex="20A9"/>
+  <outline>
+    <contour>
+      <point x="123" y="700" type="line"/>
+      <point x="88" y="700" type="line"/>
+      <point x="88" y="184" type="line"/>
+      <point x="88" y="82"/>
+      <point x="170" y="0"/>
+      <point x="271" y="0" type="curve"/>
+      <point x="373" y="0"/>
+      <point x="455" y="82"/>
+      <point x="455" y="184" type="curve"/>
+      <point x="455" y="700" type="line"/>
+      <point x="420" y="700" type="line"/>
+      <point x="420" y="184" type="line"/>
+      <point x="420" y="102"/>
+      <point x="353" y="35"/>
+      <point x="271" y="35" type="curve"/>
+      <point x="189" y="35"/>
+      <point x="123" y="102"/>
+      <point x="123" y="184" type="curve"/>
+    </contour>
+    <contour>
+      <point x="455" y="201" type="line"/>
+      <point x="420" y="201" type="line"/>
+      <point x="420" y="184" type="line"/>
+      <point x="420" y="82"/>
+      <point x="502" y="0"/>
+      <point x="604" y="0" type="curve"/>
+      <point x="705" y="0"/>
+      <point x="788" y="82"/>
+      <point x="788" y="184" type="curve"/>
+      <point x="788" y="700" type="line"/>
+      <point x="753" y="700" type="line"/>
+      <point x="753" y="184" type="line"/>
+      <point x="753" y="102"/>
+      <point x="686" y="35"/>
+      <point x="604" y="35" type="curve"/>
+      <point x="522" y="35"/>
+      <point x="455" y="102"/>
+      <point x="455" y="184" type="curve"/>
+    </contour>
+    <contour>
+      <point x="88" y="448" type="line"/>
+      <point x="88" y="413" type="line"/>
+      <point x="788" y="413" type="line"/>
+      <point x="788" y="448" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

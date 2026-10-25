@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="OE" format="2">
+  <advance width="1099"/>
+  <unicode hex="0152"/>
+  <outline>
+    <contour>
+      <point x="530" y="683" type="line"/>
+      <point x="530" y="700" type="line"/>
+      <point x="267" y="700" type="line"/>
+      <point x="168" y="700"/>
+      <point x="88" y="620"/>
+      <point x="88" y="521" type="curve"/>
+      <point x="88" y="179" type="line"/>
+      <point x="88" y="80"/>
+      <point x="168" y="0"/>
+      <point x="267" y="0" type="curve"/>
+      <point x="530" y="0" type="line"/>
+      <point x="530" y="18" type="line"/>
+      <point x="267" y="18" type="line"/>
+      <point x="177" y="18"/>
+      <point x="105" y="90"/>
+      <point x="105" y="179" type="curve"/>
+      <point x="105" y="521" type="line"/>
+      <point x="105" y="610"/>
+      <point x="177" y="683"/>
+      <point x="267" y="683" type="curve"/>
+    </contour>
+    <contour>
+      <point x="530" y="700" type="line"/>
+      <point x="513" y="700" type="line"/>
+      <point x="513" y="0" type="line"/>
+      <point x="530" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="513" y="700" type="line"/>
+      <point x="513" y="683" type="line"/>
+      <point x="1012" y="683" type="line"/>
+      <point x="1012" y="700" type="line"/>
+    </contour>
+    <contour>
+      <point x="513" y="359" type="line"/>
+      <point x="513" y="341" type="line"/>
+      <point x="972" y="341" type="line"/>
+      <point x="972" y="359" type="line"/>
+    </contour>
+    <contour>
+      <point x="513" y="18" type="line"/>
+      <point x="513" y="0" type="line"/>
+      <point x="1012" y="0" type="line"/>
+      <point x="1012" y="18" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

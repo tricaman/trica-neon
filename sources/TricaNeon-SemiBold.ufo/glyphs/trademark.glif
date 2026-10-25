@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="trademark" format="2">
+  <advance width="875"/>
+  <unicode hex="2122"/>
+  <outline>
+    <contour>
+      <point x="95" y="692" type="line"/>
+      <point x="95" y="603" type="line"/>
+      <point x="412" y="603" type="line"/>
+      <point x="412" y="692" type="line"/>
+    </contour>
+    <contour>
+      <point x="272" y="692" type="line"/>
+      <point x="183" y="692" type="line"/>
+      <point x="183" y="309" type="line"/>
+      <point x="272" y="309" type="line"/>
+    </contour>
+    <contour>
+      <point x="401" y="383" type="line"/>
+      <point x="490" y="383" type="line"/>
+      <point x="490" y="615" type="line"/>
+      <point x="490" y="625"/>
+      <point x="498" y="633"/>
+      <point x="508" y="633" type="curve"/>
+      <point x="518" y="633"/>
+      <point x="526" y="625"/>
+      <point x="526" y="615" type="curve"/>
+      <point x="526" y="383" type="line"/>
+      <point x="615" y="383" type="line"/>
+      <point x="615" y="615" type="line"/>
+      <point x="615" y="675"/>
+      <point x="567" y="723"/>
+      <point x="508" y="723" type="curve"/>
+      <point x="449" y="723"/>
+      <point x="401" y="675"/>
+      <point x="401" y="615" type="curve"/>
+    </contour>
+    <contour>
+      <point x="526" y="571" type="line"/>
+      <point x="615" y="571" type="line"/>
+      <point x="615" y="615" type="line"/>
+      <point x="615" y="625"/>
+      <point x="623" y="633"/>
+      <point x="633" y="633" type="curve"/>
+      <point x="643" y="633"/>
+      <point x="651" y="625"/>
+      <point x="651" y="615" type="curve"/>
+      <point x="651" y="383" type="line"/>
+      <point x="740" y="383" type="line"/>
+      <point x="740" y="615" type="line"/>
+      <point x="740" y="675"/>
+      <point x="692" y="723"/>
+      <point x="633" y="723" type="curve"/>
+      <point x="574" y="723"/>
+      <point x="526" y="675"/>
+      <point x="526" y="615" type="curve"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

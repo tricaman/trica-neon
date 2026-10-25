@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="numbersign" format="2">
+  <advance width="735"/>
+  <unicode hex="0023"/>
+  <outline>
+    <contour>
+      <point x="220" y="113" type="line"/>
+      <point x="325" y="113" type="line"/>
+      <point x="325" y="588" type="line"/>
+      <point x="220" y="588" type="line"/>
+    </contour>
+    <contour>
+      <point x="410" y="113" type="line"/>
+      <point x="515" y="113" type="line"/>
+      <point x="515" y="588" type="line"/>
+      <point x="410" y="588" type="line"/>
+    </contour>
+    <contour>
+      <point x="88" y="291" type="line"/>
+      <point x="88" y="186" type="line"/>
+      <point x="648" y="186" type="line"/>
+      <point x="648" y="291" type="line"/>
+    </contour>
+    <contour>
+      <point x="88" y="515" type="line"/>
+      <point x="88" y="410" type="line"/>
+      <point x="648" y="410" type="line"/>
+      <point x="648" y="515" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

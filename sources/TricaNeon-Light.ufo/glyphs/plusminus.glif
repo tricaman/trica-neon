@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="plusminus" format="2">
+  <advance width="735"/>
+  <unicode hex="00B1"/>
+  <outline>
+    <contour>
+      <point x="151" y="436" type="line"/>
+      <point x="151" y="384" type="line"/>
+      <point x="584" y="384" type="line"/>
+      <point x="584" y="436" type="line"/>
+    </contour>
+    <contour>
+      <point x="341" y="193" type="line"/>
+      <point x="394" y="193" type="line"/>
+      <point x="394" y="627" type="line"/>
+      <point x="341" y="627" type="line"/>
+    </contour>
+    <contour>
+      <point x="151" y="53" type="line"/>
+      <point x="151" y="0" type="line"/>
+      <point x="584" y="0" type="line"/>
+      <point x="584" y="53" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

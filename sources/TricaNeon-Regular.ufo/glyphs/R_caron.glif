@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Rcaron" format="2">
+  <advance width="875"/>
+  <unicode hex="0158"/>
+  <outline>
+    <component base="R"/>
+    <component base="uni030C" xOffset="805" yOffset="700"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

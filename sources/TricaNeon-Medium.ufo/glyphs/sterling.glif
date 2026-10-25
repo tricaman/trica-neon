@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="sterling" format="2">
+  <advance width="735"/>
+  <unicode hex="00A3"/>
+  <outline>
+    <contour>
+      <point x="648" y="613" type="line"/>
+      <point x="648" y="700" type="line"/>
+      <point x="459" y="700" type="line"/>
+      <point x="351" y="700"/>
+      <point x="263" y="612"/>
+      <point x="263" y="503" type="curve"/>
+      <point x="263" y="0" type="line"/>
+      <point x="350" y="0" type="line"/>
+      <point x="350" y="503" type="line"/>
+      <point x="350" y="564"/>
+      <point x="399" y="613"/>
+      <point x="459" y="613" type="curve"/>
+    </contour>
+    <contour>
+      <point x="88" y="394" type="line"/>
+      <point x="88" y="306" type="line"/>
+      <point x="551" y="306" type="line"/>
+      <point x="551" y="394" type="line"/>
+    </contour>
+    <contour>
+      <point x="88" y="88" type="line"/>
+      <point x="88" y="0" type="line"/>
+      <point x="648" y="0" type="line"/>
+      <point x="648" y="88" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

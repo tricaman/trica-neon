@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<designspace format="5.0">
+  <axes>
+    <axis tag="wght" name="Weight" minimum="100" maximum="600" default="400"/>
+  </axes>
+  <sources>
+    <source filename="TricaNeon-Thin.ufo" familyname="Trica Neon" stylename="Thin">
+      <location>
+        <dimension name="Weight" xvalue="100"/>
+      </location>
+    </source>
+    <source filename="TricaNeon-ExtraLight.ufo" familyname="Trica Neon" stylename="ExtraLight">
+      <location>
+        <dimension name="Weight" xvalue="200"/>
+      </location>
+    </source>
+    <source filename="TricaNeon-Light.ufo" familyname="Trica Neon" stylename="Light">
+      <location>
+        <dimension name="Weight" xvalue="300"/>
+      </location>
+    </source>
+    <source filename="TricaNeon-Regular.ufo" familyname="Trica Neon" stylename="Regular">
+      <location>
+        <dimension name="Weight" xvalue="400"/>
+      </location>
+    </source>
+    <source filename="TricaNeon-Medium.ufo" familyname="Trica Neon" stylename="Medium">
+      <location>
+        <dimension name="Weight" xvalue="500"/>
+      </location>
+    </source>
+    <source filename="TricaNeon-SemiBold.ufo" familyname="Trica Neon" stylename="SemiBold">
+      <location>
+        <dimension name="Weight" xvalue="600"/>
+      </location>
+    </source>
+  </sources>
+  <instances>
+    <instance familyname="Trica Neon" stylename="Thin" filename="instance_ufos/TricaNeon-Thin.ufo" postscriptfontname="TricaNeon-Thin" stylemapfamilyname="Trica Neon Thin" stylemapstylename="regular">
+      <location>
+        <dimension name="Weight" xvalue="100"/>
+      </location>
+    </instance>
+    <instance familyname="Trica Neon" stylename="ExtraLight" filename="instance_ufos/TricaNeon-ExtraLight.ufo" postscriptfontname="TricaNeon-ExtraLight" stylemapfamilyname="Trica Neon ExtraLight" stylemapstylename="regular">
+      <location>
+        <dimension name="Weight" xvalue="200"/>
+      </location>
+    </instance>
+    <instance familyname="Trica Neon" stylename="Light" filename="instance_ufos/TricaNeon-Light.ufo" postscriptfontname="TricaNeon-Light" stylemapfamilyname="Trica Neon Light" stylemapstylename="regular">
+      <location>
+        <dimension name="Weight" xvalue="300"/>
+      </location>
+    </instance>
+    <instance familyname="Trica Neon" stylename="Regular" filename="instance_ufos/TricaNeon-Regular.ufo" postscriptfontname="TricaNeon-Regular" stylemapfamilyname="Trica Neon" stylemapstylename="regular">
+      <location>
+        <dimension name="Weight" xvalue="400"/>
+      </location>
+    </instance>
+    <instance familyname="Trica Neon" stylename="Medium" filename="instance_ufos/TricaNeon-Medium.ufo" postscriptfontname="TricaNeon-Medium" stylemapfamilyname="Trica Neon Medium" stylemapstylename="regular">
+      <location>
+        <dimension name="Weight" xvalue="500"/>
+      </location>
+    </instance>
+    <instance familyname="Trica Neon" stylename="SemiBold" filename="instance_ufos/TricaNeon-SemiBold.ufo" postscriptfontname="TricaNeon-SemiBold" stylemapfamilyname="Trica Neon SemiBold" stylemapstylename="regular">
+      <location>
+        <dimension name="Weight" xvalue="600"/>
+      </location>
+    </instance>
+  </instances>
+</designspace>

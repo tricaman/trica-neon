@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="braceleft" format="2">
+  <advance width="455"/>
+  <unicode hex="007B"/>
+  <outline>
+    <contour>
+      <point x="368" y="613" type="line"/>
+      <point x="368" y="700" type="line"/>
+      <point x="262" y="700" type="line"/>
+      <point x="196" y="700"/>
+      <point x="142" y="646"/>
+      <point x="142" y="580" type="curve"/>
+      <point x="142" y="36" type="line"/>
+      <point x="142" y="-30"/>
+      <point x="196" y="-84"/>
+      <point x="262" y="-84" type="curve"/>
+      <point x="368" y="-84" type="line"/>
+      <point x="368" y="4" type="line"/>
+      <point x="262" y="4" type="line"/>
+      <point x="244" y="4"/>
+      <point x="229" y="18"/>
+      <point x="229" y="36" type="curve"/>
+      <point x="229" y="580" type="line"/>
+      <point x="229" y="598"/>
+      <point x="244" y="613"/>
+      <point x="262" y="613" type="curve"/>
+    </contour>
+    <contour>
+      <point x="88" y="352" type="line"/>
+      <point x="88" y="264" type="line"/>
+      <point x="229" y="264" type="line"/>
+      <point x="229" y="352" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

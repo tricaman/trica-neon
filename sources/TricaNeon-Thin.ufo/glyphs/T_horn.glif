@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Thorn" format="2">
+  <advance width="875"/>
+  <unicode hex="00DE"/>
+  <outline>
+    <contour>
+      <point x="88" y="0" type="line"/>
+      <point x="105" y="0" type="line"/>
+      <point x="105" y="700" type="line"/>
+      <point x="88" y="700" type="line"/>
+    </contour>
+    <contour>
+      <point x="88" y="166" type="line"/>
+      <point x="608" y="166" type="line"/>
+      <point x="707" y="166"/>
+      <point x="788" y="247"/>
+      <point x="788" y="346" type="curve"/>
+      <point x="788" y="389" type="line"/>
+      <point x="788" y="488"/>
+      <point x="707" y="569"/>
+      <point x="608" y="569" type="curve"/>
+      <point x="88" y="569" type="line"/>
+    </contour>
+    <contour>
+      <point x="105" y="184" type="line"/>
+      <point x="105" y="551" type="line"/>
+      <point x="608" y="551" type="line"/>
+      <point x="698" y="551"/>
+      <point x="770" y="479"/>
+      <point x="770" y="389" type="curve"/>
+      <point x="770" y="346" type="line"/>
+      <point x="770" y="256"/>
+      <point x="698" y="184"/>
+      <point x="608" y="184" type="curve"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

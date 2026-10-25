@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni0123" format="2">
+  <advance width="735"/>
+  <unicode hex="0123"/>
+  <outline>
+    <component base="g"/>
+    <component base="uni0327" xOffset="735"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>

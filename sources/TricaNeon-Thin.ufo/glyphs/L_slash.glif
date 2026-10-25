@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Lslash" format="2">
+  <advance width="955"/>
+  <unicode hex="0141"/>
+  <outline>
+    <contour>
+      <point x="185" y="700" type="line"/>
+      <point x="168" y="700" type="line"/>
+      <point x="168" y="179" type="line"/>
+      <point x="168" y="80"/>
+      <point x="248" y="0"/>
+      <point x="347" y="0" type="curve"/>
+      <point x="868" y="0" type="line"/>
+      <point x="868" y="18" type="line"/>
+      <point x="347" y="18" type="line"/>
+      <point x="257" y="18"/>
+      <point x="185" y="90"/>
+      <point x="185" y="179" type="curve"/>
+    </contour>
+    <contour>
+      <point x="84" y="262" type="line"/>
+      <point x="95" y="248" type="line"/>
+      <point x="349" y="438" type="line"/>
+      <point x="338" y="452" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>
