@@ -369,7 +369,9 @@ def install(bf, d, dot):
     put1("infinity", W * 1.0, ln((h, MI + iq / 2), (W / 2, MI + iq / 2), (W / 2, MI - iq / 2), (h, MI - iq / 2), radii=[iq * 0.45] * 4, closed=True),
          ln((W / 2, MI), (W / 2, MI + iq / 2), (W - h, MI + iq / 2), (W - h, MI - iq / 2), (W / 2, MI - iq / 2), (W / 2, MI),
             radii=[0] + [iq * 0.45] * 4 + [0]), ch="∞")           # right loop left open on the shared side
-    put1("radical", W * 0.8, ln((h, MI), (W * 0.22, MI), (W * 0.38, BT), (W * 0.52, T), (W * 0.8 - h, T)), ch="√")
+    # the point at the bottom is trimmed flush with the baseline, as in V
+    put1("radical", W * 0.8, bf.clip(ln((h, MI), (W * 0.22, MI), (W * 0.38, BT - S * 0.6), (W * 0.52, T), (W * 0.8 - h, T)),
+                                     -H, 0, 2 * H, 2 * H), ch="√")
     put1("partialdiff", w, ln((h, XT), (lR, XT), (lR, BT), (h, BT), radii=[r] * 4, closed=True),
          ln((lR, XM), (lR, T), (h + 40, T), radii=[0, r, 0]), ch="∂")
     put1("summation", W * 0.8, ln((W * 0.8 - h, T), (h, T), (W * 0.45, MI), (h, BT), (W * 0.8 - h, BT)), ch="∑")
