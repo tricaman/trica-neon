@@ -304,8 +304,9 @@ def build_lowercase(d, dot):
     # i is spaced on the stem, as the l: the dot sticks out into the sidebearings
     glyph("dotlessi", S, [([(h, BT), (h, XT)],)])          # base for the accented i
     glyph("i", S, [([(h, BT), (h, XT)],)], extra=[idot(h)])
-    wj = w * 0.45
-    glyph("j", wj, [([(wj - h, XT), (wj - h, DB), (h, DB)], [0, r, 0])], extra=[idot(wj - h)])
+    # the hook of the j reaches 130 units under the previous letter
+    wj = w * 0.45 - 130
+    glyph("j", wj, [([(wj - h, XT), (wj - h, DB), (h - 130, DB)], [0, r, 0])], extra=[idot(wj - h)])
     glyph("k", w, [([(L, BT), (L, AT)],), ([(L, XM), (R, XM), (R, XT)], [0, r, 0]),
                    ([(R - r, XM), (R, XM), (R, BT)], [0, r, 0])])
     wl = w * 0.42

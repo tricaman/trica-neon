@@ -82,9 +82,9 @@ def install(bf, d, dot):
 
     ASCENDERS = set("bdfhklt")
 
-    # dotless j, needed under marks
-    jw, _ = G["j"]
-    G["dotlessj"] = (jw, union(stroke(rounded([(jw - h, XT), (jw - h, DB), (h, DB)], [0, r, 0]))))
+    # dotless j, needed under marks: the skeleton of the j without the dot
+    jw, (jpart,) = bf.SKEL["j"]
+    G["dotlessj"] = (jw, union(stroke(rounded(*jpart))))
     reg("dotlessj", "ȷ")
 
     def base_name(ch):
