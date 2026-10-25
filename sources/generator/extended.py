@@ -162,7 +162,7 @@ def install(bf, d, dot):
     Iw, Ip = G["I"]; Jw, Jp = G["J"]
     put1("IJ", Iw + Jw + H / 8, Ip, shift(Jp, Iw + H / 8), ch="Ĳ")
     iw, ip = G["i"]; jw2, jp = G["j"]
-    put1("ij", iw + jw2 + 40, ip, shift(jp, iw + 40), ch="ĳ")
+    put1("ij", iw + jw2 + 2 * bf.SB, ip, shift(jp, iw + 2 * bf.SB), ch="ĳ")     # spaced as i followed by j
     kw = w
     put1("kgreenlandic", kw, ln((h, BT), (h, XT)), ln((h, XM), (kw - h, XM), (kw - h, XT), radii=[0, r, 0]),
          ln((kw - h - r, XM), (kw - h, XM), (kw - h, BT), radii=[0, r, 0]), ch="ĸ")

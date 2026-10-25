@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="iogonek.dotless" format="2">
-  <advance width="235"/>
+  <advance width="192"/>
   <outline>
     <component base="dotlessi"/>
-    <component base="uni0328" xOffset="502"/>
+    <component base="uni0328" xOffset="469"/>
   </outline>
   <lib>
     <dict>

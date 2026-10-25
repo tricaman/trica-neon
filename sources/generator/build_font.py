@@ -126,7 +126,7 @@ def build():
     glyph("period", d, extra=[dot(d / 2, d / 2)])
     glyph("comma", d, [([(d / 2, d / 2), (d / 2, -d * 1.6)],)], extra=[dot(d / 2, d / 2)])
     glyph("colon", d, extra=[dot(d / 2, d / 2), dot(d / 2, MI - d / 2)])
-    glyph("exclam", d, [([(d / 2, d * 2.2), (d / 2, T)],)], extra=[dot(d / 2, d / 2)])
+    glyph("exclam", S, [([(h, d * 2.2), (h, T)],)], extra=[dot(h, d / 2)])     # spaced on the stem, as the i
     glyph("quotesingle", S, [([(h, T - 2 * r), (h, T)],)])
     glyph("hyphen", W / 2, [([(h, MI), (W / 2 - h, MI)],)])
     Wq = Wd
@@ -209,7 +209,7 @@ def build_symbols(d, dot):
     put("periodcentered", d, dot(d / 2, MI))
     put("bullet", d * 2, circle(d, MI, d))
     put("ellipsis", d * 5, dot(d / 2, d / 2), dot(d * 2.5, d / 2), dot(d * 4.5, d / 2))
-    put("exclamdown", d, ln((d / 2, H - d * 2.2), (d / 2, BT)), dot(d / 2, H - d / 2))
+    put("exclamdown", S, ln((h, H - d * 2.2), (h, BT)), dot(h, H - d / 2))
 
     # degree, guillemets
     ds = H * 0.32
@@ -301,9 +301,9 @@ def build_lowercase(d, dot):
     glyph("g", w, [([(R, XT), (L, XT), (L, BT), (R, BT)], [0, r, r, 0]),
                    ([(R, XT), (R, DB), (L, DB)], [0, r, 0])])
     glyph("h", w, [([(L, BT), (L, AT)],), ([(L, XT), (R, XT), (R, BT)], [0, r, 0])])
-    wi = d
-    glyph("dotlessi", wi, [([(wi / 2, BT), (wi / 2, XT)],)])          # base for the accented i
-    glyph("i", wi, [([(wi / 2, BT), (wi / 2, XT)],)], extra=[idot(wi / 2)])
+    # i is spaced on the stem, as the l: the dot sticks out into the sidebearings
+    glyph("dotlessi", S, [([(h, BT), (h, XT)],)])          # base for the accented i
+    glyph("i", S, [([(h, BT), (h, XT)],)], extra=[idot(h)])
     wj = w * 0.45
     glyph("j", wj, [([(wj - h, XT), (wj - h, DB), (h, DB)], [0, r, 0])], extra=[idot(wj - h)])
     glyph("k", w, [([(L, BT), (L, AT)],), ([(L, XM), (R, XM), (R, XT)], [0, r, 0]),
