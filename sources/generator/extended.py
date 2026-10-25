@@ -104,11 +104,9 @@ def install(bf, d, dot):
         bname = base_name(base) if (above and not vertical_caron) else base
         if bname not in G:
             return False
-        bw = G[bname][0]
-        pad = (260 - bw) / 2 if bw < 260 else 0        # narrow bases: widen so marks fit
-        bw += 2 * pad
+        bw = G[bname][0]                               # as wide as the base: wider marks stick out
         top = H if base.isupper() else (T + h if base in ASCENDERS else XH)
-        comps = [(bname, pad, 0)]                      # (glyph, x offset, y offset)
+        comps = [(bname, 0, 0)]                        # (glyph, x offset, y offset)
         for m in marks:
             if m == 0x30C and vertical_caron:
                 ytop = T + h if base in "dlL" else XT + (T - XT) * 0.6 + h
@@ -267,9 +265,8 @@ def install(bf, d, dot):
 
     # i with ogonek and no dot, for a mark above it (ccmp)
     iw = G["dotlessi"][0]
-    pad = (260 - iw) / 2 if iw < 260 else 0
-    G["iogonek.dotless"] = (iw + 2 * pad, bf.Outline())
-    bf.COMPONENTS["iogonek.dotless"] = [("dotlessi", pad, 0), ("ogonekcomb", (iw + 2 * pad) * 0.78 - mx, 0)]
+    G["iogonek.dotless"] = (iw, bf.Outline())
+    bf.COMPONENTS["iogonek.dotless"] = [("dotlessi", 0, 0), ("ogonekcomb", iw * 0.78 - mx, 0)]
 
     # ------------------------------------------------------- Latin-1 symbols
     cw, cp_ = G["c"]
