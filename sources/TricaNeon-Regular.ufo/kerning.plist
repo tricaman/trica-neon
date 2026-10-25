@@ -2,12 +2,76 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
+    <key>dcaron</key>
+    <dict>
+      <key>public.kern2.T</key>
+      <integer>45</integer>
+      <key>public.kern2.Tbar</key>
+      <integer>45</integer>
+      <key>public.kern2.V</key>
+      <integer>40</integer>
+      <key>public.kern2.X</key>
+      <integer>35</integer>
+      <key>public.kern2.Y</key>
+      <integer>20</integer>
+      <key>public.kern2.four</key>
+      <integer>20</integer>
+      <key>public.kern2.one</key>
+      <integer>45</integer>
+      <key>public.kern2.seven</key>
+      <integer>45</integer>
+      <key>public.kern2.three</key>
+      <integer>30</integer>
+      <key>public.kern2.two</key>
+      <integer>10</integer>
+    </dict>
     <key>exclamdown</key>
     <dict>
       <key>public.kern2.dotlessj</key>
       <integer>5</integer>
       <key>public.kern2.j</key>
       <integer>5</integer>
+    </dict>
+    <key>lcaron</key>
+    <dict>
+      <key>public.kern2.Hbar</key>
+      <integer>5</integer>
+      <key>public.kern2.L</key>
+      <integer>5</integer>
+      <key>public.kern2.Ldot</key>
+      <integer>5</integer>
+      <key>public.kern2.T</key>
+      <integer>65</integer>
+      <key>public.kern2.Tbar</key>
+      <integer>65</integer>
+      <key>public.kern2.U</key>
+      <integer>5</integer>
+      <key>public.kern2.V</key>
+      <integer>60</integer>
+      <key>public.kern2.W</key>
+      <integer>5</integer>
+      <key>public.kern2.X</key>
+      <integer>55</integer>
+      <key>public.kern2.Y</key>
+      <integer>40</integer>
+      <key>public.kern2.Z</key>
+      <integer>20</integer>
+      <key>public.kern2.five</key>
+      <integer>20</integer>
+      <key>public.kern2.four</key>
+      <integer>40</integer>
+      <key>public.kern2.i</key>
+      <integer>5</integer>
+      <key>public.kern2.ij</key>
+      <integer>5</integer>
+      <key>public.kern2.one</key>
+      <integer>65</integer>
+      <key>public.kern2.seven</key>
+      <integer>65</integer>
+      <key>public.kern2.three</key>
+      <integer>50</integer>
+      <key>public.kern2.two</key>
+      <integer>30</integer>
     </dict>
     <key>public.kern1.A</key>
     <dict>
@@ -98,6 +162,19 @@
     <dict>
       <key>public.kern2.period</key>
       <integer>-70</integer>
+    </dict>
+    <key>tcaron</key>
+    <dict>
+      <key>public.kern2.Hbar</key>
+      <integer>10</integer>
+      <key>public.kern2.V</key>
+      <integer>10</integer>
+      <key>public.kern2.Y</key>
+      <integer>20</integer>
+      <key>public.kern2.five</key>
+      <integer>5</integer>
+      <key>public.kern2.four</key>
+      <integer>20</integer>
     </dict>
   </dict>
 </plist>

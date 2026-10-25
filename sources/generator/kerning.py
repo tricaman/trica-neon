@@ -6,7 +6,8 @@ sidebearing). Open areas, such as under the bar of a T or beside the foot of a V
 only up to a limit, and only part of the difference becomes kerning, so it stays moderate.
 Then no two letters or figures, and no letter and punctuation mark, come closer than a share
 of the stroke: kerning that would bring them closer is reduced, and pairs that are too close
-untouched get kerned apart.
+untouched get kerned apart. The vertical caron of ď ľ ť, which sticks out on the right, is kept
+further from the next letter than from its own.
 """
 import math, unicodedata
 
@@ -63,17 +64,20 @@ def groups(components, letters):
     return result
 
 
-def values(contours, advances, gap, stroke, letters, marks):
-    """{(kern1 group, kern2 group): value} for one master; contours resolved, in font units."""
-    lines = {g: _polylines(contours[g]) for g in set(LEFT.values()) | set(RIGHT.values()) | set(letters) | set(marks)}
+def values(contours, advances, gap, stroke, letters, marks, carons, caron_gap):
+    """{(kern1 group, kern2 group): value} for one master; contours resolved, in font units. `carons`: the
+    letters with the vertical caron and the height from which the caron is their right side."""
+    lines = {g: _polylines(contours[g]) for g in set(LEFT.values()) | set(RIGHT.values()) | set(letters) | set(marks)
+             | set(carons)}
     rows = {g: _rows(lines[g]) for g in lines}
     least = max(MIN_GAP * stroke, MIN_GAP_UNITS)
 
-    def closest(a, b, kern):                       # nearest approach of b set after a, over every height
-        return min((advances[a] + kern + rows[b][y][0] - rows[a][y][1] for y in rows[a] if y in rows[b]), default=None)
+    def closest(a, b, kern, lo=-math.inf):         # nearest approach of b set after a, over every height from lo up
+        return min((advances[a] + kern + rows[b][y][0] - rows[a][y][1] for y in rows[a] if y >= lo and y in rows[b]),
+                   default=None)
 
-    def apart(a, b, value):                        # the kerning that keeps a and b at least `least` apart
-        near = closest(a, b, value)
+    def apart(a, b, value, least=least, lo=-math.inf):   # the kerning that keeps a and b at least `least` apart
+        near = closest(a, b, value, lo)
         return value if near is None or near >= least else value + 5 * math.ceil((least - near) / 5)
 
     out = {}
@@ -89,6 +93,13 @@ def values(contours, advances, gap, stroke, letters, marks):
                 value = apart(a, b, 0)
                 if value:
                     out[key] = value
+    # the vertical caron sticks out on the right of ď ľ ť: it stays `caron_gap` from the next letter, measured
+    # over its height only, so that it reads as part of its own letter (glyph to class)
+    for a, lo in carons.items():
+        for b in letters:
+            value = apart(a, b, 0, caron_gap, lo)
+            if value:
+                out[(a, f"public.kern2.{b}")] = value
     # punctuation next to letters: glyph to class (marks already in a list class stay out)
     listed = {side: {m for g in groups_ if g in LISTS for m in LISTS[g]} for side, groups_ in (("l", LEFT), ("r", RIGHT))}
     for a, b, key in [(p, b, (p, f"public.kern2.{b}")) for p in marks if p not in listed["l"] for b in letters] + \

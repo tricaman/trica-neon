@@ -2,6 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
+    <key>dcaron</key>
+    <dict>
+      <key>public.kern2.T</key>
+      <integer>25</integer>
+      <key>public.kern2.Tbar</key>
+      <integer>25</integer>
+      <key>public.kern2.V</key>
+      <integer>15</integer>
+      <key>public.kern2.X</key>
+      <integer>15</integer>
+      <key>public.kern2.Z</key>
+      <integer>15</integer>
+      <key>public.kern2.one</key>
+      <integer>25</integer>
+      <key>public.kern2.seven</key>
+      <integer>25</integer>
+      <key>public.kern2.three</key>
+      <integer>20</integer>
+    </dict>
     <key>public.kern1.A</key>
     <dict>
       <key>public.kern2.T</key>
@@ -91,6 +110,13 @@
     <dict>
       <key>public.kern2.period</key>
       <integer>-105</integer>
+    </dict>
+    <key>tcaron</key>
+    <dict>
+      <key>public.kern2.Y</key>
+      <integer>10</integer>
+      <key>public.kern2.four</key>
+      <integer>10</integer>
     </dict>
   </dict>
 </plist>

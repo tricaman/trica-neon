@@ -12,6 +12,45 @@
       <key>public.kern2.Z</key>
       <integer>10</integer>
     </dict>
+    <key>dcaron</key>
+    <dict>
+      <key>public.kern2.Hbar</key>
+      <integer>5</integer>
+      <key>public.kern2.L</key>
+      <integer>5</integer>
+      <key>public.kern2.Ldot</key>
+      <integer>5</integer>
+      <key>public.kern2.T</key>
+      <integer>60</integer>
+      <key>public.kern2.Tbar</key>
+      <integer>60</integer>
+      <key>public.kern2.U</key>
+      <integer>5</integer>
+      <key>public.kern2.V</key>
+      <integer>50</integer>
+      <key>public.kern2.W</key>
+      <integer>5</integer>
+      <key>public.kern2.X</key>
+      <integer>45</integer>
+      <key>public.kern2.Y</key>
+      <integer>35</integer>
+      <key>public.kern2.five</key>
+      <integer>15</integer>
+      <key>public.kern2.four</key>
+      <integer>35</integer>
+      <key>public.kern2.i</key>
+      <integer>5</integer>
+      <key>public.kern2.ij</key>
+      <integer>5</integer>
+      <key>public.kern2.one</key>
+      <integer>60</integer>
+      <key>public.kern2.seven</key>
+      <integer>60</integer>
+      <key>public.kern2.three</key>
+      <integer>35</integer>
+      <key>public.kern2.two</key>
+      <integer>25</integer>
+    </dict>
     <key>exclamdown</key>
     <dict>
       <key>public.kern2.dotlessj</key>
@@ -28,6 +67,111 @@
     <dict>
       <key>public.kern2.Eth</key>
       <integer>15</integer>
+    </dict>
+    <key>lcaron</key>
+    <dict>
+      <key>public.kern2.B</key>
+      <integer>40</integer>
+      <key>public.kern2.C</key>
+      <integer>10</integer>
+      <key>public.kern2.D</key>
+      <integer>40</integer>
+      <key>public.kern2.E</key>
+      <integer>10</integer>
+      <key>public.kern2.Eth</key>
+      <integer>25</integer>
+      <key>public.kern2.G</key>
+      <integer>10</integer>
+      <key>public.kern2.H</key>
+      <integer>40</integer>
+      <key>public.kern2.Hbar</key>
+      <integer>50</integer>
+      <key>public.kern2.I</key>
+      <integer>40</integer>
+      <key>public.kern2.IJ</key>
+      <integer>40</integer>
+      <key>public.kern2.K</key>
+      <integer>40</integer>
+      <key>public.kern2.L</key>
+      <integer>50</integer>
+      <key>public.kern2.Ldot</key>
+      <integer>50</integer>
+      <key>public.kern2.Lslash</key>
+      <integer>10</integer>
+      <key>public.kern2.O</key>
+      <integer>10</integer>
+      <key>public.kern2.OE</key>
+      <integer>10</integer>
+      <key>public.kern2.Omega</key>
+      <integer>10</integer>
+      <key>public.kern2.P</key>
+      <integer>40</integer>
+      <key>public.kern2.Q</key>
+      <integer>10</integer>
+      <key>public.kern2.R</key>
+      <integer>40</integer>
+      <key>public.kern2.S</key>
+      <integer>30</integer>
+      <key>public.kern2.T</key>
+      <integer>105</integer>
+      <key>public.kern2.Tbar</key>
+      <integer>105</integer>
+      <key>public.kern2.Thorn</key>
+      <integer>40</integer>
+      <key>public.kern2.U</key>
+      <integer>50</integer>
+      <key>public.kern2.V</key>
+      <integer>100</integer>
+      <key>public.kern2.W</key>
+      <integer>50</integer>
+      <key>public.kern2.X</key>
+      <integer>90</integer>
+      <key>public.kern2.Y</key>
+      <integer>80</integer>
+      <key>public.kern2.Z</key>
+      <integer>40</integer>
+      <key>public.kern2.b</key>
+      <integer>40</integer>
+      <key>public.kern2.eight</key>
+      <integer>15</integer>
+      <key>public.kern2.five</key>
+      <integer>60</integer>
+      <key>public.kern2.four</key>
+      <integer>80</integer>
+      <key>public.kern2.h</key>
+      <integer>40</integer>
+      <key>public.kern2.hbar</key>
+      <integer>20</integer>
+      <key>public.kern2.i</key>
+      <integer>50</integer>
+      <key>public.kern2.ij</key>
+      <integer>50</integer>
+      <key>public.kern2.j</key>
+      <integer>35</integer>
+      <key>public.kern2.k</key>
+      <integer>40</integer>
+      <key>public.kern2.l</key>
+      <integer>40</integer>
+      <key>public.kern2.ldot</key>
+      <integer>40</integer>
+      <key>public.kern2.napostrophe</key>
+      <integer>5</integer>
+      <key>public.kern2.nine</key>
+      <integer>30</integer>
+      <key>public.kern2.one</key>
+      <integer>105</integer>
+      <key>public.kern2.seven</key>
+      <integer>105</integer>
+      <key>public.kern2.six</key>
+      <integer>10</integer>
+      <key>public.kern2.thorn</key>
+      <integer>40</integer>
+      <key>public.kern2.three</key>
+      <integer>80</integer>
+      <key>public.kern2.two</key>
+      <integer>70</integer>
+      <key>public.kern2.zero</key>
+      <integer>10</integer>
     </dict>
     <key>less</key>
     <dict>
@@ -196,6 +340,29 @@
       <integer>25</integer>
       <key>public.kern2.j</key>
       <integer>25</integer>
+    </dict>
+    <key>tcaron</key>
+    <dict>
+      <key>public.kern2.Hbar</key>
+      <integer>15</integer>
+      <key>public.kern2.T</key>
+      <integer>45</integer>
+      <key>public.kern2.Tbar</key>
+      <integer>45</integer>
+      <key>public.kern2.V</key>
+      <integer>10</integer>
+      <key>public.kern2.Y</key>
+      <integer>20</integer>
+      <key>public.kern2.four</key>
+      <integer>20</integer>
+      <key>public.kern2.one</key>
+      <integer>45</integer>
+      <key>public.kern2.seven</key>
+      <integer>45</integer>
+      <key>public.kern2.three</key>
+      <integer>20</integer>
+      <key>public.kern2.two</key>
+      <integer>10</integer>
     </dict>
   </dict>
 </plist>
