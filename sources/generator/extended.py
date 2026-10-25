@@ -94,14 +94,17 @@ def install(bf, d, dot):
         return bw - h if name in ("A", "a") else bw / 2 if name in ("I", "i", "dotlessi") else bw * 0.78
     def top_x(name, bw):           # marks above: centred, but on L and l they start over the stem (the acute rises from it)
         return stem_x(name) + 60 if name in "Ll" else bw / 2
-    # comma below and turned comma above (ģ): the comma of "," scaled down and centred on the attachment point,
-    # the turned one slanted the other way as the opening quotes; at most to 3/4, less in the heavy weights so
-    # that the comma below ends at the descenders
+    # comma below and turned comma above (ģ): the comma of "," scaled down; the one below hangs from the middle
+    # of its top end at the attachment point (under the stem of r l t T it leaves from the stem), the turned one
+    # is centred on it and slanted the other way as the opening quotes; at most to 3/4, less in the heavy
+    # weights so that the comma below ends at the descenders
     cxs = [p[0] for _, segs in G["comma"][1].contours for g in segs for p in g[1:]]
     cys = [p[1] for _, segs in G["comma"][1].contours for g in segs for p in g[1:]]
     kc = min(0.75, (h - DB - 40) / (max(cys) - min(cys)))
     cm = (min(cxs) + max(cxs)) / 2
-    def m_commabelow(cx, y): return G["comma"][1].transform(kc, 0, 0, kc, cx - kc * cm, -40 - kc * max(cys))
+    tops = sorted(set(p for _, segs in G["comma"][1].contours for g in segs for p in g[1:]), key=lambda p: p[1])[-2:]
+    ct = (tops[0][0] + tops[1][0]) / 2         # the middle of the top end of the comma
+    def m_commabelow(cx, y): return G["comma"][1].transform(kc, 0, 0, kc, cx - kc * ct, -40 - kc * max(cys))
     def m_commaturned(cx, y): return G["comma"][1].transform(-kc, 0, 0, kc, cx + kc * cm, y + 90 - kc * min(cys))
     def m_caronalt(cx, y):                   # caron of ď ľ ť Ľ: a straight stroke slanted as the apostrophe
         return ln((cx + 175 / 2 * 0.5 / 1.45, y), (cx - 175 / 2 * 0.5 / 1.45, y - 175), cap=BUTT)
