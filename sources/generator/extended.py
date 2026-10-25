@@ -415,11 +415,12 @@ def install(bf, d, dot):
                                          radii=[r * 0.3] * 4, closed=True), ch="‰")
     put1("minute", 120, ln((90, T), (40, T - 200), cap=BUTT), ch="′")
     put1("second", 220, ln((90, T), (40, T - 200), cap=BUTT), ln((190, T), (140, T - 200), cap=BUTT), ch="″")
-    tm = W * 1.0; s2 = 0.42
-    tT = stroke(rounded([(h, T), (tm * 0.4, T)]), width=S * 0.85)
-    tS = stroke(rounded([(tm * 0.2, T), (tm * 0.2, T - H * s2)]), width=S * 0.85)
-    mw_, mp = small("M", s2, tm * 0.48, T - H * s2 + h, S * 0.85)
-    put1("trademark", tm, tT, tS, mp, ch="™")
+    # ™: the T and the M of the font scaled by the same factor, their tops on the cap height, spaced as the letters
+    tmT, tmM = small("T", 0.42, 0, 0, S * 0.85)[1], small("M", 0.42, 0, 0, S * 0.85)[1]
+    (t0, t1), (m0, m1) = xb(tmT), xb(tmM)
+    tmy = H - max(p[1] for _, segs in tmT.contours for g in segs for p in g[1:])
+    tmx = t1 - t0 + 2 * bf.SB * 0.42 - m0                  # x offset of the M
+    put1("trademark", tmx + m1, shift(tmT, -t0, tmy), shift(tmM, tmx, tmy), ch="™")
 
     # spaces
     for nm, width, chs in [("enspace", 500, "  "), ("emspace", 1000, "  "), ("thinspace", 200, "  "),
