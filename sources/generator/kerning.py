@@ -4,12 +4,17 @@ Each pair of the brief is kerned so that the space between the two glyphs, avera
 the height they share, matches the space between two straight stems (twice the
 sidebearing). Open areas, such as under the bar of a T or beside the foot of a V, count
 only up to a limit, and only part of the difference becomes kerning, so it stays moderate.
+Then no two letters or figures come closer than a share of the stroke: kerning that would
+bring them closer is reduced, and pairs that are too close untouched get kerned apart.
 """
+import math, unicodedata
 
 STEPS = 40          # heights sampled in the band the two glyphs share
 CLIP = 2.0          # open space counts up to CLIP x the reference gap
 FACTOR = 0.75       # share of the measured difference that becomes kerning
 MIN_KERN = 15       # smaller values are left out
+MIN_GAP = 0.4       # closest two glyphs may come, as a share of the stroke ...
+MIN_GAP_UNITS = 20  # ... and in units at least
 
 # group -> glyph measured for it; the members are that glyph and its accented letters
 LEFT = {"A": "A", "F": "F", "L": "L", "P": "P", "T": "T", "V": "V", "W": "W", "Y": "Y",
@@ -24,7 +29,13 @@ PAIRS = [("A", "V"), ("A", "W"), ("A", "Y"), ("A", "T"), ("A", "quotes"), ("quot
         [(left, right) for left in ("T", "V", "W", "Y") for right in ("A", "a", "e", "o", "period")]
 
 
-def groups(components):
+def letters(cmap, components):
+    """The drawn letters and figures (not the accented ones): each is a kerning class with its accented forms."""
+    return sorted({n for cp, n in cmap.items()
+                   if unicodedata.category(chr(cp)) in ("Ll", "Lu", "Lt", "Nd") and n not in components})
+
+
+def groups(components, letters):
     """{"public.kern1.X": [...], "public.kern2.X": [...]} with internal glyph names. On the
     left side of a pair, accented letters whose mark sticks out on the right (ogonek,
     vertical caron) stay out of the group."""
@@ -37,20 +48,38 @@ def groups(components):
             if comps[0][0] == key and comps[1:] and not (left and marks & {"ogonekcomb", "caroncomb.alt"}):
                 out.append(name)
         return out
-    result = {f"public.kern1.{g}": members(g, k, True) for g, k in LEFT.items()}
-    result.update({f"public.kern2.{g}": members(g, k, False) for g, k in RIGHT.items()})
+    left, right = {**LEFT, **{n: n for n in letters}}, {**RIGHT, **{n: n for n in letters}}
+    result = {f"public.kern1.{g}": members(g, k, True) for g, k in left.items()}
+    result.update({f"public.kern2.{g}": members(g, k, False) for g, k in right.items()})
     return result
 
 
-def values(contours, advances, gap):
+def values(contours, advances, gap, stroke, letters):
     """{(kern1 group, kern2 group): value} for one master; contours resolved, in font units."""
-    lines = {g: _polylines(contours[g]) for g in set(LEFT.values()) | set(RIGHT.values())}
+    lines = {g: _polylines(contours[g]) for g in set(LEFT.values()) | set(RIGHT.values()) | set(letters)}
+    rows = {g: _rows(lines[g]) for g in lines}
+    least = max(MIN_GAP * stroke, MIN_GAP_UNITS)
+
+    def closest(a, b, kern):                       # nearest approach of b set after a, over every height
+        return min((advances[a] + kern + rows[b][y][0] - rows[a][y][1] for y in rows[a] if y in rows[b]), default=None)
+
+    def apart(a, b, value):                        # the kerning that keeps a and b at least `least` apart
+        near = closest(a, b, value)
+        return value if near is None or near >= least else value + 5 * math.ceil((least - near) / 5)
+
     out = {}
     for left, right in PAIRS:
         a, b = LEFT[left], RIGHT[right]
-        value = _kern(lines[a], advances[a], lines[b], gap)
-        if value:
+        value = min(0, apart(a, b, _kern(lines[a], advances[a], lines[b], gap)))
+        if abs(value) >= MIN_KERN:
             out[(f"public.kern1.{left}", f"public.kern2.{right}")] = value
+    for a in letters:
+        for b in letters:
+            key = (f"public.kern1.{a}", f"public.kern2.{b}")
+            if key not in out and not any((LEFT.get(l), RIGHT.get(r)) == (a, b) for l, r in PAIRS):
+                value = apart(a, b, 0)
+                if value:
+                    out[key] = value
     return out
 
 
@@ -66,6 +95,16 @@ def _kern(left, advance, right, gap):
         gaps.append(gap * CLIP if a is None or b is None else min(gap * CLIP, advance + b - a))
     value = 5 * round((gap - sum(gaps) / len(gaps)) * FACTOR / 5)
     return value if abs(value) >= MIN_KERN else 0
+
+
+def _rows(lines):
+    """{height: (leftmost x, rightmost x)} every 10 units where the glyph has ink."""
+    out = {}
+    for y in range(-400, 1100, 10):
+        lo, hi = _extent(lines, y + 0.01, min), _extent(lines, y + 0.01, max)
+        if lo is not None:
+            out[y] = (lo, hi)
+    return out
 
 
 def _extent(lines, y, pick):

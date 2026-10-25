@@ -5,7 +5,7 @@
     <key>public.kern1.A</key>
     <dict>
       <key>public.kern2.T</key>
-      <integer>-120</integer>
+      <integer>-110</integer>
       <key>public.kern2.V</key>
       <integer>-50</integer>
       <key>public.kern2.Y</key>
@@ -35,7 +35,7 @@
     <key>public.kern1.T</key>
     <dict>
       <key>public.kern2.A</key>
-      <integer>-120</integer>
+      <integer>-110</integer>
       <key>public.kern2.a</key>
       <integer>-130</integer>
       <key>public.kern2.e</key>

@@ -258,8 +258,10 @@ def write_sources(out):
     unicodes = {}
     for cp, n in cmap.items():
         unicodes.setdefault(n, []).append(cp)
-    kern_groups = kerning.groups(builds[WEIGHTS[0][0]]["components"])
-    kern_values = {s: kerning.values(flat[s], {n: data[s][n][0] for n in order}, 2 * bf.SB) for s in data}
+    kern_letters = kerning.letters(cmap, builds[WEIGHTS[0][0]]["components"])
+    kern_groups = kerning.groups(builds[WEIGHTS[0][0]]["components"], kern_letters)
+    kern_values = {s: kerning.values(flat[s], {n: data[s][n][0] for n in order}, 2 * bf.SB, stroke_width(w), kern_letters)
+                   for s, w in WEIGHTS}
     fea = feature_code(names)
     ys = [p[1] for s in flat for cs in flat[s].values() for _, segs in cs for g in segs for p in g[1:]]
     win = (max(ys), max(0, -min(ys)))

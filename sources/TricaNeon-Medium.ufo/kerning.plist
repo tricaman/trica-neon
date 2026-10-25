@@ -5,7 +5,7 @@
     <key>public.kern1.A</key>
     <dict>
       <key>public.kern2.T</key>
-      <integer>-115</integer>
+      <integer>-100</integer>
       <key>public.kern2.V</key>
       <integer>-50</integer>
       <key>public.kern2.Y</key>
@@ -24,6 +24,18 @@
       <integer>-125</integer>
       <key>public.kern2.Y</key>
       <integer>-130</integer>
+      <key>public.kern2.Z</key>
+      <integer>5</integer>
+    </dict>
+    <key>public.kern1.Ldot</key>
+    <dict>
+      <key>public.kern2.Z</key>
+      <integer>5</integer>
+    </dict>
+    <key>public.kern1.Lslash</key>
+    <dict>
+      <key>public.kern2.Z</key>
+      <integer>5</integer>
     </dict>
     <key>public.kern1.P</key>
     <dict>
@@ -35,7 +47,7 @@
     <key>public.kern1.T</key>
     <dict>
       <key>public.kern2.A</key>
-      <integer>-115</integer>
+      <integer>-100</integer>
       <key>public.kern2.a</key>
       <integer>-130</integer>
       <key>public.kern2.e</key>
