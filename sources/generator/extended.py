@@ -10,7 +10,7 @@ import math, unicodedata
 
 def install(bf, d, dot):
     H, S, h, r, T, MI, BT = bf.H, bf.S, bf.h, bf.r, bf.T, bf.MI, bf.BT
-    XH, XT, XM, DB = bf.XH, bf.XT, bf.XM, bf.DB
+    XH, XT, XM, DB, AX = bf.XH, bf.XT, bf.XM, bf.DB, bf.AX
     G = bf.GLYPHS
     ln, union, put, reg, circle = bf.ln, bf.union, bf.put, bf.reg, bf.circle
     stroke, rounded = bf.stroke, bf.rounded
@@ -401,10 +401,12 @@ def install(bf, d, dot):
         put1(name, W, ln((L, T), (R, T), (R, BT), (L, BT), radii=[r] * 4, closed=True), inner, ch=ch)
     framed("C", "copyright", "©")
     framed("R", "registered", "®")
-    put1("logicalnot", w, ln((h, MI + 60), (w - h, MI + 60), (w - h, MI - 100)), ch="¬")
-    pw = w; pc = pw / 2; pa = pw * 0.34
-    put1("plusminus", pw, ln((pc - pa, MI + 60), (pc + pa, MI + 60)), ln((pc, MI + 60 - pa), (pc, MI + 60 + pa)),
-         ln((pc - pa, BT), (pc + pa, BT)), ch="±")
+    put1("logicalnot", w, ln((h, AX + 80), (w - h, AX + 80), (w - h, AX - 80)), ch="¬")
+    # ±: a plus over a bar, the pair centred on the axis of the lowercase
+    pw = w; pc = pw / 2; pa = pw * 0.28; pg = max(S * 0.8, 60)
+    yp = AX + pg / 2 + h; yb = yp - pa - pg - S
+    put1("plusminus", pw, ln((pc - pa, yp), (pc + pa, yp)), ln((pc, yp - pa), (pc, yp + pa)),
+         ln((pc - pa, yb), (pc + pa, yb)), ch="±")
     uw, up = G["u"]
     put1("mu", uw, up, ln((h, DB), (h, BT + r)), ch="µμ")       # the descender ends inside the stem of the u
     put1("paragraph", W * 0.7, ln((W * 0.45, BT), (W * 0.45, T)), ln((W * 0.7 - h, BT), (W * 0.7 - h, T)),
@@ -451,10 +453,10 @@ def install(bf, d, dot):
     # ------------------------------------------------------------ math
     mw = w; mc = mw / 2; ma = mw * 0.36
     eqw, eqp = G["equal"]
-    put1("notequal", eqw, eqp, ln((mc - ma * 0.5, MI - ma), (mc + ma * 0.5, MI + ma), cap=BUTT), ch="≠")
+    put1("notequal", eqw, eqp, ln((mc - ma * 0.5, AX - ma), (mc + ma * 0.5, AX + ma), cap=BUTT), ch="≠")
     lsw, lsp = G["less"]; gtw, gtp = G["greater"]
-    put1("lessequal", lsw, lsp.transform(1, 0, 0, 1, 0, 70), ln((mc - ma, MI - ma - 40), (mc + ma, MI - ma - 40)), ch="≤")
-    put1("greaterequal", gtw, gtp.transform(1, 0, 0, 1, 0, 70), ln((mc - ma, MI - ma - 40), (mc + ma, MI - ma - 40)), ch="≥")
+    put1("lessequal", lsw, lsp.transform(1, 0, 0, 1, 0, 70), ln((mc - ma, AX - ma - 40), (mc + ma, AX - ma - 40)), ch="≤")
+    put1("greaterequal", gtw, gtp.transform(1, 0, 0, 1, 0, 70), ln((mc - ma, AX - ma - 40), (mc + ma, AX - ma - 40)), ch="≥")
     tlw, tlp = G["asciitilde"]
     # ≈: two flatter waves of the ~, one above the other with a clear gap
     wx, wa = tlw / 2, tlw * 0.36                # centre and half width of the ~
@@ -463,7 +465,7 @@ def install(bf, d, dot):
         return ln((wx - wa, y - tw2 / 2), (wx - wa, y + tw2 / 2), (wx, y + tw2 / 2), (wx, y - tw2 / 2),
                   (wx + wa, y - tw2 / 2), (wx + wa, y + tw2 / 2), radii=[0, ra, ra, ra, ra, 0])
     ay = tw2 / 2 + h + max(S * 0.4, 28)
-    put1("approxequal", tlw, wave(MI + ay), wave(MI - ay), ch="≈")
+    put1("approxequal", tlw, wave(AX + ay), wave(AX - ay), ch="≈")
     iq = W * 0.28
     put1("infinity", W * 1.0, ln((h, MI + iq / 2), (W / 2, MI + iq / 2), (W / 2, MI - iq / 2), (h, MI - iq / 2), radii=[iq * 0.45] * 4, closed=True),
          ln((W / 2, MI), (W / 2, MI + iq / 2), (W - h, MI + iq / 2), (W - h, MI - iq / 2), (W / 2, MI - iq / 2), (W / 2, MI),

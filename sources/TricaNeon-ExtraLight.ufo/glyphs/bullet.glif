@@ -4,18 +4,18 @@
   <unicode hex="2022"/>
   <outline>
     <contour>
-      <point x="200" y="350" type="curve"/>
-      <point x="200" y="381"/>
-      <point x="174" y="406"/>
-      <point x="144" y="406" type="curve"/>
-      <point x="113" y="406"/>
-      <point x="88" y="381"/>
-      <point x="88" y="350" type="curve"/>
-      <point x="88" y="319"/>
-      <point x="113" y="294"/>
-      <point x="144" y="294" type="curve"/>
-      <point x="174" y="294"/>
-      <point x="200" y="319"/>
+      <point x="200" y="267" type="curve"/>
+      <point x="200" y="298"/>
+      <point x="174" y="323"/>
+      <point x="144" y="323" type="curve"/>
+      <point x="113" y="323"/>
+      <point x="88" y="298"/>
+      <point x="88" y="267" type="curve"/>
+      <point x="88" y="236"/>
+      <point x="113" y="211"/>
+      <point x="144" y="211" type="curve"/>
+      <point x="174" y="211"/>
+      <point x="200" y="236"/>
     </contour>
   </outline>
 </glyph>

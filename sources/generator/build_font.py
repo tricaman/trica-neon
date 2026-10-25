@@ -19,6 +19,7 @@ UPM = 1000
 H = 700                       # cap height = module side l
 SB = H / 8                    # sidebearing -> gap between letters = l/4
 XH = round(H * 0.72)          # x-height
+AX = XH * 0.53                 # axis of the lowercase: dashes, math signs, guillemets (a little above half the x-height)
 
 GLYPHS = {}         # glyph name -> (width, outline)
 SKEL = {}           # glyph name -> (width, parts): skeletons, reused to build small figures
@@ -133,7 +134,7 @@ def build():
     ye = d + max(d * 1.25, 100) + h              # bottom of the stem of ! and ?: a clear gap above the dot
     glyph("exclam", S, [([(h, ye), (h, T)],)], extra=[dot(h, d / 2)])     # spaced on the stem, as the i
     glyph("quotesingle", S, [([(h, T - 2 * r), (h, T)],)])
-    glyph("hyphen", W / 2, [([(h, MI), (W / 2 - h, MI)],)])
+    glyph("hyphen", W / 2, [([(h, AX), (W / 2 - h, AX)],)])
     Wq = Wd
     yq = max(MI, ye + h)                         # the hook rises when its stem would get shorter than half a stroke
     glyph("question", Wq, [([(L2, yq), (L2, T), (R2, T), (R2, yq), (C2, yq), (C2, ye)],
@@ -204,7 +205,7 @@ def build_symbols(d, dot):
     put("underscore", W * 0.8, ln((-SB, -H * 0.12), (W * 0.8 + SB, -H * 0.12), cap=BUTT))
 
     # math, same width as the digits
-    Wm = H * 0.8; cx = Wm / 2; a = Wm * 0.36; my = MI
+    Wm = H * 0.8; cx = Wm / 2; a = Wm * 0.36; my = AX
     put("plus", Wm, ln((cx - a, my), (cx + a, my)), ln((cx, my - a), (cx, my + a)))
     put("minus", Wm, ln((cx - a, my), (cx + a, my)))
     put("equal", Wm, ln((cx - a, my + a * 0.45), (cx + a, my + a * 0.45)), ln((cx - a, my - a * 0.45), (cx + a, my - a * 0.45)))
@@ -224,10 +225,10 @@ def build_symbols(d, dot):
         ln((cx - a * 0.7, ay + a * 0.4), (cx + a * 0.7, ay - a * 0.4)))
 
     # dashes and dots
-    put("endash", W * 0.6, ln((h, MI), (W * 0.6 - h, MI)))
-    put("emdash", W * 1.1, ln((h, MI), (W * 1.1 - h, MI)))
-    put("periodcentered", d, dot(d / 2, MI))
-    put("bullet", d * 2, circle(d, MI, d))
+    put("endash", W * 0.6, ln((h, AX), (W * 0.6 - h, AX)))
+    put("emdash", W * 1.1, ln((h, AX), (W * 1.1 - h, AX)))
+    put("periodcentered", d, dot(d / 2, AX))
+    put("bullet", d * 2, circle(d, AX, d))
     put("ellipsis", d * 5, dot(d / 2, d / 2), dot(d * 2.5, d / 2), dot(d * 4.5, d / 2))
     GLYPHS["exclamdown"] = (S, GLYPHS["exclam"][1].transform(-1, 0, 0, -1, S, XH))   # ! turned, hanging from the x-height
 
@@ -235,7 +236,7 @@ def build_symbols(d, dot):
     ds = H * 0.32
     put("degree", ds, ln((h, T), (ds - h, T), (ds - h, T - ds + S), (h, T - ds + S), radii=[rs * 0.6] * 4, closed=True))
     g = a * 0.6; gx = g * 1.1
-    gy = XH * 0.53                               # guillemets centred on the lowercase, a little above the middle
+    gy = AX                                      # guillemets centred on the lowercase
     put("guilsinglleft", gx * 1.2, ln((gx, gy + g), (h, gy), (gx, gy - g)))
     put("guilsinglright", gx * 1.2, ln((h, gy + g), (gx, gy), (h, gy - g)))
     # « »: two identical chevrons, the second shifted so that a clear gap of 0.8 S stays between them

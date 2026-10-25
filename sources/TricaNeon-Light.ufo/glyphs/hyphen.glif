@@ -6,10 +6,10 @@
   <unicode hex="2011"/>
   <outline>
     <contour>
-      <point x="88" y="376" type="line"/>
-      <point x="88" y="324" type="line"/>
-      <point x="438" y="324" type="line"/>
-      <point x="438" y="376" type="line"/>
+      <point x="88" y="293" type="line"/>
+      <point x="88" y="241" type="line"/>
+      <point x="438" y="241" type="line"/>
+      <point x="438" y="293" type="line"/>
     </contour>
   </outline>
 </glyph>
