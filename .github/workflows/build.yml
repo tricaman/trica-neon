@@ -1,0 +1,48 @@
+# Build every font on each push to main and on pull requests.
+# A tag such as v1.000 also publishes a GitHub release with the zip of the fonts,
+# but only when every check passed.
+name: Build
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ["v*"]
+
+permissions:
+  contents: write     # to create the release
+
+jobs:
+  build:
+    name: Build the fonts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        id: python
+        with:
+          python-version: "3.13"
+      - uses: actions/cache@v5
+        with:
+          path: ./venv/
+          key: ${{ runner.os }}-venv${{ steps.python.outputs.python-version }}-${{ hashFiles('requirements.txt') }}
+      - name: Check that the UFO sources match the generator
+        run: make check-sources
+      - name: Build the fonts
+        run: make build
+      - name: Upload the fonts
+        uses: actions/upload-artifact@v6
+        with:
+          name: trica-neon-fonts
+          path: fonts
+      - name: Publish the release
+        if: github.ref_type == 'tag'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          test "$TAG" = "v$(make -s version)" || { echo "tag $TAG does not match the font version $(make -s version)"; exit 1; }
+          make release
+          gh release view "$TAG" > /dev/null 2>&1 || gh release create "$TAG" --title "Trica Neon $TAG" --notes "Changes: see FONTLOG.txt."
+          gh release upload "$TAG" release/trica-neon-*.zip --clobber
