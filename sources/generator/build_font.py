@@ -248,7 +248,7 @@ def build_symbols(d, dot):
     put("guillemotright", h + off + span + gx * 0.2, chev_r(h), chev_r(h + off))
 
     # # % & @ $ euro
-    put("numbersign", Wm, ln((Wm * 0.33, BT + 60), (Wm * 0.33, T - 60), cap=BUTT), ln((Wm * 0.67, BT + 60), (Wm * 0.67, T - 60), cap=BUTT),
+    put("numbersign", Wm, ln((Wm * 0.33, 0), (Wm * 0.33, H), cap=BUTT), ln((Wm * 0.67, 0), (Wm * 0.67, H), cap=BUTT),   # as tall as a capital
         ln((h, H * 0.34), (Wm - h, H * 0.34)), ln((h, H * 0.66), (Wm - h, H * 0.66)))
     pc = H * 0.3
     put("percent", W, ln((h, T), (pc, T), (pc, T - pc), (h, T - pc), radii=[rs * 0.6] * 4, closed=True),
