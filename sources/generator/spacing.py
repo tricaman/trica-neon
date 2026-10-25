@@ -10,7 +10,8 @@ keeps its sidebearing. Accented letters take the sidebearings of their base lett
 Punctuation and symbols are spaced the same way: the marks of the lowercase band (dashes, math
 signs, guillemets, . , : ; … · •) over the x-height, against n, the others over the cap height,
 against H, each zone stretched to the whole height of the glyph; they keep a quarter of the
-sidebearing at least, so that small marks (* ° ™) do not run into their neighbours.
+sidebearing at least, so that small marks (* ° ™) do not run into their neighbours. The math
+signs then all take the width of the minus, centred, so that formulas line up.
 """
 import unicodedata
 
@@ -22,6 +23,9 @@ LOWER_BAND = {"hyphen", "endash", "emdash", "minus", "plus", "equal", "multiply"
               "infinity", "guilsinglleft", "guilsinglright", "guillemotleft", "guillemotright", "periodcentered",
               "bullet", "period", "comma", "colon", "semicolon", "ellipsis"}
 SKIP = {"underscore", "fraction", "dottedcircle"}   # drawn to fill their advance, or a base for marks
+# math signs share one width, so that formulas line up: the optical width of the minus
+MATH = ["plus", "minus", "equal", "less", "greater", "multiply", "divide", "plusminus", "notequal",
+        "approxequal", "lessequal", "greaterequal", "logicalnot"]
 
 
 def respace(builds, xheight, cap, sidebearing):
@@ -72,6 +76,11 @@ def respace(builds, xheight, cap, sidebearing):
                 dl = max(dl, LEAST * sidebearing - min(xs))
                 dr = max(dr, LEAST * sidebearing - (glyphs[name][0] - max(xs)))
             shift[name] = (dl, dr)
+        common = glyphs["minus"][0] + sum(shift["minus"])
+        for name in MATH:
+            xs = [p[0] for _, segs in glyphs[name][1].contours for g in segs for p in g[1:]]
+            dl = (common - max(xs) + min(xs)) / 2 - min(xs)
+            shift[name] = (dl, common - glyphs[name][0] - dl)
         for name in kinds:
             if name in comps and comps[name][0][0] in shift:  # accented letters follow their base
                 shift[name] = shift[comps[name][0][0]]

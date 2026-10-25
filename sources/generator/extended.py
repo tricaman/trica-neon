@@ -411,7 +411,8 @@ def install(bf, d, dot):
                             (fw / 2, H - fs + fw / 2)], [r * 0.55] * 4, True), width=fw)
     rk = 0.55 * 0.55                               # the R inside, as the C in ©, lighter than the frame
     put1("registered", fs, frame, small("R", rk, (fs - W * rk) / 2, H - fs + (fs - H * rk) / 2, min(S * 0.5, fs * 0.09))[1], ch="®")
-    put1("logicalnot", w, ln((h, AX + 80), (w - h, AX + 80), (w - h, AX - 80)), ch="¬")
+    na = w * 0.36                                  # ¬ as wide as the minus
+    put1("logicalnot", w, ln((w / 2 - na, AX + 80), (w / 2 + na, AX + 80), (w / 2 + na, AX - 80)), ch="¬")
     # ±: a plus over a bar, the pair centred on the axis of the lowercase
     pw = w; pc = pw / 2; pa = pw * 0.28; pg = max(S * 0.8, 60)
     yp = AX + pg / 2 + h; yb = yp - pa - pg - S
