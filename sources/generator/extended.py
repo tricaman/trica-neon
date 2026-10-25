@@ -403,7 +403,12 @@ def install(bf, d, dot):
         k = 0.5; inner = bp0.transform(k, 0, 0, k, (W - bw0 * k) / 2, H * 0.25)
         put1(name, W, ln((L, T), (R, T), (R, BT), (L, BT), radii=[r] * 4, closed=True), inner, ch=ch)
     framed("C", "copyright", "©")
-    framed("R", "registered", "®")
+    # ®: small and raised as ™, its top on the cap height
+    fs = H * 0.55; fw = min(S * 0.85, fs * 0.13)    # a small sign: the weight stays light enough for the R to breathe
+    frame = stroke(rounded([(fw / 2, H - fw / 2), (fs - fw / 2, H - fw / 2), (fs - fw / 2, H - fs + fw / 2),
+                            (fw / 2, H - fs + fw / 2)], [r * 0.55] * 4, True), width=fw)
+    rk = 0.55 * 0.55                               # the R inside, as the C in ©, lighter than the frame
+    put1("registered", fs, frame, small("R", rk, (fs - W * rk) / 2, H - fs + (fs - H * rk) / 2, min(S * 0.5, fs * 0.09))[1], ch="®")
     put1("logicalnot", w, ln((h, AX + 80), (w - h, AX + 80), (w - h, AX - 80)), ch="¬")
     # ±: a plus over a bar, the pair centred on the axis of the lowercase
     pw = w; pc = pw / 2; pa = pw * 0.28; pg = max(S * 0.8, 60)
