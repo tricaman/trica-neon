@@ -140,6 +140,7 @@
       <string>uni0327</string>
       <string>uni0328</string>
       <string>caroncomb.alt</string>
+      <string>tildecomb.narrow</string>
       <string>uni25CC</string>
       <string>uni0237</string>
       <string>Agrave</string>
@@ -1177,6 +1178,8 @@
       <key>tilde</key>
       <string>base</string>
       <key>tildecomb</key>
+      <string>mark</string>
+      <key>tildecomb.narrow</key>
       <string>mark</string>
       <key>trademark</key>
       <string>base</string>

@@ -33,8 +33,8 @@ def install(bf, d, dot):
     def m_acute(cx, y): return ln((cx - 60, y + 90), (cx + 60, y + 200), cap=BUTT)
     def m_circ(cx, y): return ln((cx - 90, y + 90), (cx, y + 190), (cx + 90, y + 90), cap=BUTT)
     def m_caron(cx, y): return ln((cx - 90, y + 190), (cx, y + 90), (cx + 90, y + 190), cap=BUTT)
-    def m_tilde(cx, y):
-        a, y0, y1, rr = 190, y + 105, y + 185, 57
+    def m_tilde(cx, y, a=150):                # a: half the width
+        y0, y1, rr = y + 105, y + 185, a * 0.3
         return ln((cx - a, y0), (cx - a, y1), (cx, y1), (cx, y0), (cx + a, y0), (cx + a, y1),
                   radii=[0, rr, rr, rr, rr, 0], cap=BUTT)
     def m_macron(cx, y): return ln((cx - 100, y + 140), (cx + 100, y + 140), cap=BUTT)
@@ -78,6 +78,11 @@ def install(bf, d, dot):
                             [("_bottom", mx, 0), ("bottom", mx, min(ys))] if attach == "bottom" else [("_ogonek", mx, 0)])
     G["caroncomb.alt"] = (-2 * bf.SB, m_caronalt(mx, 0))
     bf.MARKS.add("caroncomb.alt")
+    # a narrower tilde for the narrow letters (Ĩ ĩ), so that a run of them does not touch
+    nt = m_tilde(mx, 0, 90)
+    G["tildecomb.narrow"] = (-2 * bf.SB, nt)
+    bf.MARKS.add("tildecomb.narrow")
+    bf.ANCHORS["tildecomb.narrow"] = [("_top", mx, 0), ("top", mx, max(p[1] for _, segs in nt.contours for g in segs for p in g[1:]))]
 
     # dotted circle: shapers show it under a combining mark that has no letter to sit on.
     # Twelve dots every 30 degrees (sqrt only, so the points are the same on every platform).
@@ -129,6 +134,13 @@ def install(bf, d, dot):
                 x = x_extent(bname)[1] + 40            # right of the letter, whose crossbar (t) can pass its box
                 comps.append(("caroncomb.alt", x - mx, ytop))
                 bw = x + 40
+            elif m == 0x303 and bname in ("I", "dotlessi"):
+                # the narrow tilde, and room for it, so that a run of these letters does not touch
+                need = 2 * 90 + S + max(S * 0.5, 30) - 2 * bf.SB
+                if need > bw:
+                    comps[0] = (bname, (need - bw) / 2, 0)
+                    bw = need
+                comps.append(("tildecomb.narrow", bw / 2 - mx, top))
             elif m in ABOVE:
                 comps.append((ABOVE[m], bw / 2 - mx, top))
             elif m in BELOW:

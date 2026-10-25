@@ -14,16 +14,21 @@ languagesystem latn MOL;
 @marks_top = [gravecomb acutecomb uni0302 tildecomb uni0304 uni0306 uni0307 uni0308 uni030A uni030B uni030C uni0312];
 
 # i, j and į lose their dot under a mark above, also with marks below in between (the
-# filtering set skips every mark that is not above); d l t L take the vertical caron
+# filtering set skips every mark that is not above); I and the dotless i take the narrow
+# tilde; d l t L take the vertical caron
 lookup soft_dotted {
     lookupflag UseMarkFilteringSet @marks_top;
     sub [i j iogonek]' @marks_top by [dotlessi uni0237 iogonek.dotless];
 } soft_dotted;
+lookup narrow_tilde {
+    sub [I dotlessi iogonek.dotless] tildecomb' by tildecomb.narrow;
+} narrow_tilde;
 lookup vertical_caron {
     sub [d l t L] uni030C' by caroncomb.alt;
 } vertical_caron;
 feature ccmp {
     lookup soft_dotted;
+    lookup narrow_tilde;
     lookup vertical_caron;
 } ccmp;
 

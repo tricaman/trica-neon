@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="tildecomb.narrow" format="2">
+  <anchor x="-367" y="0" name="_top"/>
+  <anchor x="-367" y="220" name="top"/>
+  <outline>
+    <contour>
+      <point x="-492" y="105" type="line"/>
+      <point x="-422" y="105" type="line"/>
+      <point x="-422" y="150" type="line"/>
+      <point x="-422" y="150"/>
+      <point x="-422" y="150"/>
+      <point x="-422" y="150" type="curve"/>
+      <point x="-402" y="150" type="line"/>
+      <point x="-402" y="150"/>
+      <point x="-402" y="150"/>
+      <point x="-402" y="150" type="curve"/>
+      <point x="-402" y="132" type="line"/>
+      <point x="-402" y="98"/>
+      <point x="-375" y="70"/>
+      <point x="-340" y="70" type="curve"/>
+      <point x="-304" y="70" type="line"/>
+      <point x="-270" y="70"/>
+      <point x="-242" y="98"/>
+      <point x="-242" y="132" type="curve"/>
+      <point x="-242" y="185" type="line"/>
+      <point x="-312" y="185" type="line"/>
+      <point x="-312" y="140" type="line"/>
+      <point x="-312" y="140"/>
+      <point x="-312" y="140"/>
+      <point x="-312" y="140" type="curve"/>
+      <point x="-332" y="140" type="line"/>
+      <point x="-332" y="140"/>
+      <point x="-332" y="140"/>
+      <point x="-332" y="140" type="curve"/>
+      <point x="-332" y="158" type="line"/>
+      <point x="-332" y="192"/>
+      <point x="-360" y="220"/>
+      <point x="-394" y="220" type="curve"/>
+      <point x="-430" y="220" type="line"/>
+      <point x="-465" y="220"/>
+      <point x="-492" y="192"/>
+      <point x="-492" y="158" type="curve"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.truetype.overlap</key>
+      <true/>
+    </dict>
+  </lib>
+</glyph>
