@@ -1,0 +1,18 @@
+# Python
+venv/
+venv-test/
+__pycache__/
+*.pyc
+
+# Outputs of `make build`, `make test`, `make proof` and `make release`: the fonts are published with the releases
+fonts/
+out/
+release/
+build.stamp
+sources/build.ninja
+sources/.ninja_log
+sources/instance_ufos/
+
+# macOS
+.DS_Store
+._*
