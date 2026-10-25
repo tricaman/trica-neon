@@ -55,9 +55,9 @@ def install(bf, d, dot):
                 cur = q
         return (min(xs) + max(xs)) / 2
 
-    def caron_x(name, ytop):       # the caron of ď ľ ť Ľ: one stroke (at least 40) right of what the letter has at its height
+    def caron_x(name, ytop):       # the caron of ď ľ ť Ľ: 70 units right of what the letter has at its height, in every weight
         left = min(p[0] for _, segs in m_caronalt(0, 0).contours for g in segs for p in g[1:])
-        return x_right(name, ytop - 175, ytop) + max(S, 40) - left
+        return x_right(name, ytop - 175, ytop) + 70 - left
 
     # ------------------------------------------------------------------ marks
     def m_grave(cx, y): return ln((cx - 70, y + 215), (cx + 70, y + 80), cap=BUTT)
