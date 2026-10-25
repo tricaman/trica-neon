@@ -21,18 +21,18 @@
       <point x="210" y="-12" type="curve"/>
     </contour>
     <contour>
-      <point x="220" y="566" type="curve"/>
-      <point x="220" y="581"/>
-      <point x="207" y="594"/>
-      <point x="192" y="594" type="curve"/>
-      <point x="177" y="594"/>
-      <point x="164" y="581"/>
-      <point x="164" y="566" type="curve"/>
-      <point x="164" y="550"/>
-      <point x="177" y="538"/>
-      <point x="192" y="538" type="curve"/>
-      <point x="207" y="538"/>
-      <point x="220" y="550"/>
+      <point x="220" y="644" type="curve"/>
+      <point x="220" y="659"/>
+      <point x="207" y="672"/>
+      <point x="192" y="672" type="curve"/>
+      <point x="177" y="672"/>
+      <point x="164" y="659"/>
+      <point x="164" y="644" type="curve"/>
+      <point x="164" y="629"/>
+      <point x="177" y="616"/>
+      <point x="192" y="616" type="curve"/>
+      <point x="207" y="616"/>
+      <point x="220" y="629"/>
     </contour>
   </outline>
 </glyph>

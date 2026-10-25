@@ -316,7 +316,7 @@ def build_lowercase(d, dot):
     inner joints sharp. x-height 0.72 l, ascenders at cap height, descenders 0.28 l."""
     w = H * 0.8; L, R, C = h, w - h, w / 2
     AT = T
-    idot = lambda cx: dot(cx, XH + min(d * 0.6, H * 0.12) + d / 2)
+    idot = lambda cx: dot(cx, XH + 140)     # the dot of i and j as high in every weight as the dot accent and the dieresis
 
     bowl_r = ([(L, XT), (R, XT), (R, BT), (L, BT)], [0, r, r, 0], True)     # stem on the left
     bowl_l = ([(L, XT), (R, XT), (R, BT), (L, BT)], [r, 0, 0, r], True)     # stem on the right
