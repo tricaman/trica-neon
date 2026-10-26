@@ -7,34 +7,40 @@
   <anchor x="922" y="0" name="ogonek"/>
   <outline>
     <contour>
-      <point x="1126" y="235" type="line"/>
-      <point x="1161" y="235" type="line"/>
-      <point x="1161" y="320" type="line"/>
-      <point x="1161" y="422"/>
-      <point x="1078" y="504"/>
-      <point x="977" y="504" type="curve"/>
-      <point x="259" y="504" type="line"/>
-      <point x="158" y="504"/>
-      <point x="76" y="422"/>
-      <point x="76" y="320" type="curve"/>
       <point x="76" y="184" type="line"/>
       <point x="76" y="82"/>
       <point x="158" y="0"/>
       <point x="259" y="0" type="curve"/>
-      <point x="1161" y="0" type="line"/>
-      <point x="1161" y="35" type="line"/>
-      <point x="259" y="35" type="line"/>
-      <point x="177" y="35"/>
-      <point x="111" y="102"/>
+      <point x="452" y="0" type="line"/>
+      <point x="553" y="0"/>
+      <point x="636" y="82"/>
+      <point x="636" y="184" type="curve"/>
+      <point x="636" y="320" type="line"/>
+      <point x="636" y="422"/>
+      <point x="553" y="504"/>
+      <point x="452" y="504" type="curve"/>
+      <point x="259" y="504" type="line"/>
+      <point x="158" y="504"/>
+      <point x="76" y="422"/>
+      <point x="76" y="320" type="curve"/>
+    </contour>
+    <contour>
       <point x="111" y="184" type="curve"/>
       <point x="111" y="320" type="line"/>
       <point x="111" y="402"/>
       <point x="177" y="469"/>
       <point x="259" y="469" type="curve"/>
-      <point x="977" y="469" type="line"/>
-      <point x="1059" y="469"/>
-      <point x="1126" y="402"/>
-      <point x="1126" y="320" type="curve"/>
+      <point x="452" y="469" type="line"/>
+      <point x="534" y="469"/>
+      <point x="601" y="402"/>
+      <point x="601" y="320" type="curve"/>
+      <point x="601" y="184" type="line"/>
+      <point x="601" y="102"/>
+      <point x="534" y="35"/>
+      <point x="452" y="35" type="curve"/>
+      <point x="259" y="35" type="line"/>
+      <point x="177" y="35"/>
+      <point x="111" y="102"/>
     </contour>
     <contour>
       <point x="636" y="504" type="line"/>
@@ -43,10 +49,52 @@
       <point x="636" y="0" type="line"/>
     </contour>
     <contour>
+      <point x="1126" y="235" type="line"/>
+      <point x="1161" y="235" type="line"/>
+      <point x="1161" y="320" type="line"/>
+      <point x="1161" y="422"/>
+      <point x="1078" y="504"/>
+      <point x="977" y="504" type="curve"/>
+      <point x="784" y="504" type="line"/>
+      <point x="683" y="504"/>
+      <point x="601" y="422"/>
+      <point x="601" y="320" type="curve"/>
+      <point x="601" y="184" type="line"/>
+      <point x="601" y="82"/>
+      <point x="683" y="0"/>
+      <point x="784" y="0" type="curve"/>
+      <point x="1161" y="0" type="line"/>
+      <point x="1161" y="35" type="line"/>
+      <point x="784" y="35" type="line"/>
+      <point x="702" y="35"/>
+      <point x="636" y="102"/>
+      <point x="636" y="184" type="curve"/>
+      <point x="636" y="320" type="line"/>
+      <point x="636" y="402"/>
+      <point x="702" y="469"/>
+      <point x="784" y="469" type="curve"/>
+      <point x="977" y="469" type="line"/>
+      <point x="1059" y="469"/>
+      <point x="1126" y="402"/>
+      <point x="1126" y="320" type="curve"/>
+    </contour>
+    <contour>
       <point x="601" y="270" type="line"/>
       <point x="601" y="235" type="line"/>
       <point x="1161" y="235" type="line"/>
       <point x="1161" y="270" type="line"/>
+    </contour>
+    <contour>
+      <point x="618" y="504" type="line"/>
+      <point x="618" y="469" type="line"/>
+      <point x="784" y="469" type="line"/>
+      <point x="784" y="504" type="line"/>
+    </contour>
+    <contour>
+      <point x="618" y="35" type="line"/>
+      <point x="618" y="0" type="line"/>
+      <point x="784" y="0" type="line"/>
+      <point x="784" y="35" type="line"/>
     </contour>
   </outline>
   <lib>
