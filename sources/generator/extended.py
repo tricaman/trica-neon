@@ -91,7 +91,9 @@ def install(bf, d, dot):
     def m_cedilla(cx, y):                    # a short neck turning softly into a bowl open to the left, down to the descender
         y1 = -30; a = (y1 - DB) / 2; s = 30
         return ln((cx, BT), (cx, y1), (cx + s + a, y1), (cx + s + a, DB), (cx - 45, DB), radii=[0, s, a, a, 0], cap=BUTT)
-    def m_ogonek(cx, y): return ln((cx, BT), (cx, -110), (cx + 90, -110), radii=[0, 90, 0], cap=BUTT)   # a quarter circle, as the foot of the t
+    def m_ogonek(cx, y):                     # a hook leaving the letter slanted as the comma, round at the descender, out to the right
+        k = 0.5 / 1.45
+        return ln((cx, BT), (cx - (BT - DB) * k, DB), (cx + 60, DB), radii=[0, 60, 0], cap=BUTT)
     def ogonek_x(name, bw):        # where the ogonek hangs: as the end of the right stem of A and a, under the stem of I and i
         return bw - h if name in ("A", "a") else bw / 2 if name in ("I", "i", "dotlessi") else bw * 0.78
     def top_x(name, bw):           # marks above: centred, but on L and l they start over the stem (the acute rises from it)

@@ -4,16 +4,18 @@
   <anchor x="-367" y="0" name="_ogonek"/>
   <outline>
     <contour>
-      <point x="-341" y="26" type="line"/>
-      <point x="-394" y="26" type="line"/>
-      <point x="-394" y="-20" type="line"/>
-      <point x="-394" y="-84"/>
-      <point x="-342" y="-136"/>
-      <point x="-277" y="-136" type="curve"/>
-      <point x="-277" y="-84" type="line"/>
-      <point x="-313" y="-84"/>
-      <point x="-341" y="-55"/>
-      <point x="-341" y="-20" type="curve"/>
+      <point x="-343" y="18" type="line"/>
+      <point x="-392" y="35" type="line"/>
+      <point x="-440" y="-104" type="line"/>
+      <point x="-458" y="-155"/>
+      <point x="-429" y="-196"/>
+      <point x="-375" y="-196" type="curve"/>
+      <point x="-307" y="-196" type="line"/>
+      <point x="-307" y="-143" type="line"/>
+      <point x="-375" y="-143" type="line"/>
+      <point x="-388" y="-143"/>
+      <point x="-395" y="-134"/>
+      <point x="-391" y="-122" type="curve"/>
     </contour>
   </outline>
 </glyph>
