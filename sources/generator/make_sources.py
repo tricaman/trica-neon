@@ -261,12 +261,13 @@ def write_sources(out):
     kern_letters = kerning.letters(cmap, builds[WEIGHTS[0][0]]["components"])
     kern_groups = kerning.groups(builds[WEIGHTS[0][0]]["components"], kern_letters)
     kern_marks = kerning.punctuation(cmap, builds[WEIGHTS[0][0]]["components"], spacing.SKIP)
+    kern_sticking = kerning.sticking_out(builds[WEIGHTS[0][0]]["components"])
     # the vertical caron (ď ľ ť Ľ) is the right side of its letter above the x-height: it stays a sidebearing
     # from the next letter, more than the 70 units from its own
     kern_carons = {n: bf.XH for n, cs in builds[WEIGHTS[0][0]]["components"].items()
                    if any(c[0] == "caroncomb.alt" for c in cs)}
     kern_values = {s: kerning.values(flat[s], {n: data[s][n][0] for n in order}, 2 * bf.SB, stroke_width(w), kern_letters,
-                                     kern_marks, kern_carons, bf.SB) for s, w in WEIGHTS}
+                                     kern_marks, kern_sticking, kern_carons, bf.SB) for s, w in WEIGHTS}
     fea = feature_code(names)
     ys = [p[1] for s in flat for cs in flat[s].values() for _, segs in cs for g in segs for p in g[1:]]
     win = (max(ys), max(0, -min(ys)))

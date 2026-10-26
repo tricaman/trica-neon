@@ -2,7 +2,26 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
+    <key>Aogonek</key>
+    <dict>
+      <key>public.kern2.dotlessj</key>
+      <integer>45</integer>
+      <key>public.kern2.j</key>
+      <integer>45</integer>
+    </dict>
     <key>Delta</key>
+    <dict>
+      <key>public.kern2.Z</key>
+      <integer>10</integer>
+    </dict>
+    <key>Iogonek</key>
+    <dict>
+      <key>public.kern2.dotlessj</key>
+      <integer>35</integer>
+      <key>public.kern2.j</key>
+      <integer>35</integer>
+    </dict>
+    <key>Lcaron</key>
     <dict>
       <key>public.kern2.Z</key>
       <integer>10</integer>
@@ -11,6 +30,13 @@
     <dict>
       <key>public.kern2.Z</key>
       <integer>10</integer>
+    </dict>
+    <key>aogonek</key>
+    <dict>
+      <key>public.kern2.dotlessj</key>
+      <integer>25</integer>
+      <key>public.kern2.j</key>
+      <integer>25</integer>
     </dict>
     <key>dcaron</key>
     <dict>
@@ -67,6 +93,20 @@
     <dict>
       <key>public.kern2.Eth</key>
       <integer>15</integer>
+    </dict>
+    <key>iogonek</key>
+    <dict>
+      <key>public.kern2.dotlessj</key>
+      <integer>35</integer>
+      <key>public.kern2.j</key>
+      <integer>35</integer>
+    </dict>
+    <key>iogonek.dotless</key>
+    <dict>
+      <key>public.kern2.dotlessj</key>
+      <integer>20</integer>
+      <key>public.kern2.j</key>
+      <integer>20</integer>
     </dict>
     <key>lcaron</key>
     <dict>

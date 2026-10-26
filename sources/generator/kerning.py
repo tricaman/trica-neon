@@ -25,6 +25,7 @@ RIGHT = {"A": "A", "T": "T", "V": "V", "W": "W", "Y": "Y", "a": "a", "e": "e", "
          "period": "period", "quotes": "quotesingle"}
 LISTS = {"quotes": ["quotesingle", "quotedbl", "quoteleft", "quotedblleft", "quoteright", "quotedblright"],
          "period": ["period", "comma", "ellipsis"]}
+STICK_OUT = {"ogonekcomb", "caroncomb.alt"}     # marks that stick out on the right of their letter
 PAIRS = [("A", "V"), ("A", "W"), ("A", "Y"), ("A", "T"), ("A", "quotes"), ("quotes", "A"),
          ("L", "T"), ("L", "V"), ("L", "Y"), ("P", "A"), ("P", "period"), ("F", "period"),
          ("r", "period"), ("y", "period"), ("v", "period")] + \
@@ -45,6 +46,12 @@ def punctuation(cmap, components, skip):
                    and n not in components and n not in skip})
 
 
+def sticking_out(components):
+    """The accented letters whose mark sticks out on the right (ogonek, vertical caron): on the left side of a
+    pair they stay out of the groups and are kerned one by one, glyph to class."""
+    return sorted(n for n, comps in components.items() if {c[0] for c in comps[1:]} & STICK_OUT)
+
+
 def groups(components, letters):
     """{"public.kern1.X": [...], "public.kern2.X": [...]} with internal glyph names. On the
     left side of a pair, accented letters whose mark sticks out on the right (ogonek,
@@ -55,7 +62,7 @@ def groups(components, letters):
         out = [key]
         for name, comps in components.items():
             marks = {c[0] for c in comps[1:]}
-            if comps[0][0] == key and comps[1:] and not (left and marks & {"ogonekcomb", "caroncomb.alt"}):
+            if comps[0][0] == key and comps[1:] and not (left and marks & STICK_OUT):
                 out.append(name)
         return out
     left, right = {**LEFT, **{n: n for n in letters}}, {**RIGHT, **{n: n for n in letters}}
@@ -64,11 +71,12 @@ def groups(components, letters):
     return result
 
 
-def values(contours, advances, gap, stroke, letters, marks, carons, caron_gap):
-    """{(kern1 group, kern2 group): value} for one master; contours resolved, in font units. `carons`: the
-    letters with the vertical caron and the height from which the caron is their right side."""
+def values(contours, advances, gap, stroke, letters, marks, sticking, carons, caron_gap):
+    """{(kern1 group, kern2 group): value} for one master; contours resolved, in font units. `sticking`: the
+    accented letters out of the groups on the left; `carons`: those with the vertical caron, and the height
+    from which the caron is their right side."""
     lines = {g: _polylines(contours[g]) for g in set(LEFT.values()) | set(RIGHT.values()) | set(letters) | set(marks)
-             | set(carons)}
+             | set(sticking)}
     rows = {g: _rows(lines[g]) for g in lines}
     least = max(MIN_GAP * stroke, MIN_GAP_UNITS)
 
@@ -93,11 +101,14 @@ def values(contours, advances, gap, stroke, letters, marks, carons, caron_gap):
                 value = apart(a, b, 0)
                 if value:
                     out[key] = value
-    # the vertical caron sticks out on the right of ď ľ ť: it stays `caron_gap` from the next letter, measured
-    # over its height only, so that it reads as part of its own letter (glyph to class)
-    for a, lo in carons.items():
+    # the accented letters out of the groups on the left, glyph to class: kept apart from the next letter as the
+    # letters are (the ogonek from the hook of the j), and the vertical caron of ď ľ ť `caron_gap` from it,
+    # measured over its height only, so that it reads as part of its own letter
+    for a in sticking:
         for b in letters:
-            value = apart(a, b, 0, caron_gap, lo)
+            value = apart(a, b, 0)
+            if a in carons:
+                value = apart(a, b, value, caron_gap, carons[a])
             if value:
                 out[(a, f"public.kern2.{b}")] = value
     # punctuation next to letters: glyph to class (marks already in a list class stay out)
