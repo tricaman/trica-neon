@@ -88,7 +88,9 @@ def install(bf, d, dot):
     def m_dblacute(cx, y):                   # the two acutes a clear gap apart, measured across their strokes
         off = (S + max(S * 0.6, 40)) * math.hypot(140, 135) / 135 / 2
         return union(m_acute(cx - off, y), m_acute(cx + off, y))
-    def m_cedilla(cx, y): return ln((cx, BT), (cx, -110), (cx - 90, -110), radii=[0, 90, 0], cap=BUTT)  # the ogonek turned to the left
+    def m_cedilla(cx, y):                    # a short neck turning softly into a bowl open to the left, down to the descender
+        y1 = -30; a = (y1 - DB) / 2; s = 30
+        return ln((cx, BT), (cx, y1), (cx + s + a, y1), (cx + s + a, DB), (cx - 45, DB), radii=[0, s, a, a, 0], cap=BUTT)
     def m_ogonek(cx, y): return ln((cx, BT), (cx, -110), (cx + 90, -110), radii=[0, 90, 0], cap=BUTT)   # a quarter circle, as the foot of the t
     def ogonek_x(name, bw):        # where the ogonek hangs: as the end of the right stem of A and a, under the stem of I and i
         return bw - h if name in ("A", "a") else bw / 2 if name in ("I", "i", "dotlessi") else bw * 0.78
