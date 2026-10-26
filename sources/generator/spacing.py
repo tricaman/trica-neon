@@ -24,7 +24,7 @@ LOWER_BAND = {"hyphen", "endash", "emdash", "minus", "plus", "equal", "multiply"
               "bullet", "period", "comma", "colon", "semicolon", "ellipsis"}
 SKIP = {"underscore", "fraction", "dottedcircle"}   # drawn to fill their advance, or a base for marks
 # arrows are mostly open space, so the area method would bring them almost to touch: they keep the whole
-# sidebearing on each side instead, as a straight stem
+# sidebearing on each side instead, as a straight stem, and a twentieth more
 ARROWS = ["arrowleft", "arrowup", "arrowright", "arrowdown", "arrowboth"]
 # math signs share one width, so that formulas line up: the optical width of the minus
 MATH = ["plus", "minus", "equal", "less", "greater", "multiply", "divide", "plusminus", "notequal",
@@ -86,7 +86,8 @@ def respace(builds, xheight, cap, sidebearing):
             shift[name] = (dl, common - glyphs[name][0] - dl)
         for name in ARROWS:
             xs = [p[0] for _, segs in glyphs[name][1].contours for g in segs for p in g[1:]]
-            shift[name] = (sidebearing - min(xs), sidebearing - (glyphs[name][0] - max(xs)))
+            s = 1.05 * sidebearing
+            shift[name] = (s - min(xs), s - (glyphs[name][0] - max(xs)))
         for name in kinds:
             if name in comps and comps[name][0][0] in shift:  # accented letters follow their base
                 shift[name] = shift[comps[name][0][0]]
