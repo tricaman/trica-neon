@@ -460,12 +460,15 @@ def install(bf, d, dot):
         G[nm] = (width - 2 * bf.SB, bf.Outline()); reg(nm, chs)
 
     # ------------------------------------------------------------ arrows
-    aw_ = W; ac = aw_ / 2; hd = W * 0.22
+    # 1.2 caps boxes long, the head reaching 0.33 of the box above and below the shaft: the letters are wide, so
+    # arrows only as long as the cap height would look small beside them
+    aw_ = W * 1.2; ac = aw_ / 2; hd = W * 0.33
+    uw = 2 * hd + S                           # box of the vertical arrows, as wide as their head
     # the shaft ends flat at the point of the head, which covers it (a square end would stick out of the point)
     put1("arrowright", aw_, ln((0, MI), (aw_ - h, MI), cap=BUTT), ln((aw_ - h - hd, MI + hd), (aw_ - h, MI), (aw_ - h - hd, MI - hd)), ch="→")
     put1("arrowleft", aw_, ln((h, MI), (aw_, MI), cap=BUTT), ln((h + hd, MI + hd), (h, MI), (h + hd, MI - hd)), ch="←")
-    put1("arrowup", W * 0.6, ln((W * 0.3, 0), (W * 0.3, T), cap=BUTT), ln((W * 0.3 - hd, T - hd), (W * 0.3, T), (W * 0.3 + hd, T - hd)), ch="↑")
-    put1("arrowdown", W * 0.6, ln((W * 0.3, BT), (W * 0.3, H), cap=BUTT), ln((W * 0.3 - hd, BT + hd), (W * 0.3, BT), (W * 0.3 + hd, BT + hd)), ch="↓")
+    put1("arrowup", uw, ln((uw / 2, 0), (uw / 2, T), cap=BUTT), ln((uw / 2 - hd, T - hd), (uw / 2, T), (uw / 2 + hd, T - hd)), ch="↑")
+    put1("arrowdown", uw, ln((uw / 2, BT), (uw / 2, H), cap=BUTT), ln((uw / 2 - hd, BT + hd), (uw / 2, BT), (uw / 2 + hd, BT + hd)), ch="↓")
     put1("arrowboth", aw_, ln((h, MI), (aw_ - h, MI), cap=BUTT), ln((aw_ - h - hd, MI + hd), (aw_ - h, MI), (aw_ - h - hd, MI - hd)),
          ln((h + hd, MI + hd), (h, MI), (h + hd, MI - hd)), ch="↔")
 

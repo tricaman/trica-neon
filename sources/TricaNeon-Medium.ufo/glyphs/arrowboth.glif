@@ -1,28 +1,28 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="arrowboth" format="2">
-  <advance width="911"/>
+  <advance width="1051"/>
   <unicode hex="2194"/>
   <outline>
     <contour>
       <point x="149" y="394" type="line"/>
       <point x="149" y="306" type="line"/>
-      <point x="762" y="306" type="line"/>
-      <point x="762" y="394" type="line"/>
+      <point x="902" y="306" type="line"/>
+      <point x="902" y="394" type="line"/>
     </contour>
     <contour>
-      <point x="608" y="566" type="line"/>
-      <point x="546" y="504" type="line"/>
-      <point x="700" y="350" type="line"/>
-      <point x="546" y="196" type="line"/>
-      <point x="608" y="134" type="line"/>
-      <point x="824" y="350" type="line"/>
+      <point x="671" y="643" type="line"/>
+      <point x="609" y="581" type="line"/>
+      <point x="840" y="350" type="line"/>
+      <point x="609" y="119" type="line"/>
+      <point x="671" y="57" type="line"/>
+      <point x="964" y="350" type="line"/>
     </contour>
     <contour>
-      <point x="365" y="504" type="line"/>
-      <point x="303" y="566" type="line"/>
+      <point x="442" y="581" type="line"/>
+      <point x="380" y="643" type="line"/>
       <point x="88" y="350" type="line"/>
-      <point x="303" y="134" type="line"/>
-      <point x="365" y="196" type="line"/>
+      <point x="380" y="57" type="line"/>
+      <point x="442" y="119" type="line"/>
       <point x="211" y="350" type="line"/>
     </contour>
   </outline>

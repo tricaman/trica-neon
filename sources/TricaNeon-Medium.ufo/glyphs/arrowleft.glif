@@ -1,20 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="arrowleft" format="2">
-  <advance width="893"/>
+  <advance width="1033"/>
   <unicode hex="2190"/>
   <outline>
     <contour>
       <point x="149" y="394" type="line"/>
       <point x="149" y="306" type="line"/>
-      <point x="806" y="306" type="line"/>
-      <point x="806" y="394" type="line"/>
+      <point x="946" y="306" type="line"/>
+      <point x="946" y="394" type="line"/>
     </contour>
     <contour>
-      <point x="365" y="504" type="line"/>
-      <point x="303" y="566" type="line"/>
+      <point x="442" y="581" type="line"/>
+      <point x="380" y="643" type="line"/>
       <point x="88" y="350" type="line"/>
-      <point x="303" y="134" type="line"/>
-      <point x="365" y="196" type="line"/>
+      <point x="380" y="57" type="line"/>
+      <point x="442" y="119" type="line"/>
       <point x="211" y="350" type="line"/>
     </contour>
   </outline>
