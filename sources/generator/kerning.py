@@ -21,15 +21,18 @@ MIN_GAP_UNITS = 20  # ... and in units at least
 # group -> glyph measured for it; the members are that glyph and its accented letters
 LEFT = {"A": "A", "F": "F", "L": "L", "P": "P", "T": "T", "V": "V", "W": "W", "Y": "Y",
         "r": "r", "v": "v", "y": "y", "quotes": "quotesingle"}
-RIGHT = {"A": "A", "T": "T", "V": "V", "W": "W", "Y": "Y", "a": "a", "e": "e", "o": "o",
-         "period": "period", "quotes": "quotesingle"}
+UNDER = ["a", "c", "d", "e", "g", "m", "n", "o", "p", "q", "r", "s", "u", "v", "w", "x", "y", "z", "dotlessi", "ae", "oe",
+         "oslash"]                               # lowercase that can pass under the bar of T or the arms of V and Y
+RIGHT = {"A": "A", "T": "T", "V": "V", "W": "W", "Y": "Y", "period": "period", "quotes": "quotesingle", "hyphen": "hyphen",
+         **{n: n for n in UNDER}}
 LISTS = {"quotes": ["quotesingle", "quotedbl", "quoteleft", "quotedblleft", "quoteright", "quotedblright"],
          "period": ["period", "comma", "ellipsis"]}
 STICK_OUT = {"ogonekcomb", "caroncomb.alt"}     # marks that stick out on the right of their letter
 PAIRS = [("A", "V"), ("A", "W"), ("A", "Y"), ("A", "T"), ("A", "quotes"), ("quotes", "A"),
          ("L", "T"), ("L", "V"), ("L", "Y"), ("P", "A"), ("P", "period"), ("F", "period"),
          ("r", "period"), ("y", "period"), ("v", "period")] + \
-        [(left, right) for left in ("T", "V", "W", "Y") for right in ("A", "a", "e", "o", "period")]
+        [(left, right) for left in ("T", "V", "W", "Y") for right in ("A", "period")] + \
+        [(left, right) for left in ("T", "V", "Y") for right in UNDER + ["hyphen"]] + [("W", r) for r in ("a", "e", "o")]
 
 
 def letters(cmap, components):

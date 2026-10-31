@@ -909,6 +909,10 @@
     <array>
       <string>hbar</string>
     </array>
+    <key>public.kern2.hyphen</key>
+    <array>
+      <string>hyphen</string>
+    </array>
     <key>public.kern2.i</key>
     <array>
       <string>i</string>
