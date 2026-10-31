@@ -139,7 +139,7 @@ def build():
     yq = max(MI, ye + h)                         # the hook rises when its stem would get shorter than half a stroke
     glyph("question", Wq, [([(L2, yq), (L2, T), (R2, T), (R2, yq), (C2, yq), (C2, ye)],
                             [0, r, r, r, 0, 0])], extra=[dot(C2, d / 2)])
-    glyph("slash", W / 2, [([(h, BT), (W / 2 - h, T)],)])
+    put("slash", W / 2, flush((h, BT), (W / 2 - h, T)))
     GLYPHS["space"] = (350 - 2 * SB, Outline())     # word space: 350 units
 
     build_symbols(d, dot)
@@ -155,6 +155,16 @@ def reg(name, chars):
 def ln(*pts, cap=SQUARE, radii=None, closed=False):
     """stroked polyline (helper for symbols)"""
     return stroke(rounded(list(pts), radii, closed), cap)
+
+
+def flush(p0, p1, y0=0, y1=None):
+    """A straight stroke along p0 -> p1, run on past both ends and cut level with y0 and y1 (the baseline and the
+    cap height unless given), as the V: no corner of a slanted end sticks out of the zone."""
+    y1 = H if y1 is None else y1
+    (xa, ya), (xb, yb) = p0, p1
+    k = (xb - xa) / (yb - ya)
+    lo, hi = y0 - S, y1 + S
+    return clip(ln((xa + (lo - ya) * k, lo), (xa + (hi - ya) * k, hi), cap=BUTT), -10 * H, y0, 10 * H, y1)
 
 
 def put(name, width, *paths, chars=""):
@@ -200,7 +210,7 @@ def build_symbols(d, dot):
     put("bar", S, ln((h, yb), (h, yt)))
     gb = (max(S * 1.5, 90) + S) / 2                 # ¦: the bar with a clear break in the middle
     put("brokenbar", S, ln((h, yb), (h, (yb + yt) / 2 - gb)), ln((h, (yb + yt) / 2 + gb), (h, yt)))
-    put("backslash", W / 2, ln((h, T), (W / 2 - h, BT)))
+    put("backslash", W / 2, flush((h, T), (W / 2 - h, BT)))
     # the underscore fills its advance, flat at both ends, so repeated underscores form one line
     put("underscore", W * 0.8, ln((-SB, -H * 0.12), (W * 0.8 + SB, -H * 0.12), cap=BUTT))
 
@@ -254,7 +264,7 @@ def build_symbols(d, dot):
     pc = H * 0.3
     put("percent", W, ln((h, T), (pc, T), (pc, T - pc), (h, T - pc), radii=[rs * 0.6] * 4, closed=True),
         ln((W - pc, BT + pc), (W - h, BT + pc), (W - h, BT), (W - pc, BT), radii=[rs * 0.6] * 4, closed=True),
-        ln((W * 0.2, BT), (W * 0.8, T)))
+        flush((W * 0.2, BT), (W * 0.8, T)))
     Sw = GLYPHS["S"][1]
     put("dollar", W, Sw, ln((W / 2, -H * 0.1), (W / 2, H * 1.1), cap=BUTT))
     ew = W

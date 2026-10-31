@@ -1,42 +1,42 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="zero.dnom" format="2">
-  <advance width="360"/>
+  <advance width="361"/>
   <outline>
     <contour>
-      <point x="37" y="90" type="line"/>
-      <point x="37" y="38"/>
-      <point x="78" y="-3"/>
-      <point x="130" y="-3" type="curve"/>
-      <point x="230" y="-3" type="line"/>
-      <point x="282" y="-3"/>
-      <point x="323" y="38"/>
-      <point x="323" y="90" type="curve"/>
-      <point x="323" y="260" type="line"/>
-      <point x="323" y="312"/>
-      <point x="282" y="353"/>
-      <point x="230" y="353" type="curve"/>
-      <point x="130" y="353" type="line"/>
-      <point x="78" y="353"/>
-      <point x="37" y="312"/>
-      <point x="37" y="260" type="curve"/>
+      <point x="40" y="91" type="line"/>
+      <point x="40" y="41"/>
+      <point x="81" y="0"/>
+      <point x="131" y="0" type="curve"/>
+      <point x="230" y="0" type="line"/>
+      <point x="280" y="0"/>
+      <point x="321" y="41"/>
+      <point x="321" y="91" type="curve"/>
+      <point x="321" y="259" type="line"/>
+      <point x="321" y="309"/>
+      <point x="280" y="350"/>
+      <point x="230" y="350" type="curve"/>
+      <point x="131" y="350" type="line"/>
+      <point x="81" y="350"/>
+      <point x="40" y="309"/>
+      <point x="40" y="259" type="curve"/>
     </contour>
     <contour>
-      <point x="52" y="90" type="curve"/>
-      <point x="52" y="260" type="line"/>
-      <point x="52" y="303"/>
-      <point x="87" y="338"/>
-      <point x="130" y="338" type="curve"/>
-      <point x="230" y="338" type="line"/>
-      <point x="273" y="338"/>
-      <point x="308" y="303"/>
-      <point x="308" y="260" type="curve"/>
-      <point x="308" y="90" type="line"/>
-      <point x="308" y="47"/>
-      <point x="273" y="12"/>
-      <point x="230" y="12" type="curve"/>
-      <point x="130" y="12" type="line"/>
-      <point x="87" y="12"/>
-      <point x="52" y="47"/>
+      <point x="55" y="91" type="curve"/>
+      <point x="55" y="259" type="line"/>
+      <point x="55" y="301"/>
+      <point x="89" y="335"/>
+      <point x="131" y="335" type="curve"/>
+      <point x="230" y="335" type="line"/>
+      <point x="272" y="335"/>
+      <point x="306" y="301"/>
+      <point x="306" y="259" type="curve"/>
+      <point x="306" y="91" type="line"/>
+      <point x="306" y="49"/>
+      <point x="272" y="15"/>
+      <point x="230" y="15" type="curve"/>
+      <point x="131" y="15" type="line"/>
+      <point x="89" y="15"/>
+      <point x="55" y="49"/>
     </contour>
   </outline>
 </glyph>

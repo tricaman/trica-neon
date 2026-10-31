@@ -31,6 +31,11 @@
       <key>public.kern2.Z</key>
       <integer>10</integer>
     </dict>
+    <key>backslash</key>
+    <dict>
+      <key>public.kern2.Z</key>
+      <integer>10</integer>
+    </dict>
     <key>dcaron</key>
     <dict>
       <key>public.kern2.Hbar</key>

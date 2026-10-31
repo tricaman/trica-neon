@@ -1,30 +1,30 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="five.dnom" format="2">
-  <advance width="360"/>
+  <advance width="369"/>
   <outline>
     <contour>
-      <point x="338" y="279" type="line"/>
-      <point x="338" y="368" type="line"/>
-      <point x="22" y="368" type="line"/>
-      <point x="22" y="130" type="line"/>
+      <point x="329" y="261" type="line"/>
+      <point x="329" y="350" type="line"/>
+      <point x="40" y="350" type="line"/>
+      <point x="40" y="130" type="line"/>
       <point x="219" y="130" type="line"/>
-      <point x="236" y="130"/>
-      <point x="249" y="117"/>
-      <point x="249" y="101" type="curve"/>
-      <point x="249" y="84"/>
-      <point x="236" y="71"/>
-      <point x="219" y="71" type="curve"/>
-      <point x="22" y="71" type="line"/>
-      <point x="22" y="-18" type="line"/>
-      <point x="219" y="-18" type="line"/>
-      <point x="285" y="-18"/>
-      <point x="338" y="35"/>
-      <point x="338" y="101" type="curve"/>
-      <point x="338" y="166"/>
-      <point x="285" y="220"/>
+      <point x="230" y="130"/>
+      <point x="239" y="121"/>
+      <point x="239" y="110" type="curve"/>
+      <point x="239" y="98"/>
+      <point x="230" y="89"/>
+      <point x="219" y="89" type="curve"/>
+      <point x="40" y="89" type="line"/>
+      <point x="40" y="0" type="line"/>
+      <point x="219" y="0" type="line"/>
+      <point x="279" y="0"/>
+      <point x="329" y="49"/>
+      <point x="329" y="110" type="curve"/>
+      <point x="329" y="170"/>
+      <point x="279" y="220"/>
       <point x="219" y="220" type="curve"/>
-      <point x="111" y="220" type="line"/>
-      <point x="111" y="279" type="line"/>
+      <point x="129" y="220" type="line"/>
+      <point x="129" y="261" type="line"/>
     </contour>
   </outline>
 </glyph>

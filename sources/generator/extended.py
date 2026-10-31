@@ -325,13 +325,17 @@ def install(bf, d, dot):
             res.append(stroke(rounded(pts2, rad2, closed), width=sw))
         return width * scale, union(*res)
 
-    sc, sw = 0.5, S * 0.85
-    sup_y = H - H * sc
+    sw = S * 0.85                                # stroke of the small figures
+    def fitted(name, y0, y1):                  # the figure scaled so that its outline fills y0..y1, its ink from x 0
+        s = (y1 - y0 - sw) / (T - BT)
+        dx, dy = sw / 2 - h * s, y0 + sw / 2 - BT * s
+        wd, p = small(name, s, dx, dy, sw)
+        return wd + 2 * dx, p
     for nm, ch in [("one", "¹"), ("two", "²"), ("three", "³")]:
-        wd, p = small(nm, sc, 0, sup_y, sw)
+        wd, p = fitted(nm, MI, H)
         put1(nm + "superior", wd, p, ch=ch)
     for nm in ["zero", "four", "five", "six", "seven", "eight", "nine"]:
-        wd, p = small(nm, sc, 0, sup_y, sw)
+        wd, p = fitted(nm, MI, H)
         put1(nm + "superior", wd, p, ch={"zero": "⁰", "four": "⁴", "five": "⁵", "six": "⁶",
                                             "seven": "⁷", "eight": "⁸", "nine": "⁹"}[nm])
     # fractions: the slash of ⁄; numerator and denominator keep the same clear gap from it where they
@@ -343,17 +347,19 @@ def install(bf, d, dot):
         xs = [p[0] for _, segs in o.contours for g in segs for p in g[1:]]
         return min(xs), max(xs)
     for num, den, ch in [("one", "four", "¼"), ("one", "two", "½"), ("three", "four", "¾")]:
-        npth = small(num, sc, 0, sup_y, sw)[1]
-        dpth = small(den, sc, 0, 0, sw)[1]
+        npth = fitted(num, MI, H)[1]
+        dpth = fitted(den, 0, MI)[1]
         (n0, n1), (d0, d1) = xb(npth), xb(dpth)
         xc = n1 - n0 + gap + hs                            # centre of the slash, from the left of the numerator
-        left = min(0, xc - sl / 2 - hs)                    # the foot of the slash can pass the numerator
-        right = max(xc + hs + gap + d1 - d0, xc + sl / 2 + hs)
+        slash = bf.flush((xc - sl / 2, BT), (xc + sl / 2, T))
+        (s0, s1) = xb(slash)
+        left = min(0, s0)                                  # the foot of the slash can pass the numerator
+        right = max(xc + hs + gap + d1 - d0, s1)
         put1(num + "_" + den, right - left, shift(npth, -n0 - left), shift(dpth, xc + hs + gap - d0 - left),
-             ln((xc - sl / 2 - left, BT), (xc + sl / 2 - left, T), cap=BUTT), ch=ch)
+             shift(slash, -left), ch=ch)
     # ⁄ itself: with the 40 unit sidebearings of the numerators and denominators (frac), the same gap
     tight_f = gap - 40 - bf.SB
-    put1("fraction", 2 * (tight_f + hs), ln((tight_f + hs - sl / 2, BT), (tight_f + hs + sl / 2, T), cap=BUTT), ch="⁄")
+    put1("fraction", 2 * (tight_f + hs), bf.flush((tight_f + hs - sl / 2, BT), (tight_f + hs + sl / 2, T)), ch="⁄")
     # ordinals
     aw2, ap2 = small("a", 0.55, 0, H * 0.42, sw)
     put1("ordfeminine", aw2, ap2, ln((h, H * 0.3), (aw2 - h, H * 0.3)), ch="ª")
@@ -365,7 +371,7 @@ def install(bf, d, dot):
     # all as wide as the zero, with the figure centred
     tight = 40 - bf.SB
     for nm in ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]:
-        wd, p = small(nm, sc, 0, 0, sw)
+        wd, p = fitted(nm, 0, MI)
         G[nm + ".dnom"] = (wd + 2 * tight, shift(p, tight))
         G[nm + ".numr"] = (wd + 2 * tight, bf.Outline())
         bf.COMPONENTS[nm + ".numr"] = [(nm + "superior", tight, 0)]
