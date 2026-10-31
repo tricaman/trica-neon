@@ -25,6 +25,24 @@
     </dict>
     <key>dcaron</key>
     <dict>
+      <key>backslash</key>
+      <integer>20</integer>
+      <key>braceright</key>
+      <integer>25</integer>
+      <key>bracketright</key>
+      <integer>25</integer>
+      <key>ibreve</key>
+      <integer>20</integer>
+      <key>icircumflex</key>
+      <integer>25</integer>
+      <key>idieresis</key>
+      <integer>35</integer>
+      <key>imacron</key>
+      <integer>20</integer>
+      <key>itilde</key>
+      <integer>15</integer>
+      <key>parenright</key>
+      <integer>25</integer>
       <key>public.kern2.T</key>
       <integer>30</integer>
       <key>public.kern2.Tbar</key>
@@ -45,6 +63,18 @@
       <integer>30</integer>
       <key>public.kern2.three</key>
       <integer>25</integer>
+      <key>quotedblleft</key>
+      <integer>25</integer>
+      <key>quoteleft</key>
+      <integer>25</integer>
+      <key>summation</key>
+      <integer>15</integer>
+      <key>trademark</key>
+      <integer>25</integer>
+      <key>uni2077</key>
+      <integer>5</integer>
+      <key>yen</key>
+      <integer>5</integer>
     </dict>
     <key>iogonek</key>
     <dict>
@@ -62,6 +92,8 @@
     </dict>
     <key>lcaron</key>
     <dict>
+      <key>idieresis</key>
+      <integer>10</integer>
       <key>public.kern2.T</key>
       <integer>5</integer>
       <key>public.kern2.Tbar</key>
@@ -103,6 +135,18 @@
     </dict>
     <key>public.kern1.T</key>
     <dict>
+      <key>iacute</key>
+      <integer>-105</integer>
+      <key>ibreve</key>
+      <integer>-20</integer>
+      <key>icircumflex</key>
+      <integer>-50</integer>
+      <key>idieresis</key>
+      <integer>-10</integer>
+      <key>igrave</key>
+      <integer>-45</integer>
+      <key>itilde</key>
+      <integer>-20</integer>
       <key>public.kern2.A</key>
       <integer>-125</integer>
       <key>public.kern2.a</key>
@@ -156,6 +200,20 @@
     </dict>
     <key>public.kern1.V</key>
     <dict>
+      <key>iacute</key>
+      <integer>-80</integer>
+      <key>ibreve</key>
+      <integer>-30</integer>
+      <key>icircumflex</key>
+      <integer>-35</integer>
+      <key>idieresis</key>
+      <integer>-20</integer>
+      <key>igrave</key>
+      <integer>-55</integer>
+      <key>imacron</key>
+      <integer>-35</integer>
+      <key>itilde</key>
+      <integer>-35</integer>
       <key>public.kern2.A</key>
       <integer>-60</integer>
       <key>public.kern2.a</key>
@@ -220,6 +278,20 @@
     </dict>
     <key>public.kern1.Y</key>
     <dict>
+      <key>iacute</key>
+      <integer>-60</integer>
+      <key>ibreve</key>
+      <integer>-50</integer>
+      <key>icircumflex</key>
+      <integer>-5</integer>
+      <key>idieresis</key>
+      <integer>-20</integer>
+      <key>igrave</key>
+      <integer>-70</integer>
+      <key>imacron</key>
+      <integer>-40</integer>
+      <key>itilde</key>
+      <integer>-50</integer>
       <key>public.kern2.A</key>
       <integer>-55</integer>
       <key>public.kern2.a</key>
@@ -283,9 +355,55 @@
     </dict>
     <key>tcaron</key>
     <dict>
+      <key>asterisk</key>
+      <integer>20</integer>
+      <key>currency</key>
+      <integer>5</integer>
+      <key>dagger</key>
+      <integer>15</integer>
+      <key>daggerdbl</key>
+      <integer>25</integer>
+      <key>degree</key>
+      <integer>25</integer>
+      <key>greaterequal</key>
+      <integer>15</integer>
+      <key>iacute</key>
+      <integer>15</integer>
+      <key>ibreve</key>
+      <integer>15</integer>
+      <key>icircumflex</key>
+      <integer>60</integer>
+      <key>idieresis</key>
+      <integer>35</integer>
+      <key>itilde</key>
+      <integer>30</integer>
+      <key>jcircumflex</key>
+      <integer>30</integer>
+      <key>paragraph</key>
+      <integer>10</integer>
+      <key>percent</key>
+      <integer>20</integer>
+      <key>perthousand</key>
+      <integer>20</integer>
       <key>public.kern2.Y</key>
       <integer>15</integer>
       <key>public.kern2.four</key>
+      <integer>15</integer>
+      <key>quotedbl</key>
+      <integer>5</integer>
+      <key>quotedblleft</key>
+      <integer>5</integer>
+      <key>quotedblright</key>
+      <integer>5</integer>
+      <key>quoteleft</key>
+      <integer>5</integer>
+      <key>quoteright</key>
+      <integer>5</integer>
+      <key>quotesingle</key>
+      <integer>5</integer>
+      <key>registered</key>
+      <integer>10</integer>
+      <key>yen</key>
       <integer>15</integer>
     </dict>
   </dict>

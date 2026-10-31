@@ -6,8 +6,9 @@ sidebearing). Open areas, such as under the bar of a T or beside the foot of a V
 only up to a limit, and only part of the difference becomes kerning, so it stays moderate.
 Then no two letters or figures, and no letter and punctuation mark, come closer than a share
 of the stroke: kerning that would bring them closer is reduced, and pairs that are too close
-untouched get kerned apart. The vertical caron of ď ľ ť, which sticks out on the right, is kept
-further from the next letter than from its own.
+untouched get kerned apart, the accented letters one by one, as a mark can come closer than its
+letter. The vertical caron of ď ľ ť, which sticks out on the right, is kept further from the next
+letter than from its own.
 """
 import math, unicodedata
 
@@ -42,10 +43,11 @@ def letters(cmap, components):
 
 
 def punctuation(cmap, components, skip):
-    """The drawn punctuation and symbols, kept apart from the letters (as single glyphs, not classes),
-    but for those in `skip`, drawn to touch their neighbours (_ ⁄)."""
+    """The drawn punctuation, symbols, superior figures and fractions, kept apart from the letters (as single
+    glyphs, not classes), but for those in `skip`, drawn to touch their neighbours (_ ⁄)."""
     return sorted({n for cp, n in cmap.items()
-                   if unicodedata.category(chr(cp))[0] in "PS" and unicodedata.category(chr(cp)) != "Sk"
+                   if (unicodedata.category(chr(cp))[0] in "PS" or unicodedata.category(chr(cp)) == "No")
+                   and unicodedata.category(chr(cp)) != "Sk"
                    and n not in components and n not in skip})
 
 
@@ -74,12 +76,12 @@ def groups(components, letters):
     return result
 
 
-def values(contours, advances, gap, stroke, letters, marks, sticking, carons, caron_gap):
+def values(contours, advances, gap, stroke, letters, marks, sticking, carons, caron_gap, classes):
     """{(kern1 group, kern2 group): value} for one master; contours resolved, in font units. `sticking`: the
     accented letters out of the groups on the left; `carons`: those with the vertical caron, and the height
-    from which the caron is their right side."""
+    from which the caron is their right side; `classes`: the groups, to check their accented members."""
     lines = {g: _polylines(contours[g]) for g in set(LEFT.values()) | set(RIGHT.values()) | set(letters) | set(marks)
-             | set(sticking)}
+             | set(sticking) | {m for members in classes.values() for m in members}}
     rows = {g: _rows(lines[g]) for g in lines}
     least = max(MIN_GAP * stroke, MIN_GAP_UNITS)
 
@@ -104,6 +106,23 @@ def values(contours, advances, gap, stroke, letters, marks, sticking, carons, ca
                 value = apart(a, b, 0)
                 if value:
                     out[key] = value
+    # the accented members of a class: a mark can reach where the bare letter does not (the dieresis of ï under
+    # the bar of T, the double acute of ő), so each is kept apart on its own when it comes too close, as an
+    # exception to the kerning of its class
+    def by_name(prefix):                           # the classes of one side, by name, but for the list classes
+        return {g[len(prefix):]: m for g, m in classes.items() if g.startswith(prefix) and g[len(prefix):] not in LISTS}
+    first, second = by_name("public.kern1."), by_name("public.kern2.")
+    for left, lm in first.items():
+        for right, rm in second.items():
+            base = out.get((f"public.kern1.{left}", f"public.kern2.{right}"), 0)
+            for m in rm[1:]:
+                value = apart(lm[0], m, base)
+                if value != base:
+                    out[(f"public.kern1.{left}", m)] = value
+            for m in lm[1:]:
+                value = apart(m, rm[0], base)
+                if value != base:
+                    out[(m, f"public.kern2.{right}")] = value
     # the accented letters out of the groups on the left, glyph to class: kept apart from the next letter as the
     # letters are (the ogonek from the hook of the j), and the vertical caron of ď ľ ť `caron_gap` from it,
     # measured over its height only, so that it reads as part of its own letter
@@ -114,6 +133,20 @@ def values(contours, advances, gap, stroke, letters, marks, sticking, carons, ca
                 value = apart(a, b, value, caron_gap, carons[a])
             if value:
                 out[(a, f"public.kern2.{b}")] = value
+            for m in second.get(b, [b])[1:]:
+                v = apart(a, m, value)
+                if a in carons:
+                    v = apart(a, m, v, caron_gap, carons[a])
+                if v != value:
+                    out[(a, m)] = v
+    # ... and next to punctuation, as a closing quote or bracket after ľ ď ť (glyph to glyph)
+    for a in sticking:
+        for p in marks:
+            value = apart(a, p, 0)
+            if a in carons:
+                value = apart(a, p, value, caron_gap, carons[a])
+            if value:
+                out[(a, p)] = value
     # punctuation next to letters: glyph to class (marks already in a list class stay out)
     listed = {side: {m for g in groups_ if g in LISTS for m in LISTS[g]} for side, groups_ in (("l", LEFT), ("r", RIGHT))}
     for a, b, key in [(p, b, (p, f"public.kern2.{b}")) for p in marks if p not in listed["l"] for b in letters] + \
