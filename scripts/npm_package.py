@@ -32,7 +32,7 @@ shutil.copy(license_file, os.path.join(out, "LICENSE"))
 package = {
     "name": NAME,
     "version": version,
-    "description": f"{FAMILY}, a geometric typeface drawn with a single stroke: web fonts with ready-made CSS.",
+    "description": f"{FAMILY}, a geometric display typeface drawn with a single stroke: web fonts with ready-made CSS.",
     "keywords": ["font", "typeface", "webfont", "woff2", "variable font", "css", NAME],
     "homepage": "https://tricaman.github.io/trica-neon/",
     "repository": {"type": "git", "url": "git+https://github.com/tricaman/trica-neon.git"},
@@ -46,8 +46,8 @@ json.dump(package, open(os.path.join(out, "package.json"), "w"), indent=2)
 open(os.path.join(out, "package.json"), "a").write("\n")
 open(os.path.join(out, "README.md"), "w").write(f"""# {FAMILY}
 
-Web fonts of [{FAMILY}](https://github.com/tricaman/trica-neon), a geometric typeface drawn with a single
-stroke, in six weights from Thin (100) to SemiBold (600), with ready-made CSS.
+Web fonts of [{FAMILY}](https://github.com/tricaman/trica-neon), a geometric display typeface drawn with a
+single stroke, in six weights from Thin (100) to SemiBold (600), with ready-made CSS.
 
 ```sh
 npm install {NAME}

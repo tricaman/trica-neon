@@ -2,7 +2,9 @@
 
 ![Trica Neon in its six weights, from Thin to SemiBold](documentation/images/specimen.png)
 
-Trica Neon is a geometric typeface drawn with a single, even stroke, like a line of neon tube. The design grows from one module: a pill as wide as the capital height and half as tall, with fully round ends. Every curve is half or a quarter of that pill, outer corners are rounded and inner joints stay sharp.
+Trica Neon is a geometric display typeface drawn with a single, even stroke, like a line of neon tube. The design grows from one module: a pill as wide as the capital height and half as tall, with fully round ends. Every curve is half or a quarter of that pill, outer corners are rounded and inner joints stay sharp.
+
+It is made for headlines, titles and logos, for posters, signs and interfaces, and it feels at home in short texts such as captions, labels and menus. For long reading, it pairs well with a quieter text face.
 
 The project is a work in progress: version 1.000 is not released yet.
 

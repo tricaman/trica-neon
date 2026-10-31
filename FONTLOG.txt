@@ -7,7 +7,7 @@ This file provides detailed information on the Trica Neon font software. This in
 Basic Font Information
 ----------------------
 
-Trica Neon is a geometric typeface drawn with a single, even stroke. The design grows from one module, a pill as wide as the capital height and half as tall: every curve is half or a quarter of that pill, outer corners are rounded and inner joints stay sharp. The glyphs are generated from centerline skeletons stroked at the width of each weight, so all weights share one construction.
+Trica Neon is a geometric display typeface drawn with a single, even stroke, made for headlines, logos, signs and interfaces, and for short texts such as captions and labels. The design grows from one module, a pill as wide as the capital height and half as tall: every curve is half or a quarter of that pill, outer corners are rounded and inner joints stay sharp. The glyphs are generated from centerline skeletons stroked at the width of each weight, so all weights share one construction.
 
 
 ChangeLog

@@ -96,7 +96,7 @@ def specimen():
     x = MARGIN
     for name, wght in WEIGHTS:
         x += draw(d, x, 790, name, size, wght) + 50
-    draw(d, MARGIN, 930, "A geometric typeface drawn with a single stroke.", 44, 300, MUTED)
+    draw(d, MARGIN, 930, "A geometric display typeface drawn with a single stroke.", 44, 300, MUTED)
     draw(d, MARGIN, 1080, "Six weights and a variable font · SIL Open Font License", 32, 400, MUTED)
     save(img, "specimen.png")
 
