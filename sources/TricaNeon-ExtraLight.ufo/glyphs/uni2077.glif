@@ -6,16 +6,10 @@
     <contour>
       <point x="45" y="700" type="line"/>
       <point x="45" y="670" type="line"/>
-      <point x="233" y="670" type="line"/>
-      <point x="269" y="670"/>
-      <point x="298" y="641"/>
-      <point x="298" y="605" type="curve"/>
-      <point x="298" y="350" type="line"/>
-      <point x="328" y="350" type="line"/>
-      <point x="328" y="605" type="line"/>
-      <point x="328" y="657"/>
-      <point x="285" y="700"/>
-      <point x="233" y="700" type="curve"/>
+      <point x="288" y="670" type="line"/>
+      <point x="111" y="350" type="line"/>
+      <point x="145" y="350" type="line"/>
+      <point x="338" y="700" type="line"/>
     </contour>
   </outline>
 </glyph>

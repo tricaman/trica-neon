@@ -330,6 +330,8 @@ def install(bf, d, dot):
         s = (y1 - y0 - sw) / (T - BT)
         dx, dy = sw / 2 - h * s, y0 + sw / 2 - BT * s
         wd, p = small(name, s, dx, dy, sw)
+        if name in bf.CUT:                       # a skeleton run on past its zone is cut there, as at full size
+            p = bf.clip(p, -10 * H, y0, 10 * H, y1)
         return wd + 2 * dx, p
     for nm, ch in [("one", "¹"), ("two", "²"), ("three", "³")]:
         wd, p = fitted(nm, MI, H)

@@ -27,6 +27,7 @@ CHARS = {}          # glyph name -> characters it serves (filled by the builders
 COMPONENTS = {}     # composite glyph name -> [(component glyph, x offset, y offset)]
 ANCHORS = {}        # glyph name -> [(anchor name, x, y)]
 MARKS = set()       # combining marks (zero-width glyphs)
+CUT = set()         # glyphs whose skeleton runs on past their zone and is cut flat there (the small figures cut them too)
 
 
 def setup(stroke):
@@ -120,7 +121,13 @@ def build():
     glyph("four", Wd, [([(L2, T), (L2, MI), (R2, MI)], [0, r, 0]), ([(R2, T), (R2, BT)],)])
     glyph("five", Wd, [([(R2, T), (L2, T), (L2, MI), (R2, MI), (R2, BT), (L2, BT)], [0, 0, 0, r, r, 0])])
     glyph("six", Wd, [([(R2, T), (L2, T), (L2, BT), (R2, BT), (R2, MI), (L2, MI)], [0, r, r, r, r, 0])])
-    glyph("seven", Wd - o7, [([(L2 - o7, T), (R2 - o7, T), (R2 - o7, BT)], [0, r, 0])])
+    # 7: the bar and a straight slanted stem from its end to a third of the width, run on below the baseline and
+    # cut flat there, as the Z and the V, so that it reads apart from the 1
+    x7, xf = R2 - o7, L2 + (R2 - L2) * 0.3 - o7
+    k7 = (T + S) / (T - BT)
+    glyph("seven", Wd - o7, [([(L2 - o7, T), (x7, T), (x7 + (xf - x7) * k7, T - (T - BT) * k7)],)])
+    GLYPHS["seven"] = (GLYPHS["seven"][0], clip(GLYPHS["seven"][1], -H, 0, 2 * H, H))
+    CUT.add("seven")
     glyph("eight", Wd, [pill(L2, R2, MI, T), pill(L2, R2, BT, MI)])
     glyph("nine", Wd, [([(L2, BT), (R2, BT), (R2, T), (L2, T), (L2, MI), (R2, MI)], [0, r, r, r, r, 0])])
 
