@@ -6,8 +6,6 @@ Trica Neon is a geometric display typeface drawn with a single, even stroke, lik
 
 It is made for headlines, titles and logos, for posters, signs and interfaces, and it feels at home in short texts such as captions, labels and menus. For long reading, it pairs well with a quieter text face.
 
-The project is a work in progress: version 1.000 is not released yet.
-
 [Specimen page](https://tricaman.github.io/trica-neon/) · [Download](https://github.com/tricaman/trica-neon/releases/latest)
 
 ## Styles
