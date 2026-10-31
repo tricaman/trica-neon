@@ -82,10 +82,12 @@ images: build.stamp
 	venv/bin/python scripts/specimen_images.py "fonts/variable/TricaNeon[wght].ttf" documentation/images
 
 # The npm package in out/npm: the WOFF2 files with ready-made CSS. It is published by hand,
-# with `npm publish out/npm`.
+# with `npm publish ./out/npm`; a new package of the same fonts (a better README, say) takes
+# the next revision: `make npm NPM_REVISION=1`.
+NPM_REVISION ?= 0
 npm: build.stamp
 	rm -rf out/npm
-	venv/bin/python scripts/npm_package.py fonts/webfonts OFL.txt $(VERSION) out/npm
+	venv/bin/python scripts/npm_package.py fonts/webfonts OFL.txt $(VERSION) out/npm $(NPM_REVISION)
 
 # The zip published with each GitHub release: fonts, license and README.
 release: build.stamp
